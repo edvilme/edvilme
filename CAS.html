@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900" rel="stylesheet">
+        <style>
+            body{
+                font-family:Arial, Helvetica, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center
+            }
+            h1{
+                max-width: 800px;
+                width: 100%;
+                text-align: left;
+                font-family: 'Source Sans Pro', sans-serif;
+                font-size: 64;
+                padding: 4px;
+                box-sizing: border-box;
+                font-weight: 900;
+                margin-bottom: 0px
+            }
+            #experiencias_cont{
+                width: 100%;
+                max-width: 800px
+            }
+            .experiencia{
+                display: flex;
+                padding: 12px 4px;
+                border-bottom: 1px solid rgb(200,200,200)
+            }
+            .experiencia>*{
+                flex: 1;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 4px 4px
+            }
+            .experiencia_titulo{
+                flex: 2;
+                font-weight: 600;
+                font-size: 16;
+            }
+            .tag{
+                height: 24px;
+                width: 24px;
+                border-radius: 12px;
+                margin: 1px;
+                background: rgb(0,122,255);
+                display: inline-block;
+                text-align: center;
+                color: white;
+                font-weight: 600;
+                line-height: 1.5
+            }
+            #header{
+                position: sticky;
+                top: 0;
+                background: rgba(255,255,255,0.95);
+            }
+            #header * {
+                text-align: left;
+                font-size: 16px;
+                font-family: 'Source Sans Pro', sans-serif;
+                font-weight: 600; 
+            }
+        </style>
+        
+    </head>
+    <body>
+        <h1>Experiencias</h1>
+        <div id="experiencias_cont">
+                <div class="experiencia" id="header">
+                    <div class="experiencia_titulo">NOMBRE</div>
+                    <div class="experiencia_fecha">FECHA</div>
+                    <div class="experiencia_componente">COMPONENTES</div>
+                    <div class="experiencia_aprendizaje">RESULTADOS</div></div>
+        </div>
+        <script>
+                var postsArray= {
+                    "BLOG (12): MI CV (MAR. ’18)": ['Feb 26, 2019'], 
+                    "BLOG (28): CADENA DE SONRISAS": ['Feb 26, 2019', 'A', 'S', '5', '6'], 
+                    "BLOG (27) ⠃⠗⠁⠊⠇⠇⠑": ['Feb 26, 2019', 'C', '3', '4', '2'], 
+                    "CTRL ALT TEC (09): ENERO": ['Feb 13, 2019', 'C', 'S', '1', '3', '4',], 
+                    "BLOG (26): HICE MI PÁGINA DE MEMES": ['Jan 26, 2019', 'C', '1', '2', '5'], 
+                    "BLOG (25): ASESORÍAS DE MATE": ['Jan 22, 2019', 'C', 'S', '1', '5', '8'], 
+                    "CTRL ALT TEC (08): DICIEMBRE": ['Jan 1, 2019', 'C', 'S', '1', '2', '3', '4', '5', '8'], 
+                    "CTRL ALT TEC (07): NOVIEMBRE Y FIN DE SEMESTRE": ['Nov 22, 2018', 'C', 'S', '1', '2', '3', '4', '5', '8'], 
+                    "BLOG (24): TEAMAPPLENEWS": ['Nov 20, 2018', 'C', '1', '5'], 
+                    "BLOG (23): VIERNES DE PELIS Y SALUDOS ": ['Nov 4, 2018', 'C', 'A', '2', '3', '8'], 
+                    "CTRL-ALT-TEC (06): SEPTIEMBRE": ['Oct 19, 2018', 'C', 'S', '1', '2', '3', '4', '5', '8'], 
+                    "BLOG (22): MONOCICLO": ['Sep 236, 2018', 'C', 'A', '2', '3', '8'], 
+                    "CTRL-ALT-TEC (05): AGOSTO": ['Sep 6, 2018', 'C', 'S', '1', '2', '3', '4', '5', '8'], 
+                    "BLOG (21): PLÁTICA VIVE SALUDABLE": ['Aug 30, 2018', 'A', '6', '7'], 
+                    "CTRL-ALT-TEC (04): PLAYERAS": ['Aug 27, 2018', 'C', '1', '2', '3', '4', '5', '8'], 
+                    "ALL THE SAME (04): NUEVO ENFOQUE": ['Aug 10, 2018', 'C', 'S', '1', '3', '4', '5', '6'], 
+                    "BLOG (20): #100DAYSOFCODE": ['Aug 6, 2018', 'C', '1', '2', '3', '5', '8'], 
+                    "BLOG (19): SNAKE GRAVITY #LAVEZQUEHICEUNAAPP": ['Jun 3, 2018', 'C', '1', '2', '3', '5', '8'], 
+                    "REFLEXIÓN: LA VEZ QUE RECOGÍ UN TAMAL…": ['May 28, 2018', 'C', 'A', 'S'], 
+                    "EDVILME TV (04): DIFFERENT PIECES": ['May 18, 2018', 'C', 'S', '2', '3', '5', '6', '7', '8'], 
+                    "BLOG (18): LABBER #LAVEZQUEHICEUNAAPP (Revisar)": ['May 11, 2018', 'C'], 
+                    "BLOG (17): HACKMX": ['Apr 20, 2018', 'C', '1', '2', '3', '5', '8'], 
+                    "BLOG (16): DÍA FELIZ": ['Apr 17, 2018', 'C', 'A', 'S', '2', '3', '4', '5', '7'], 
+                    "BLOG (15): APPLE DEVELOPER": ['Apr 10, 2018', 'C', '1', '5', '7', '8'], 
+                    "BLOG (14): LES MISERABLES": ['Apr 6, 2018', 'C', 'S', '3', '7'], 
+                    "BLOG (13): TESLA": ['Apr 6, 2018', 'C', '1', '3', '6'], 
+                    "CTRL-ALT-TEC (03): HACK CLUB": ['Mar 21, 2018', 'C', 'S', '1', '2', '3', '4', '5', '8'], 
+                    "MANGO (01): APP #LAVEZQUEHICEUNAAPP": ['Mar 9, 2018', 'C', '2', '3', '5', '8'], 
+                    "CTRL-ALT-TEC (02): ¡COMENZAMOS!": ['Mar 4, 2018', 'C', '1', '2', '3', '4', '5', '8'], 
+                    "BLOG (11): TEC-TALKS": ['Mar 4, 2018', 'C', '1', '2', '8'], 
+                    "CTRL-ALT-TEC (01): GRUPO ESTUDIANTIL": ['Feb 23, 2018', 'C', 'S', '1', '2', '3', '4', '5', '8'], 
+                    "BLOG ( 10 ): IERROR": ['Feb 23, 2018', 'C', 'S', '2', '7'], 
+                    "BRIGHT (03): CAMPAÑAS": ['Feb 10, 2018', 'C', '1', '2', '3', '5', '6'], 
+                    "UNDERSCORE + PHAAE (01.1): DISEÑO Y ALMACENAMIENTO": ['Feb 3, 2018', 'C', 'S', '1', '3', '4', '5', '6', '8'], 
+                    "PROJECT WATERMELON (02): OBJETIVO": ['Feb 3, 2018', 'C', 'S', '1', '2', '5', '6'], 
+                    "PROJECT WATERMELON (01): PLANEACIÓN": ['Jan 17, 2018', 'C', 'S', '1', '2', '5', '6'], 
+                    "PROJECT UNDERSCORE (01): PLANEACIÓN": ['Jan 13, 2018', 'C','S', '2', '3', '4', '4', '5', '6', '8'], 
+                    "BLOG (09): VIAJE A MONTERREY DÍA 2": ['Nov 21, 2017', 'C', 'A', 'S', '1', '2', '4', '5'], 
+                    "BLOG (08): EL VIAJE A MONTERREY DÍA 1": ['Nov 20, 2017', 'C',  '1', '2', '4', '5'], 
+                    "BLOG (07): INVITACIÓN A INCMTY": ['Nov 20, 2017', 'C', '1', '2', '4'], 
+                    "BLOG (06): POSADA IB (PROYECTO)": ['Nov 20, 2017', 'C', 'A', 'S', '4', '5'], 
+                    "ALL THE SAME (03): VÍAS DE COMUNICACIÓN": ['Nov 14, 2017', 'C', 'S', '1', '2', '4', '5', '6'], 
+                    "LES MISERABLES (03): LA RIFA": ['Nov 10, 2017', 'C', 'S', '1', '4', '5'], 
+                    "ALL THE SAME (02): DISEÑO DEL LOGOTIPO": ['Nov 5, 2017', 'C', 'S', '1', '2', '3', '4', '4', '5', '6', '7', '8'], 
+                    "BLOG (05): BOWLS 2017 (Y RAPPI)": ['Nov 4, 2017', 'C', 'A', 'S', '7', '8'], 
+                    "ALL THE SAME (01): PROYECTO INTERNACIONAL": ['Nov 1, 2017', 'C', 'S', '1', '2', '3', '4', '5', '6', '7', '8'], 
+                    "EDVILME TV (03): VÍDEO ACERCA DE LA POBREZA": ['Oct 28, 2017', 'C', '3', '4', '6'], 
+                    "BLOG (04): TOMÉ CLASE DE ARTE": ['Oct 25, 2017', 'C', '3'], 
+                    "BLOG (03): ASESORÍA DE QUÍMICA": ['Oct 24, 2017', 'C', '1', '2', '3', '8'], 
+                    "LOS MISERABLES (02): RIFA Y BOLETOS": ['Oct 23, 2017', 'C', 'S', '1', '2', '3', '4', '5'], 
+                    "BRIGHT (02): EL CAMBIO ES DE MUCHOS": ['Oct 22, 2017', 'C', 'S', '3', '4', '5', '6', '7'], 
+                    "19S (03): EN MEMORIA": ['Oct 20, 2017', 'C', 'A', 'S', '7'], 
+                    "BRIGHT (01): LA IMPORTANCIA DE CUIDAR DEL MEDIO AMBIENTE": ['Oct 13, 2017', 'C', 'S', '1', '2', '3', '4', '5', '6', '7', '8'], 
+                    "EDVILME TV (02): VÍDEO ANTI-BULLYING": ['Oct 8, 2017', 'C', 'A', 'S',  '1', '2', '3', '4', '5', '6', '7', '8'], 
+                    "19S (02): ¿CÓMO AYUDAR?": ['Sep 28, 2017', 'C', 'A', 'S'], 
+                    "19S (01): CÓMO VIVÍ EL SISMO": ['Sep 28, 2017', 'C', 'A', 'S'], 
+                    "JAVA(0): SYSTEM.OUT.PRINTIN(“HELLO JAVA!”);": ['Sep 14, 2017', 'C'], 
+                    "LOS MISERABLES (01): UN ADELANTO": ['Sep 14, 2017', 'C', 'A', 'S'], 
+                    "EDVILME TV (01): LA VEZ QUE HICE UN CANAL DE YOUTUBE": ['Sep 6, 2017', 'C'], 
+                    "BLOG (02): DOLIST #LAVEZQUEHICEUNAAPP": ['Aug 31, 2017', 'C', 'S'], 
+                    "BLOG (01): HELLO WORLD!": ['Aug 28, 2017']
+                }
+                for (const post in postsArray) {
+                    var experiencia = document.createElement("div");
+                    experiencia.classList.add("experiencia");
+                    var experiencia_titulo = document.createElement("div");
+                    experiencia_titulo.classList.add("experiencia_titulo");
+                    experiencia_titulo.innerText = post;
+                    var experiencia_fecha = document.createElement("div");
+                    experiencia_fecha.classList.add("experiencia_fecha");
+                    experiencia_fecha.innerText = postsArray[post][0];
+                    var experiencia_componente = document.createElement("div");
+                    experiencia_componente.classList.add("experiencia_componente");
+                    if(postsArray[post].includes("C")){
+                        experiencia_componente.innerHTML = experiencia_componente.innerHTML+'<span class="tag">C</span>';
+                    }else{
+                        experiencia_componente.innerHTML = experiencia_componente.innerHTML+'<span class="tag" style="visibility: hidden"></span>';                        
+                    }
+                    if(postsArray[post].includes("A")){
+                        experiencia_componente.innerHTML = experiencia_componente.innerHTML+'<span class="tag">A</span>';
+                    }else{
+                        experiencia_componente.innerHTML = experiencia_componente.innerHTML+'<span class="tag" style="visibility: hidden"></span>';                        
+                    }
+                    if(postsArray[post].includes("S")){
+                        experiencia_componente.innerHTML = experiencia_componente.innerHTML+'<span class="tag">S</span>';
+                    }else{
+                        experiencia_componente.innerHTML = experiencia_componente.innerHTML+'<span class="tag" style="visibility: hidden"></span>';                        
+                    }
+
+                    var experiencia_aprendizaje = document.createElement("div");
+                    experiencia_aprendizaje.classList.add("experiencia_aprendizaje");
+
+                    for(var i=0; i<9; i++){
+                        if(postsArray[post].includes(i.toString())){
+                            experiencia_aprendizaje.innerHTML = experiencia_aprendizaje.innerHTML+'<span class="tag">'+i.toString()+'</span>';
+                        }else{
+                            experiencia_aprendizaje.innerHTML = experiencia_aprendizaje.innerHTML+'<span class="tag" style="visibility: hidden"></span>';                        
+                        }
+                    }
+
+
+                   // experiencia_aprendizaje.innerHTML = '<span class="tag">1</span><span class="tag">2</span><span class="tag">3</span><span class="tag">4</span><span class="tag">5</span><span class="tag">6</span><span class="tag">7</span>';
+                    experiencia.append(experiencia_titulo, experiencia_fecha, experiencia_componente, experiencia_aprendizaje);
+                    document.querySelector("#experiencias_cont").append(experiencia)
+                }
+            </script>
+    </body>
+</html>
