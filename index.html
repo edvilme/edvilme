@@ -1,1 +1,289 @@
-qwertyuiop´+
+<html>
+    <head>
+        <style>
+            body{
+                padding: 0;
+                margin: 0;
+                transition: 0.8s all;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                overflow: auto
+            }
+            .header{
+                transition: 0.8s all;
+                width: 100%;
+                height: 70px;
+                padding: 8px;
+                position: sticky;
+                top: 0;
+                display: flex;
+                flex-direction: row;
+                font-family: sans-serif;
+                font-weight: 600;
+                font-size: 40;
+                box-sizing: border-box;
+                background: white;
+                color: rgb(80,80,80);
+                justify-content: space-between
+
+            }
+            .header li{
+                list-style: none;
+                margin: 4px;
+            }
+            .header_black{
+                background: black;
+                color: rgb(160,160,160);
+                justify-content: space-around
+            }
+            .hero{
+                width: 100%;
+                box-sizing: border-box;                
+                height: calc(100vh - 70px);
+                transition: 0.3s all;
+                background-color: black;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20
+            }
+            .hero h1{
+                color: rgb(255,149,0);
+                font-size: 108;
+                margin: 0
+            }
+            .hero *{
+                max-width: 401px;
+                width: 100%; 
+                font-weight: 600;
+            }
+            .hero span:first-child{
+                font-size: 80
+            }
+            .hero span:last-child{
+                font-size: 20;
+                color: rgb(80,80,80);
+                text-align: center
+            }
+            section{
+                padding: 24px; 
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 18px;
+                max-width: 1020px;
+                width: 100%;
+            }
+            h1{
+                font-size: 80;
+                font-weight: 800
+            }
+            .emphasis{
+                font-size: 32;
+                font-weight: 600;
+                line-height: 1.5
+            }
+            /*.emphasis.quote::before{
+                content: '"';
+                font-size: 80;
+                margin-right: 8px;
+                float: left;
+                font-style: normal;
+            }*/
+            .emphasis.quote{
+                font-weight: 200;
+                font-size: 100
+            }
+            .tag{
+                margin: 1px;
+                padding: 2px 8px;
+                border-radius: 16px;
+                background: rgb(200,200,200)
+            }
+            .tag img{
+                height: 20px;
+                margin: 1px;
+                display: inline;
+            }
+            .icon-grid{
+                padding: 16px 0px; 
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly
+            }
+            .icon-grid>*{
+                margin: 8px
+            }
+            .icon-grid *{
+                width: 160px;
+                border-radius: 25%;
+                box-shadow: 0px 0px 20px 0px rgba(200,200,200,0.3);
+            }
+            .sub-section {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                border-bottom: 1px solid rgb(200,200,200)
+            }
+            .sub-section > * {
+                margin: 8px;
+            }
+            .sub-section h2{
+                float: left;
+                font-family: 'Source Sans Pro', sans-serif;
+                font-weight: 200;
+                font-size: 160;
+                color: rgb(255,139,0)
+            }
+            .sub-section strong{
+                font-weight: 600;
+                font-size: 28px; 
+                display: block
+            }
+            .row{
+                padding: 16px 0px;
+                font-size: 20px; 
+            }
+            .card-emphasis{
+                border-radius: 8px;
+                color: white;
+                background: black;
+                font-size: 40;
+                padding: 24px;
+                margin: 4px;
+                display: inline-block
+            }
+        </style>
+    </head>
+    <div class="hero">
+        <span>Hello, I am</span>
+        <h1>edvilme</h1>
+        <span>EDUARDO VILLALPANDO MELLO</span>
+    </div>
+    <header class="header">
+        <li>👦🏻</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+    </header>
+    <section>
+        <h1>about me.</h1>        
+        <span class="emphasis">
+            I study <span class="tag">IB</span> at <span class="tag">Tec de Monterrey</span>. I do <span class="tag">code</span>, <span class="tag">design</span> and several interesting <span class="tag">projects</span>. You can find me online at
+            <div class="icon-grid"> 
+                <a href="https://twitter.com/edvilme"><img src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/43/ee/57/43ee573b-dd76-d5f6-bb2b-e4aa645c64c3/ProductionAppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/246x0w.jpg"></a>
+                <a href="https://www.youtube.com/channel/UC1E4zbr2sby4sLIYqI9IwQQ"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/f0/81/ce/f081ce05-55b9-be59-e070-6ce8109e03e1/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/246x0w.jpg"></a>
+                <a href="https://github.com/edvilme"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"></a>
+                <a href="https://stackoverflow.com/cv/edvilme"><img src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.png?v=c78bd457575a"></a>
+                <a href="https://99designs.com.mx/profiles/2639973"><img src="https://99designs.co.uk/og-image.png"></a>
+                <a href="https://instagram.com/edvilme.jpg"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/73/20/b4/7320b4b4-d80f-b095-55f5-8e2585ad5061/Prod-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/246x0w.jpg"></a>
+                <a href="https://iamedvilme.wordpress.com"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/fe/74/f7/fe74f7f1-15d6-5c73-26d0-19d6e9898b1b/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/246x0w.jpg"></a>
+                <a href="mailto:eduardo.villalpando.mello@gmail.com"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/af/4f/a2/af4fa251-760b-5299-58d3-d4c6eb694527/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/246x0w.jpg"></a>
+            </div>
+        </span>
+    </section>
+    <section>
+        <h1>my trayectory.</h1>  
+        <div class="sub-section">
+            <h2>2019</h2>
+            <div>
+                <div class="row">
+                    <strong>Stanford Almond Assistant</strong> CONTRIBUTOR
+                </div>
+                
+            </div>
+        </div>
+        <div class="sub-section">
+            <h2>2018</h2>
+            <div>
+                <div class="row">
+                    <strong>Ctrl Alt Tec</strong> CO-FOUNDER AND PRESIDENT
+                </div>
+                <div class="row">
+                    <strong>Team Apple News</strong> WEB DEVELOPER
+                </div>
+                <div class="row">
+                    <strong>PHAAE</strong> WEB DEVELOPER AND GRAPHIC DESIGNER
+                </div>
+                <div class="row">
+                    <strong>#100DaysOfCode</strong> 
+                </div>
+            </div>
+        </div>
+        <div class="sub-section">
+            <h2>2017</h2>
+            <div>
+                <div class="row">
+                    <strong>Monzalvo Abogados, S.C.</strong> INTERN AND WEB DEVELOPER
+                </div>
+                <div class="row">
+                    <strong>Asociación por una Niñez Venturosa, A.C.</strong> GRAPHIC DESIGNER
+                </div>
+                <div class="row">
+                    <strong>Bright</strong> AMBASSADOR
+                </div>
+                <div class="row">
+                    <strong>incMTY + Prepa Tec Apps</strong> PARTICIPANT
+                </div>
+            </div>
+        </div>
+    </section>      
+    <section>
+        <h1>my skills.</h1>  
+        <div class="card-emphasis">javascript</div>
+        <div class="card-emphasis">node.js</div>
+        <div class="card-emphasis">react.js</div>
+        <div class="card-emphasis">express.js</div>
+        <div class="card-emphasis">react native</div>
+        <div class="card-emphasis">python</div>
+        <div class="card-emphasis">java</div>
+        <div class="card-emphasis">php</div>
+        <div class="card-emphasis">unix</div>
+        <div class="card-emphasis">mysql</div>
+        <div class="card-emphasis">jquery</div>
+        <div class="card-emphasis">apache</div>
+        <div class="card-emphasis">css</div>
+        <div class="card-emphasis">html</div>
+        <div class="card-emphasis">firebase</div>
+        <div class="card-emphasis">wordpress</div>
+        <br>
+        <br>
+        <div class="card-emphasis">logo design</div>
+        <div class="card-emphasis">motion graphics</div>
+        <div class="card-emphasis">brand identity</div>
+        <div class="card-emphasis">photography</div>
+        <div class="card-emphasis">UI design</div>
+        <div class="card-emphasis">digital illustration</div>
+        <div class="card-emphasis">photoshop</div>
+    </section>    
+    <section>
+        <h1>some projects.</h1>
+        <div class="icon-grid"> 
+            <a href="https://twitter.com/edvilme"><img src="https://ctrl-alt-tec.hackclub.com/img/logo-block.png"></a>
+            <a href="https://twitter.com/edvilme"><img src="https://ctrl-alt-tec.github.io/Bank/logo.png"></a>
+            <a href="https://twitter.com/edvilme"><img src="https://ctrl-alt-tec.github.io/Lists/logo.png"></a>
+            <a href="https://twitter.com/edvilme"><img src="https://ctrl-alt-tec.github.io/Puzzle/logo.png"></a>
+            <a href="https://twitter.com/edvilme"><img src="https://mango-app.github.io/web/icon-app.png"></a>
+            <a href="https://twitter.com/edvilme"><img src="https://ctrl-alt-tec.github.io/Kiwi/logo.png"></a>
+            <a href="https://twitter.com/edvilme"><img src="https://ctrl-alt-tec.hackclub.com/watermelon/logo.png"></a>
+            <a href="https://twitter.com/edvilme"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/b2/8a/cc/b28acc3b-62e2-1dc0-276f-dd81ff58af84/AppIcon-1x_U007emarketing-85-220-0-6.png/246x0w.jpg"></a>
+            <a href="https://twitter.com/edvilme"><img src="https://avatars2.githubusercontent.com/u/42452233?s=200&v=4"></a>
+           
+        </div>
+    </section>
+    <script>
+        window.addEventListener("scroll", function(){
+            if(document.querySelector("body").scrollTop < 50){
+                document.querySelector(".hero").style.background = "black";
+                document.querySelector(".header").classList.add("header_black");
+            }else{
+                //document.querySelector(".hero").style.background = "white";
+                document.querySelector(".header").classList.remove("header_black");
+            }
+        })
+    </script>
+</html>
