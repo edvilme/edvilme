@@ -17,7 +17,7 @@ class AltBlog{
 
         this.props = props;
         AltBlog.Constants.sections = props.sections;
-        AltBlog.currentUser = props.currentUser ? props.currentUser : {email: null};
+        AltBlog.currentUser = props.currentUser ? props.currentUser : {email: undefined};
 
         this.dom = document.querySelector("#BlogContainer");
         window.onpopstate = (event)=>{
@@ -43,7 +43,8 @@ class AltBlog{
         this.navBar.emptySelection();
         switch (page) {
             case 'post':
-                if(args=='new'){args={}}
+                if(args=='new' && AltBlog.currentUser.email != undefined){args={}}
+                if(args=='new' && AltBlog.currentUser.email == undefined){break;}
                 this.openPost( this.data.find(i=>(i.id == args)) );
                 break;
             case 'search':

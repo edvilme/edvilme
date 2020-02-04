@@ -20,59 +20,40 @@
     <script src="editor_modules/simple_image.js"></script>
     <script src="editor_modules/table.js"></script>
     <script src="editor_modules/embed.js"></script>
-    <script src="editor_modules/latex.js"></script>
+    
+<script src="editor_modules/latex.js"></script>
+
+    <script src="altBlog.js"></script>
+
     <style>
-        body, html{
-            background-color: black;
-            color: white;
-        }
-        .AltBlog_UI_NavBar{
-            background: #303030;
-            position: sticky;
-        }
-        #BlogContainer{
+        #allPosts{
             display: flex;
             flex-wrap: wrap;
         }
+        #cover{
+            display: flex;
+            justify-content: center;
+            padding: 16px;
+            height: 20vh;
+        }
+        #cover img{
+            width: 400px;
+            height: auto;
+        }
     </style>
-
 </head>
 <body>
-    <div id="BlogContainer"></div>
-    <script src="altBlog2.js"></script>
+    <div id="allPosts"></div>
     <script src="config.js"></script>
     <script>
-/*
-        let allPosts = [
-            {
-                id: '01023646',
-                title: 'Titulo 1',
-                subtitle: 'Lorem ipsum',
-                author: 'edvilme',
-                section: 'Blog'
-
-            }, {
-                id: '01024232',
-                title: 'Titulo 2',
-                subtitle: 'kljklj',
-                author: 'edvilme2',
-                section: 'Retos'
-            }
-        ]
-
-        let Blog = new AltBlog({
-            data: ()=>(allPosts), 
-            sections: ['Blog', 'Retos', 'Talleres'],
-            navBar: {
-                logo: 'https://ctrl-alt-tec.hackclub.com/watermelon/logo.png'
-            }
-        })
-    */
-        //document.body.append( new AltBlog().dom )
         Blog.getData().then(()=>{
-            //Blog.navigationReplaceContent(null, null)
-            document.body.append( Blog.dom )
+            //Blog.showPosts();
+            Blog.showPosts();
         })
+
+
+
+
     </script>
 </body>
 </html>
