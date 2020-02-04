@@ -22,7 +22,7 @@ let storageRef = firebase.storage().ref();
 
 let Blog = new AltBlog({
     data: async ()=>{
-        let posts = await db.collection("posts").get();
+        let posts = await db.collection("posts").orderBy("time", "desc").get();
         return posts.docs.map((l, i)=>({id: l.id, ...l.data()}));
     }, 
     login: (username, password)=>{

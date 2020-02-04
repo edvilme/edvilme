@@ -74,6 +74,16 @@ button {
     border-radius: 20px;
 }
 
+.AltBlog_UI_Tag{
+    padding: 4px;
+    margin: 2px;
+    border-radius: 2px;
+    background: rgb(200,200,200);
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 1em;
+}
+
 .AltBlog_Card{
     padding: 16px;
     margin: 8px;
@@ -121,7 +131,7 @@ button {
     justify-content: flex-end;
     align-items: center;
 }
-.AltBlog_Editor_Header span.tag, .AltBlog_Editor_Header h1, .AltBlog_Editor_Header h2, .AltBlog_Editor_Header-Commands, .AltBlog_Editor_Byline{
+.AltBlog_Editor_Header span.tag, .AltBlog_Editor_Header h1, .AltBlog_Editor_Header h2, .AltBlog_Editor_Header-Commands, .AltBlog_Editor_Byline, .AltBlog_Editor_Hashtags{
     width: 100%;
     max-width: 650px;
     margin-left: auto;

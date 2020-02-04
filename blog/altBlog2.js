@@ -56,6 +56,9 @@ class AltBlog{
             case 'user':
                 this.setPageUser();
                 break;
+            case 'tag':
+                this.setPagePosts(i => ( i.tags != undefined && i.tags.includes(args) ));
+                break;
             default: 
                 this.setPagePosts(); 
                 break;
@@ -143,6 +146,7 @@ AltBlog.Constants = {
 }
 
 AltBlog.Editor = class{
+    static Tags;
     constructor(post, _altBlog){
         this.post = post;
         this._altBlog = _altBlog;
@@ -182,9 +186,13 @@ AltBlog.Editor = class{
         
         header.append(this.section, this.title, this.subtitle);
 
+        
+        //hashtags.contentEditable = "true";
+    
+        //post.hashtags = ["Blog", "Development", "Etc"]
 
-
-
+        this.hashtags = new AltBlog.Editor.Tags(post.tags);
+        
         this.postCommands = new AltBlog.UI.PostCommands(post, this);
         let byline = document.createElement('div');
         byline.classList.add('AltBlog_Editor_Byline');
@@ -194,7 +202,7 @@ AltBlog.Editor = class{
         this.publish_btn = document.createElement('div');
         this.publish_btn.classList.add('AltBlog_FAB', '__editor-publish');
         this.publish_btn.addEventListener('click', ()=>{this.publish()})
-        this.dom.append(header, this.postCommands.dom, byline, this.editor_cont, this.publish_btn)
+        this.dom.append(header, this.postCommands.dom, this.hashtags.dom, byline, this.editor_cont, this.publish_btn)
         this.initEditor()
     }
 
@@ -251,6 +259,7 @@ AltBlog.Editor = class{
         return {
             ...this.post,
             ...editorData,
+            tags: this.hashtags.getValues(),
             title: this.title.innerText,
             subtitle: this.subtitle.innerText,
             author: AltBlog.currentUser.email,
@@ -273,9 +282,38 @@ AltBlog.Editor = class{
     }
 }
 
+AltBlog.Editor.Tags = class{
+    constructor(tags = []){
+        this.dom = document.createElement('div');
+        this.dom.classList.add('AltBlog_Editor_Hashtags');
+        this.dom.contentEditable = "true";
+        this.dom.innerHTML = tags.join(" ");
+
+        this.dom.addEventListener('keyup', ()=>{
+            if(event.keyCode == 32 || event.keyCode == 13){
+                this.render()
+            }
+        })
+        this.render()
+    }
+    render(){
+        let value = this.dom.innerText;
+        value = value.replace( /\S+/g, (a)=>new AltBlog.UI.Tag(a).dom.outerHTML).replace("<br>", ""); 
+        this.dom.innerHTML = value;
+        this.dom.focus();
+        document.execCommand('selectAll', false, null);
+        document.getSelection().collapseToEnd()
+    }
+    getValues(){
+        return this.dom.innerText.split(' ')
+    }
+    
+}
+
 AltBlog.UI = {
     PostCommnands: null,
-    NavBar: null
+    NavBar: null,
+    Tag: null
 }
 
 AltBlog.UI.PostCommands = class{
@@ -351,5 +389,16 @@ AltBlog.UI.NavBar = class {
     selectSection(section){
         this.emptySelection();
         this.sections.find(i=>i.innerHTML==section).classList.add('active')
+    }
+}
+
+AltBlog.UI.Tag = class{
+    constructor(value, callback){
+        this.dom = document.createElement('a');
+        this.dom.href = "?tag="+value;
+        this.dom.classList.add('AltBlog_UI_Tag');
+
+        this.dom.innerHTML=value;
+
     }
 }
