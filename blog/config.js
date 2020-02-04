@@ -16,12 +16,9 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 let db = firebase.firestore();
+let storageRef = firebase.storage().ref();
 
-firebase.auth().onAuthStateChanged(user=>{
-    if(user){
-        Blog.changeCurrentUser(new AltBlog.User(user.uid, (({displayName, email, photoUrl})=>({displayName, email, photoUrl}))(user)))
-    }
-})
+
 
 let Blog = new AltBlog({
     data: async ()=>{
@@ -40,10 +37,22 @@ let Blog = new AltBlog({
     create: (post)=>{
         db.collection("posts").add(post).then(()=>{console.log("done, created")})
     },
+    fileUpload: async (stream, name, callback)=>{
+        let promise = await storageRef.child(name).put(stream);
+        let url = await promise.ref.getDownloadURL();
+        return url
+    },
     allPosts: document.querySelector("#allPosts"),
     navBar: {
         logo: 'https://ctrl-alt-tec.hackclub.com/watermelon/logo.png',
         visible: true, 
     },
     sections: ['Blog', 'Retos', 'Talleres']
+})
+
+firebase.auth().onAuthStateChanged(user=>{
+    if(user){
+        AltBlog.currentUser = user
+    }
+    console.log("user", user)
 })

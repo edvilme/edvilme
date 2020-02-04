@@ -13,7 +13,12 @@ class AltBlog{
     static permissions;
     static currentUser;
 
-    async init(){
+    state = {
+        page: '',
+        params: {}
+    }
+
+    async getData(){
         this.posts = await this._constructorProps.data()
     }
 
@@ -22,7 +27,6 @@ class AltBlog{
         
         // Define static props
         AltBlog.sections = props.sections;
-
         AltBlog.currentUser = props.currentUser ? props.currentUser : new AltBlog.User('guest', 'guest');
         
         this.container = props.allPosts ? props.allPosts : document.body;
@@ -31,13 +35,13 @@ class AltBlog{
         this.update = (id, post)=>{
             props.update(id, post);
             alert('done');
-            this.init().then(()=>{ this.openPost(post) })
+            this.getData().then(()=>{ this.openPost(post) })
         }
 
         this.delete = (id, post)=>{
             if(confirm("¿Borrar el post? \n Esta accion no se puede deshacer")){
                 props.delete(id, post);
-                this.init().then(()=>{ this.showPosts() });
+                this.getData().then(()=>{ this.showPosts() });
             }
         }
 
@@ -52,9 +56,12 @@ class AltBlog{
         if(props.navBar && props.navBar.visible){
             this.navBar = new AltBlog.UI.NavBar(props.navBar, this);
         }
+
+        this.fileUpload = props.fileUpload;
     }
 
     showPosts(f=(i)=>true){
+        this.navBar.cancelSelection();
         document.title = 'Watermelon';
         //Empty container
         this.container.innerHTML = '';
@@ -67,12 +74,14 @@ class AltBlog{
         newPost.classList.add('AltBlog_FAB', '__editor-publish');        
         newPost.addEventListener('click', ()=>{
             this.openPost();
+ 
         })
         this.container.append(newPost);
     }
 
     openPost(post={}){
         document.title = post.title ? post.title : 'New Post';
+        //history.pushState({post: post}, post.title ? post.title : 'New Post', "");
         //Empty container
         this.container.innerHTML = "";
         let editor = new AltBlog.Editor(post, this, AltBlog.currentUser.email == post.author);
@@ -110,7 +119,7 @@ AltBlog.Card = class{
         this.dom.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.8) 100%), url(${props.image})`
 
         this.dom.addEventListener('click', ()=>{
-            _altBlog.openPost(props)
+            _altBlog.openPost(props);
         })
 
     }
@@ -132,7 +141,7 @@ AltBlog.Editor = class{
 
         let header = document.createElement('div');
         header.classList.add('AltBlog_Editor_Header')
-        header.style.background = `linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.8) 100%), url('${params.image ? params.image : ''}')`
+        header.style.background = `linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.8) 100%), url(' ${params.image ? params.image : ''}')`
 
         this.title = document.createElement('h1');
         this.title.innerText = params.title ? params.title : 'Título';
@@ -144,15 +153,32 @@ AltBlog.Editor = class{
         this.section.classList.add('tag')
         this.section.innerText = params.section ? params.section : 'Categoría';
 
-
         let author = params.author ? params.author : AltBlog.currentUser.uid;
 
         let byline = document.createElement('div');
         byline.classList.add('AltBlog_Editor_Byline');
         byline.innerHTML = `Por ${ author } `;
 
+        let headerButton = document.createElement('input');
+        headerButton.type = "file";
 
         header.append(this.section, this.title, this.subtitle)
+
+        header.addEventListener('click', e=>{
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            headerButton.click()
+        }) 
+        headerButton.addEventListener('change', (e)=>{
+            //console.log(e.target.files[0])
+            _altBlog.fileUpload(e.target.files[0], params.id+"/header", (data)=>{
+                data.ref.getDownloadURL().then(url=>{
+                    console.log(url);
+                    params.image = url
+                })
+            })
+        })
+
 
         this.commands = document.createElement('div');
         this.commands.classList.add('AltBlog_Editor_Header-Commands');
@@ -288,9 +314,7 @@ AltBlog.UI.NavBar = class {
             item.innerHTML = l;
             item.addEventListener('click', ()=>{
                 _altBlog.showPosts(i=>(i.section == l))
-                document.querySelectorAll('.AltBlog_UI_NavBar-Nav span').forEach(i=>{
-                    i.classList.remove('active')
-                })
+                this.cancelSelection();
                 item.classList.add('active')   
             })
             navCont.append(item)
@@ -305,5 +329,10 @@ AltBlog.UI.NavBar = class {
     }
     changeUser(){
         this.user.style.background = `url('${AltBlog.currentUser.photoUrl}')`
+    }
+    cancelSelection(){
+        document.querySelectorAll('.AltBlog_UI_NavBar-Nav span').forEach(i=>{
+            i.classList.remove('active')
+        })
     }
 };
