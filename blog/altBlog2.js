@@ -17,7 +17,7 @@ class AltBlog{
 
         this.props = props;
         AltBlog.Constants.sections = props.sections;
-        AltBlog.currentUser = props.currentUser;
+        AltBlog.currentUser = props.currentUser ? props.currentUser : {email: null};
 
         this.dom = document.querySelector("#BlogContainer");
         window.onpopstate = (event)=>{
@@ -151,8 +151,10 @@ AltBlog.Editor = class{
         this.post = post;
         this._altBlog = _altBlog;
         this.isNew = post.id == undefined;
+        
         if(this.isNew){this.post.author = AltBlog.currentUser.email}
         this.isEditable = this.post.author == AltBlog.currentUser.email;
+        
         this.dom = document.createElement('div');
         this.dom.classList.add('AltBlog_Editor_Cont');
 
