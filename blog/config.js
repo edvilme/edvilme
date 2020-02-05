@@ -57,10 +57,10 @@ let Blog = new AltBlog({
     },
     allPosts: document.querySelector("#allPosts"),
     navBar: {
-        logo: 'https://ctrl-alt-tec.hackclub.com/watermelon/logo.png',
+        logo: 'logo.png',
         visible: true, 
     },
-    sections: ['Blog', 'Retos', 'Talleres']
+    sections: ['Blog', 'Programación', 'Diseño']
 })
 
 firebase.auth().onAuthStateChanged(user=>{
