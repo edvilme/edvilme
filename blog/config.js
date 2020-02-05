@@ -39,7 +39,7 @@ let Blog = new AltBlog({
         return posts.docs.map((l, i)=>({id: l.id, ...l.data()}));
     }, 
     login: (username, password)=>{
-        firebase.auth().signInWithEmailAndPassword("eduardo@ctrlalttec.hackclub.com", "123456");
+        firebase.auth().signInWithEmailAndPassword(username, password);
     },
     update: (id, post)=>{
         db.collection("posts").doc(id).update(post).then(()=>{console.log("done")})
