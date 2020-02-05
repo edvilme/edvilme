@@ -60,7 +60,8 @@ let Blog = new AltBlog({
         logo: 'logo.png',
         visible: true, 
     },
-    sections: ['Blog', 'Programación', 'Diseño']
+    sections: ['Blog', 'Programación', 'Diseño'],
+    name: "edvilme Blog"
 })
 
 firebase.auth().onAuthStateChanged(user=>{

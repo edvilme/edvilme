@@ -1,9 +1,9 @@
 class AltBlog{
-    static Card;
-    static Editor;
-    static UI;
-    static Constants;
-    static currentUser;
+    //static Card;
+    //static Editor;
+    //static UI;
+    //static Constants;
+    //static currentUser;
     
     async getData(){
         this.data = await this.props.data();
@@ -17,6 +17,7 @@ class AltBlog{
 
         this.props = props;
         AltBlog.Constants.sections = props.sections;
+        AltBlog.Constants.name = props.name ? props.name : location.hostname;
         AltBlog.currentUser = props.currentUser ? props.currentUser : {email: undefined};
 
         this.dom = document.querySelector("#BlogContainer");
@@ -45,23 +46,31 @@ class AltBlog{
             case 'post':
                 if(args=='new' && AltBlog.currentUser.email != undefined){args={}}
                 if(args=='new' && AltBlog.currentUser.email == undefined){break;}
-                this.openPost( this.data.find(i=>(i.id == args)) );
+                let post = this.data.find(i=>(i.id == args))
+                this.openPost( post );
+                document.title = post.title + " | " + AltBlog.Constants.name;
                 break;
             case 'search':
                 this.setPagePosts(i => (i.title.includes(args) || i.subtitle.includes(args)));
+                document.title = "Searching: " + post.title + " | " + AltBlog.Constants.name;
                 break;
             case 'section':
                 this.setPagePosts(i => ( i.section == args ));
                 this.navBar.selectSection(args);
+                document.title = args + " | " + AltBlog.Constants.name;
                 break;
             case 'user':
                 this.setPageUser();
+                document.title = "User | " + AltBlog.Constants.name;
                 break;
             case 'tag':
                 this.setPagePosts(i => ( i.tags != undefined && i.tags.includes(args) ));
+                document.title = "Tag: " + post.title + " | " + AltBlog.Constants.name;
+
                 break;
             default: 
                 this.setPagePosts(); 
+                document.title = AltBlog.Constants.name;
                 break;
         }
     }
@@ -147,7 +156,7 @@ AltBlog.Constants = {
 }
 
 AltBlog.Editor = class{
-    static Tags;
+    //static Tags;
     constructor(post, _altBlog){
         this.post = post;
         this._altBlog = _altBlog;
