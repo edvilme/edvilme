@@ -1,7 +1,7 @@
 // This document configures AltBlog to the specified settings. Check documentation for details
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+/*var firebaseConfig = {
     apiKey: "AIzaSyBaAIgZY3coG_Vlhv5UdZrqrlxTeLm_-RE",
     authDomain: "watermelon-974ca.firebaseapp.com",
     databaseURL: "https://watermelon-974ca.firebaseio.com",
@@ -10,7 +10,20 @@ var firebaseConfig = {
     messagingSenderId: "458674442702",
     appId: "1:458674442702:web:42fa5b0b32ce9253381b9f",
     measurementId: "G-YMWDNF8GGQ"
-}; 
+};*/
+
+var firebaseConfig = {
+    apiKey: "AIzaSyBga60gYQLk27yHUeIPULRiZIXwojB5nzc",
+    authDomain: "blog-e6b92.firebaseapp.com",
+    databaseURL: "https://blog-e6b92.firebaseio.com",
+    projectId: "blog-e6b92",
+    storageBucket: "blog-e6b92.appspot.com",
+    messagingSenderId: "55882587854",
+    appId: "1:55882587854:web:f7bab3dffb99ff88087a9f",
+    measurementId: "G-FT6FPR501W"
+  };
+
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();

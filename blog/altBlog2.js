@@ -67,7 +67,7 @@ class AltBlog{
     }
 
     setPageUser(){
-        if(AltBlog.currentUser){
+        if(AltBlog.currentUser && AltBlog.currentUser.email){
             this.dom.innerHTML = "User!"
         } else {
             this.dom.innerHTML = "Please sign in"
@@ -152,8 +152,17 @@ AltBlog.Editor = class{
         this.post = post;
         this._altBlog = _altBlog;
         this.isNew = post.id == undefined;
+
+        if(this.isNew){
+            if(AltBlog.currentUser){
+                this.post.author = AltBlog.currentUser.email
+            } else {
+                _altBlog.signin()
+                this.post.author = AltBlog.currentUser.email
+            }
+        }
         
-        if(this.isNew){this.post.author = AltBlog.currentUser.email}
+        
         this.isEditable = this.post.author == AltBlog.currentUser.email;
         
         this.dom = document.createElement('div');
@@ -182,7 +191,8 @@ AltBlog.Editor = class{
             });
             headerImageUpload.addEventListener('change', (e)=>{
                 _altBlog.fileUploadAndGetUrl(e.target.files[0], post.id+"/header").then(url=>{
-                    post.image = url
+                    post.image = url;
+                    header.style.background = `linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.8) 100%), url(' ${url}')`
                 })
             })
         }
