@@ -6,21 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
-    <script src="editor.js"></script>
-    <script src="editor_modules/code.js"></script>
-    <script src="editor_modules/header.js"></script>
-    <script src="editor_modules/list.js"></script>
-    <script src="editor_modules/paragraph.js"></script>
-    <script src="editor_modules/raw.js"></script>
-    <script src="editor_modules/simple_image.js"></script>
-    <script src="editor_modules/table.js"></script>
-    <script src="editor_modules/embed.js"></script>
-    <script src="editor_modules/latex.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/Ctrl-Alt-Tec/altBlog/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ctrl-Alt-Tec/altBlog/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/raw@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+
     <style>
         body, html{
             background-color: black;
@@ -39,7 +43,6 @@
 </head>
 <body>
     <div id="BlogContainer"></div>
-    <script src="altBlog2.js"></script>
     <script src="config.js"></script>
     <script>
 /*
@@ -70,8 +73,8 @@
     */
         //document.body.append( new AltBlog().dom )
         Blog.getData().then(()=>{
-            //Blog.navigationReplaceContent(null, null)
-            document.body.append( Blog.dom )
+            //Blog.showPosts();
+            Blog.showPosts();
         })
     </script>
 </body>

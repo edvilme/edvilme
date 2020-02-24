@@ -1,3 +1,19 @@
+function includeJS(file) { 
+    var script  = document.createElement('script'); 
+    script.src  = file; 
+    script.type = 'text/javascript'; 
+    script.async = false
+    //script.defer = true; 
+    document.getElementsByTagName('head').item(0).appendChild(script); 
+} 
+
+includeJS('https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js');
+includeJS('https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js');
+includeJS('https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js');
+includeJS('https://www.gstatic.com/firebasejs/7.4.0/firebase-storage.js');
+includeJS('https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js');
+
+
 class AltBlog{
     //static Card;
     //static Editor;
@@ -14,7 +30,6 @@ class AltBlog{
     }
 
     constructor(props){
-
         this.props = props;
         AltBlog.Constants.sections = props.sections;
         AltBlog.Constants.name = props.name ? props.name : location.hostname;
@@ -424,3 +439,11 @@ AltBlog.UI.Tag = class{
 
     }
 }
+
+includeJS('config.js');
+
+
+Blog.getData().then(()=>{
+    //Blog.navigationReplaceContent(null, null)
+    document.body.append( Blog.dom )
+})
