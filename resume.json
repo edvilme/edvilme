@@ -1,0 +1,338 @@
+{
+    "basics": {
+        "name": "Eduardo Villalpando Mello", 
+        "alias": "@edvilme",
+        "picture": "",
+        "email": "eduardo.villalpando.mello@gmail.com", 
+        "website": "https://edvilme.tk", 
+        "summary": "I study Enginerring in Computer Tecnologies at Tec de Monterrey. I love design, programming, and doing interesting stuff", 
+        "profiles": [
+            {
+                "network": "Twitter", 
+                "username": "edvilme",
+                "url": "https://twitter.com/edvilme"
+            }, 
+            {
+                "network": "GitHub", 
+                "username": "edvilme", 
+                "url": "https://github.com/edvilme"
+            }, 
+            {
+                "network": "YouTube",
+                "username": "edvilmeTV", 
+                "url": "https://www.youtube.com/channel/UC1E4zbr2sby4sLIYqI9IwQQ"
+            },
+            {
+                "network":"99designs", 
+                "username": "edvilme",
+                "url": "https://en.99designs.com.mx/profiles/2639973"
+            }
+        ]
+    }, 
+    "work": [
+        {
+            "company": "Asociación Nacional de Productos para la Salud", 
+            "position": "Web Developer", 
+            "startDate": "2011", 
+            "endDate": "2012", 
+            "summary": "Mexican Association of domestic health product manufacturers", 
+            "highlights": [
+                "Programmed and designed a website to promote the Association"
+            ]
+        }, 
+        {
+            "company": "Monzalvo Abogados, S.C.", 
+            "website": "https://monzalvoabogados.com",
+            "position": "Law intern and web developer", 
+            "startDate": "May 2017", 
+            "endDate": "July 2017",
+            "summary": "Corporate strategy and litigation law firm", 
+            "highlights": [
+                "Learned to draft lawsuits", 
+                "Elaborated contracts", 
+                "Submitted law proposals", 
+                "Redesigned the firm's website"
+            ]
+        }, 
+        {
+            "company": "Asociación por una Niñez Venturosa, A.C.", 
+            "website": "http://porunaninezventurosa.com/",
+            "position": "Inter graphic designer", 
+            "startDate": "May 2017", 
+            "endDate": "July 2017",
+            "summary": "Association helping children in need with education, aid, etc",
+            "highlights": [
+                "During my time at Monzalvo Abogados, I did graphic design work"
+            ] 
+        },
+        {
+            "company": "Ctrl Alt Tec Hack Club", 
+            "website": "https://ctrl-alt-tec.hackclub.com",
+            "position": "Founder and Vicepresident (President untill 2019)", 
+            "startDate": "March 2018",
+            "endDate": "Present", 
+            "summary": "My friends and I built a student club in collaboration with HackClub to make programming accessible to anyone", 
+            "highlights": [
+                "Designed classes and activities", 
+                "Helped with management", 
+                "Co-developed several projects"
+            ]
+        }, 
+        {
+            "company": "PCA", 
+            "website": "https://rn-campaigns.herokuapp.com",
+            "position": "Lead developer", 
+            "startDate": "May 2019", 
+            "endDate": "August 2019", 
+            "summary": "I was hired to work on a political polls web app", 
+            "highlights": [
+                "Designed and implemented database architecture with SQL", 
+                "Developed backend API using Node.js and Express (and passport.js for authentication)", 
+                "Developed frontend with HTML, CSS and JS",
+                "Deveoped web app using Heroku"
+            ]
+        }, 
+        {
+            "company": "SAO Business & IT Solutions", 
+            "website": "https://www.saosistemas.com/", 
+            "position": "Intern developer", 
+            "startDate": "May 2019",
+            "endDate": "July 2019", 
+            "summary": "Software firm in Mexico City specialized in developing tools for financial, insurance and automotive sectors", 
+            "highlights": [
+                "Learned C#", 
+                "Designed and co-implemented mobile app using the company's API's and Mircosoft Xamarin"
+            ]
+        },
+        {
+            "company": "Quazaar", 
+            "website": "https://quazaarstudios.github.io/quazaar/",
+            "position": "Graphic and assets designer",
+            "startDate": "July 2020", 
+            "endDate": "September 2020",
+            "summary": "Game development startup", 
+            "highlights": [
+                "Designed graphic assets for a game", 
+                "Designed game brand identity"
+            ]
+        }, 
+        {
+            "company": "Luz Viva",
+            "website": "luzviva.tk", 
+            "position": "Lead web developer", 
+            "startDate": "March 2020", 
+            "endDate": "Present", 
+            "summary": "Mexican startup that sells hand-painted and customized cellphone cases", 
+            "highlights": [
+                "Developing website", 
+                "Developing e-commerce site using Google Apss Script as database"
+            ]
+        }, 
+        {
+            "company": "El Rayo", 
+            "website": "https://periodicoelrayo.com", 
+            "position": "Science and Technology Vice Director", 
+            "startDate": "November 2019", 
+            "endDate": "Present",
+            "summary": "Student led newspaper for Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus Santa Fe",
+            "highlights": [
+                "Learned about periodism procedures and structure", 
+                "Reviewed articles", 
+                "Wrote articles", 
+                "Developed online version of the newspaper"
+            ]
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Bright", 
+            "position": "ambassador", 
+            "startDate": "2017",
+            "endDate": "2017", 
+            "website": "https://wwww.thinkbright.com", 
+            "description": "Mexican startup that offers subscription based solar electricity to accelerate adoption in the country", 
+            "highlights": [
+                "Learned about the environmental and energy situation in Mexico"
+            ]
+        }, 
+        {
+            "organization": "Public Health Aid, Awareness and Education Organization",
+            "position": "Volunteer web developer", 
+            "startDate": "mid 2018", 
+            "endDate": "early 2019", 
+            "website": "https://www.phaae.org/", 
+            "description": "PHAAE is a registered non-profit in Nigeria that focuses on issues affecting women, adolescent girls and children in Africa, specially regarfing water, sanitation and hygiene",
+            "highlights": [
+                "Designed website"
+            ]
+        }, 
+        {
+            "organization": "Stanford Almond Assistant", 
+            "position": "contributor", 
+            "startDate": "2019-03-27", 
+            "endDate": "2019-04-2",
+            "website": "almond.stanford.edu",
+            "description": "Almond is a project led by Stanford University that aims to create an open, private virtual assistant", 
+            "highlights": [
+                "Proposed the idea to Giovanni Campagna (a PhD student that leads the program) and developed a whatsapp client for the bot. THe idea had to be scrapped because of high costs"
+            ]
+        },
+        {
+            "organization": "MediTec",
+            "position": "Brand identity designer", 
+            "startDate": "2020-03-17", 
+            "endDate": "2020-04-14",
+            "description": "MediTec is student organization from the Medicine School of Instituto Tecnológico y de Estudios Superiores de Monterrey that holds events like free medical diagnosis and studies",
+            "highlights": [
+                "Designed logo for 2020 edition", 
+                "Designed brand identity"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus Santa Fe", 
+            "area": "Engineer in Computer Technologies",
+            "studyType": "Bachelor", 
+            "startDate": "August 2019", 
+            "endDate": "Present"
+        }, 
+        {
+            "institution": "Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus Santa Fe", 
+            "area": "International Baccalaureate Diploma Progam",
+            "studyType": "High School (IB DP)",
+            "startDate": "August 2016", 
+            "endDate": "May 2019",
+            "gpa": "/42",
+            "courses": [
+                "Business Management (HL)",
+                "Computer Science (HL)", 
+                "English A: Language and Literature (HL)", 
+                "Spanish B: Literature (HL)",
+                "Physics (SL)",
+                "Mathematics (SL)"
+            ]
+        }
+    ],  
+    "competitions": [
+        {
+            "title": "HackQuarantine", 
+            "startDate": "April 2019", 
+            "award": "Participant",
+            "description": "Online Hackathon focused on solutions for the 2020 COVID pandemic. Along with othe participants, we represented Ctrl Alt Tec and learned a lot collectively. We developed a tool for contact tracing based on geographic proximity", 
+            "website": "https://hackquarantine.com",
+            "link": "https://ctrl-alt-tec.github.io/CovidApp"
+        },
+        {
+            "title": "BBVA Hackathon", 
+            "startDate": "August 2019",
+            "award": "Participant",
+            "description": "3 day Hackathon held by spanish bank BBVA in their Mexico City Offices. Participated in the Global Hitss Challenge focused on processing massive amounts of data regarding customer service",
+            "website": "https://www.google.com.mx/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwiTp4aW1qXpAhWDHc0KHZezA_EQFjAAegQIBBAB&url=https%3A%2F%2Fwww.bbva.com%2Fes%2Fmx%2Fhackathon-bbva-2019-pone-a-prueba-a-jovenes-que-quieran-pensar-fuera-de-la-caja%2F&usg=AOvVaw0Z_J_wAmY_UZzbaEtrgXQU"
+        },
+        {
+            "title": "HackMTY",
+            "startDate": "August 2019",
+            "award": "1st place winner", 
+            "description": "Hackathon held in Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus Monterrey. My team participated in the Konfío and JDA (now BlueYonder) challenge regarding clearer and smarter income/expenses dashboards and machine learning predictions respectivelly. My team won first place for the latter and got invited to their offices in Monterrey and Arizona", 
+            "website": "https://www.hackmty.com/",
+            "link": "https://www.hackmty.com/"
+        },
+        {
+            "title": "HackMX 2",
+            "startDate": "April 2019",
+            "award": "Participant",
+            "description": "Hackathon held in Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus Ciudad de México. My team participated in the Liverpool challenge consisting in using AR to provide a better shopping experience during the holidays. We developed an appp featuring the store's mascot that served as an AR virtual assistant while shopping.",
+            "website": "https://hackmx.mx/",
+            "link": "https://github.com/edvilme/HackMx2"
+        },
+        {
+            "title": "#100DaysOfCode", 
+            "startDate": "2018", 
+            "award": "Participant", 
+            "description": "100 Days of code is a Twitter challenge where participants need to do several projects for 100 days straight and document their learning progress",
+            "website": "N/A"
+        }, 
+        {
+            "title": "HackMX",
+            "startDate": "April 2018",
+            "award": "Participant",
+            "description": "Hackathon held in Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus Santa Fe. On the first edition of HackMX we were amnong the only High School participants, and we participated in the Santander Challenge consisting recommending credit/debit cards to customers based on their interests and profiles", 
+            "website": "https://hackmx.mx/",
+            "link": "http://htmlpreview.github.io/?https://github.com/SeaWar741/hackmx/blob/master/santander.html"
+        },
+        {
+            "title": "Prepa Tec Apps (now PrepAppsTec)",
+            "startDate": "November 2017",
+            "award": "Selected Campus Representatives",
+            "description": "Prepa Tec Apps is an inter-campus competition held by PrepaTec that aims to select technologically advanced projects from students across different campuses. My team had previously developed an app and business model for a shared economy app for home maintenance with which we represented our campus",
+            "website": "n/a",
+            "link": "https://mango-app.github.io/web/"
+        },
+        {
+            "title": "incMTY",
+            "startDate": "November 2017",
+            "award": "Participants",
+            "description": "incMTY is one of the most important latinamerican entrepeneurship events, held in Monterrey. As participants of Prepa Tec Apps we were given the opportunity to pitch our idea to several judges in the event",
+            "website": "https://incmty.com/",
+            "link": "https://mango-app.github.io/web/"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Frontend Development",
+            "level": "Advanced", 
+
+            "keywords":[
+                {"name": "HTML 5", "icon": "icon-html5-plain"},
+                {"name": "CSS3", "icon": "icon-css3-plain"},
+                {"name": "JavaScript", "icon": "icon-javascript-plain"},
+                {"name": "Wordpress", "icon": "icon-wordpress-plain"}, 
+                {"name": "Firebase", "icon": "icon-firebase-plain"}
+            ]
+        },
+        {
+            "name": "Backend Development",
+            "level": "Beginner",
+            "keywords": [
+                {"name": "Node.js", "icon": "icon-nodejs-plain"},
+                {"name": "Express.js", "icon": "icon-express-original"},
+                {"name": "PHP", "icon": "icon-php-plain"},
+                {"name": "Apache", "icon": "icon-apache-plain-wordmark"},
+                {"name": "UNIX/Bash", "icon": "icon-bash-plain"},
+                {"name": "Heroku", "icon": "icon-heroku-plain"}
+            ]
+        },
+        {
+            "name": "Databases",
+            "level": "Intermediate",
+            "keywords":[
+                {"name": "MySQL", "icon": "icon-mysql-plain"},
+                {"name": "mongoDB", "icon": "icon-mongodb-plain"}
+            ]
+        },
+        {
+            "name": "App Development",
+            "level": "Intermediate",
+            "keywords": [
+                {"name": "C#", "icon": "icon-csharp-plain"},
+                {"name": "Java", "icon": "icon-java-plain"},
+                {"name": "C++", "icon": "icon-cplusplus-plain"},
+                {"name": "Python", "icon": "icon-python-plain"},
+                {"name": "React", "icon": "icon-react-original"},
+                {"name": "Apple Developer", "icon": "icon-apple-original"}
+            ]
+        },
+        {
+            "name": "Design", 
+            "level": "Beginner", 
+            "keywords":[
+                {"name": "Photography & Photoshop", "icon": "icon-photoshop-plain"},
+                {"name": "Vector design & digital art", "icon": "icon-illustrator-plain"} 
+            ],
+            "keywords_old": [
+                "logo design", "motion graphics", "brandd identity", "UI design", "digital illustration"
+            ]
+        }
+    ]
+}
