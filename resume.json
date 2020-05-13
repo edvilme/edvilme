@@ -5,7 +5,7 @@
         "picture": "",
         "email": "eduardo.villalpando.mello@gmail.com", 
         "website": "https://edvilme.tk", 
-        "summary": "I study Enginerring in Computer Tecnologies at Tec de Monterrey. I love design, programming, and doing interesting stuff", 
+        "summary": "I study Enginerring in Computer Tecnologies at Tec de Monterrey. I love design, programming, and doing interesting stuff.", 
         "profiles": [
             {
                 "network": "Twitter", 
@@ -35,7 +35,7 @@
             "position": "Web Developer", 
             "startDate": "2011", 
             "endDate": "2012", 
-            "summary": "Mexican Association of domestic health product manufacturers", 
+            "summary": "Mexican Association of domestic health product manufacturers.\nDeveloped website.", 
             "highlights": [
                 "Programmed and designed a website to promote the Association"
             ]
@@ -46,7 +46,7 @@
             "position": "Law intern and web developer", 
             "startDate": "May 2017", 
             "endDate": "July 2017",
-            "summary": "Corporate strategy and litigation law firm", 
+            "summary": "Corporate strategy and litigation law firm.\nDrafted lawsuits, contracts and redesigned website.", 
             "highlights": [
                 "Learned to draft lawsuits", 
                 "Elaborated contracts", 
@@ -60,7 +60,7 @@
             "position": "Inter graphic designer", 
             "startDate": "May 2017", 
             "endDate": "July 2017",
-            "summary": "Association helping children in need with education, aid, etc",
+            "summary": "Association helping children in need with education, aid, etc.\nDid graphic design while working at Monzalvo Abogados.",
             "highlights": [
                 "During my time at Monzalvo Abogados, I did graphic design work"
             ] 
@@ -68,7 +68,7 @@
         {
             "company": "Ctrl Alt Tec Hack Club", 
             "website": "https://ctrl-alt-tec.hackclub.com",
-            "position": "Founder and Vicepresident (President untill 2019)", 
+            "position": "Founder and Vicepresident (President till 2019)", 
             "startDate": "March 2018",
             "endDate": "Present", 
             "summary": "My friends and I built a student club in collaboration with HackClub to make programming accessible to anyone", 
@@ -84,7 +84,7 @@
             "position": "Lead developer", 
             "startDate": "May 2019", 
             "endDate": "August 2019", 
-            "summary": "I was hired to work on a political polls web app", 
+            "summary": "I was hired to work on a political polls web app, with SQL, Node, Express.js, and Heroku.", 
             "highlights": [
                 "Designed and implemented database architecture with SQL", 
                 "Developed backend API using Node.js and Express (and passport.js for authentication)", 
@@ -98,7 +98,7 @@
             "position": "Intern developer", 
             "startDate": "May 2019",
             "endDate": "July 2019", 
-            "summary": "Software firm in Mexico City specialized in developing tools for financial, insurance and automotive sectors", 
+            "summary": "Software firm in Mexico City specialized in developing tools for financial, insurance and automotive sectors.\nDesigned and co-developed mobile app in Xamarin", 
             "highlights": [
                 "Learned C#", 
                 "Designed and co-implemented mobile app using the company's API's and Mircosoft Xamarin"

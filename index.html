@@ -1,344 +1,606 @@
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=0.5">
-        <style>
-            body{
-                padding: 0;
-                margin: 0;
-                transition: 0.8s all;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                overflow: auto;
-                background-color: #303030;
-                color: white;
-            }
-            .header{
-                transition: 0.8s all;
-                width: 100%;
-                height: 70px;
-                padding: 8px;
-                position: sticky;
-                top: 0;
-                display: flex;
-                flex-direction: row;
-                font-family: sans-serif;
-                font-weight: 600;
-                font-size: 40;
-                box-sizing: border-box;
-                background: black;
-                color: rgb(200,200,200);
-                justify-content: space-around
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo VIllalpando Mello</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="devicon.css">
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
+        h1, h2, h3, h4{
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: clip;
+            /* word-break: break-all; */
+        }
+
+        #hero{
+            padding: 16px;
+            box-sizing: border-box;
+            color: white;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            place-content: center;
+            height: 80vh;
+        }
+        #hero>h1{
+            font-family: 'Fira Code';
+            font-weight: 400;
+            font-size: 2em;
+            text-align: center;
+            overflow: hidden;
+        }
+        #hero>h1>#name{
+            color: #FFA000;
+            font-size: 2em;
+            vertical-align: middle;
+        }
+        #hero>.button{
+            margin: 8px;
+            border: 1px solid rgb(100, 100, 100);
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            background: #303030;
+            border-radius: 8px;
+        }
+
+        section{
+            display: flex;
+            flex-direction: column;
+            padding: 24px 8px;
+            align-items: center;
+            font-size: 1.4em;
+            overflow-x: hidden;
+        }
+        section>*{
+            width: 100%;
+            max-width: 800px;
+        }
+        section>h1{
+            font-family: 'Fira Code';
+            font-weight: 600;
+            font-size: 3.2rem;
+            margin: 8px;
+        }
+        section h3{
+            text-transform: uppercase;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0px;
+            line-height: 1;
+            margin: 4px 0px
+        }
+        section h4{
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1;
+
+            margin: 0px;
+            margin: 4px 0px;
+
+            color: #FFA000;
+        }
+        section .dates{
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #6f6f6f;
+            font-size: 1rem;
+        }
+        section .caption{
+            color: #b5b5b5;
+            font-size: 1.2rem;
+            white-space: pre-wrap;
+        }
+
+
+        section#about{
+            background: #303030;
+            color: white;
+        }
+        section#about>[name="about_profiles"]{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        section#about>[name="about_profiles"]>a{
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 8px;
+        }
+        section#about>[name="about_profiles"]>a>img{
+            width: 160px;
+            height: 160px;
+            border-radius: 35%;
+            box-shadow: 0px 0px 20px 0px rgba(10,10,10,0.3);
+            margin: 8px;
+            background: white;
+            object-fit: scale-down;
+        }
+
+        section#work{
+            background: #252525;
+            color: white;
+        }
+
+        section#work>.job{
+            padding: 16px 0px;
+            border-bottom: 1px solid #b5b5b5;
+            display: flex;
+            align-items: center;
+        }
+        section#work>.job>.dates{
+            flex: 1;
+            margin-right: 16px;
+            text-align: right;
+            font-size: 1.2rem;
+        }
+        
+        section#work>.job>.job_details{
+            flex: 3;
+            margin-left: 4px;
+            color: #b5b5b5;
+        }
+        section#work>.job>.job_details>h3{
+            color: white;
+        }
+
+/* 
+        section#work>.job>.job_details>ul.job_highlights{
+            margin: 8px 0px;
+            font-size: 0.9em;
+        }
+        section#work>.job>.job_details>ul.job_highlights>li{
+            padding: 2px 0px;
+        } */
+
+        section#education>[name="education_studies"]{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        section#education{
+            background-image: url("https://www.transparenttextures.com/patterns/project-paper.png");
+            background-color: #303030;
+            color: white;
+        }
+
+        section#education>[name="education_studies"]>.study{
+            background: black;
+            padding: 16px 32px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            margin: 8px;
+
+        }
+
+
+    
+
+
+
+        section#education>[name="education_studies"]>.study>.study_place{
+            
+        }
+
+        section#competitions{
+            background: black url('/img/dynamic.gif');
+            background-blend-mode: luminosity;
+            background-size: cover;
+            color: white;
+        }
+
+        section#competitions>ul[name="competitions_competitions"]{
+            padding: 0;
+            margin: unset;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+        }
+        section#competitions>ul[name="competitions_competitions"]>li{
+            padding: 8px 16px;
+            margin: 16px;
+            background: white;
+            color: black;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 360px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        section#skills .skill{
+            padding: 8px 0px;
+            margin: 8px 0px;
+            border-bottom: 0.5px dotted;
+        }
+
+        section#skills .tools{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        section#skills .tools span{
+            display: block;
+            margin: 16px;
+            text-align: center;
+            flex: 1;
+        }
+
+        section#skills .tools i{
+            font-size: 3em;
+            display: inline-block;
+            width: 100%
+        }
+
+        @media only screen and (max-width: 800px){
+            #hero>h1{
+                font-size: 1.5em;
             }
-            .header li{
-                list-style: none;
-                margin: 4px;
+            section>h1{
+                font-size: 2.8rem !important;
             }
-            .header_black{
-                background: black;
-                color: rgb(160,160,160);
+        }
+        @media only screen and (max-width: 500px){
+            section>h1{
+                font-size: 1.6rem !important;
             }
-            .hero{
-                width: 100%;
-                box-sizing: border-box;                
-                height: calc(100vh - 70px);
-                transition: 0.3s all;
-                background-color: black;
-                color: white;
-                display: flex;
-                flex-direction: column;
-                align-content: center;
-                align-items: center;
-                justify-content: center;
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 20
+            section h3{
+                font-size: 1.5rem !important;
             }
-            .hero h1{
-                color: rgb(255,149,0);
-                font-size: 108;
-                margin: 0
+        }
+
+        @media print{
+            body{
+                color: black;
+                font-size: 8pt !important;
+                
             }
-            .hero *{
-                max-width: 401px;
-                width: 100%; 
-                font-weight: 600;
+
+
+            #hero{
+                background: transparent;
+                color: black;
+                height: auto;
+                border-bottom: 1px solid ;
+
+                padding: 0;
             }
-            .hero span:first-child{
-                font-size: 80
+
+            #hero>h1, #hero>h1>*{
+                color: black !important; 
+                font-size: 14pt !important;
+                font-weight: 800;
+                margin: 0;
             }
-            .hero span:last-child{
-                font-size: 20;
-                color: rgb(80,80,80);
-                text-align: center
+            #hero>.button{
+                display: none;
             }
             section{
-                padding: 24px; 
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 18px;
-                max-width: 1020px;
-                width: 100%;
+                background: none !important;
+                color: black;
+                padding: 0.25cm 1cm !important;
+                page-break-after: auto;
+                page-break-before: auto;
+                page-break-inside: avoid;
+            }
+            section>h1{
+                color: black;
+                font-size: 18pt !important;
+            }
+            section>h2{
+                font-size: 14pt !important;
+                color: #6f6f6f !important;
+            }
+            section>p{
+                font-size: 12pt !important;
+                margin: 4pt;
+            }
+            section>*{
+                color: black;
+            }
+
+
+            section h3{
+                font-size: 12pt !important;
+                font-weight: 600;
+                margin: 2pt 0pt !important
+            }
+            section h4{
+                font-size: 12pt;
+            }
+            section .dates{
+                font-size: 10pt !important;
+            }
+            section .caption{
+                font-size: 10pt;
+                color: #303030;
+            }
+
+            section>h1>br{
+                display: none;
+            }
+
+            section#about>[name="about_profiles"]{
+                display: flex;
+                font-size: 10pt !important;
+                border-top: 0.02cm dotted;
+                border-bottom: 0.02cm dotted;
+            }
+            section#about>[name="about_profiles"]>a{
+                display: block;
+                margin: 0pt;
+                color: black;
+            }
+            section#about>[name="about_profiles"]>a>img{
+                margin: 4pt;
+                box-shadow: none;
+                height: 14pt;
+                width: 14pt;
+                vertical-align: middle;
+            }
+
+            section#education>[name="education_studies"]{
+                flex-direction: row;
+            }
+            section#education>[name="education_studies"]>.study{
+                background: none !important;
+                color: black;
+                padding: 0pt !important;
+                margin: 0pt !important;
+                flex: 1;
+            }
+           
+            section#work>.job h3{
+                color: black !important;
+            }
+            section#work>.job{
+                page-break-before: always !important;
+                page-break-inside: avoid !important;
+                page-break-after: always !important;
+                padding: 4pt 0pt !important;
+                page-break-before: always;
+                page-break-inside:avoid;
+                border-bottom-style: dotted;
+            }
+            section#work>.job>*{
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+            }
+            section#work>.job>.dates{
+                margin-right: 4pt !important;
+            }
+            section#work>.job>.job_details{
+                margin-left: 4pt !important;
+                flex: 4 !important;
+            }
+            section#competitions>ul[name="competitions_competitions"]>li{
+                padding: 4pt 1pt !important;
+                margin: 0 !important;
+                max-width: unset !important;
+                width: 50%;
                 box-sizing: border-box;
             }
-            h1{
-                font-size: 80;
-                font-weight: 800
+            section#competitions>ul[name="competitions_competitions"]>li>a,
+            section#competitions>ul[name="competitions_competitions"]>li>hr
+            {
+                display: none;
             }
-h2{
+            
+            section#skills .skill{
+                margin: 4pt 0pt !important;
+                padding: 4pt 0pt !important;
+                font-size: 14pt !important;
+            }
 
-}
-            .emphasis{
-                font-size: 32;
-                font-weight: 600;
-                line-height: 1.5
+            section#skills .tools i{
+                font-size: 18pt !important;
             }
-            /*.emphasis.quote::before{
-                content: '"';
-                font-size: 80;
-                margin-right: 8px;
-                float: left;
-                font-style: normal;
-            }*/
-            .emphasis.quote{
-                font-weight: 200;
-                font-size: 100
+
+            footer{
+                display: block !important;
             }
-            .tag{
-                margin: 1px;
-                padding: 2px 8px;
-                border-radius: 16px;
-                background: rgb(200,200,200)
-            }
-            .tag img{
-                height: 20px;
-                margin: 1px;
-                display: inline;
-            }
-            .icon-grid{
-                padding: 16px 0px; 
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-evenly
-            }
-            .icon-grid>*{
-                margin: 8px
-            }
-            .icon-grid *{
-                width: 160px;
-                border-radius: 25%;
-                box-shadow: 0px 0px 20px 0px rgba(10,10,10,0.3);
-            }
-            .sub-section {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                border-bottom: 1px solid rgb(200,200,200);
-                flex-wrap: wrap
-            }
-            .sub-section > * {
-                margin: 8px;
-            }
-            .sub-section h2{
-                float: left;
-                font-family: 'Source Sans Pro', sans-serif;
-                font-weight: 200;
-                font-size: 160;
-                color: rgb(255,139,0)
-            }
-            .sub-section strong{
-                font-weight: 600;
-                font-size: 28px; 
-                display: block
-            }
-            .row{
-                padding: 16px 0px;
-                font-size: 20px;
-flex: 1
-            }
-            .card-emphasis{
-                border-radius: 8px;
-                color: white;
-                background: black;
-                font-size: 40;
-                padding: 24px;
-                margin: 4px;
-                display: inline-block
-            }
-        </style>
-    </head>
-    <div class="hero">
-        <span>Hello, I am</span>
-        <h1>edvilme</h1>
-        <span>EDUARDO VILLALPANDO MELLO</span>
+
+        }
+    </style>
+</head>
+<body>
+    <div id="hero">
+        <h1>
+            <span style="color:#2979FF">let</span> edvilme = <span id="name">"Eduardo Villalpando Mello"</span>
+        </h1>
+        <a href="mailto:eduardo.villalpando.mello@gmail.com" class="button">Contact me</a>
     </div>
-    <header class="header">
-        <li>👦🏻</li>
-        <li>Me.</li>
-        <li><a href="blog/index.html">Blog.</a></li>
-        <li>Portfolio.</li>
-    </header>
-    <section>
-        <h1>about me.</h1>        
-        <span class="emphasis">
-            I study <span class="tag">Computer Science</span> at <span class="tag">Tec de Monterrey</span>. I do <span class="tag">code</span>, <span class="tag">design</span> and several interesting <span class="tag">projects</span>. You can find me online at
-            <div class="icon-grid"> 
-                <a href="https://twitter.com/edvilme"><img src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/43/ee/57/43ee573b-dd76-d5f6-bb2b-e4aa645c64c3/ProductionAppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/246x0w.jpg"></a>
-                <a href="https://www.youtube.com/channel/UC1E4zbr2sby4sLIYqI9IwQQ"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/f0/81/ce/f081ce05-55b9-be59-e070-6ce8109e03e1/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/246x0w.jpg"></a>
-                <a href="https://github.com/edvilme"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"></a>
-                <a href="https://stackoverflow.com/cv/edvilme"><img src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.png?v=c78bd457575a"></a>
-                <a href="https://99designs.com.mx/profiles/2639973"><img src="https://scontent.fmex11-1.fna.fbcdn.net/v/t1.0-9/12804772_10153919698601192_356784940262771809_n.png?_nc_cat=105&_nc_oc=AQkH9-UEnazSpFjDOwdT-zC_wIk_42lstSMWv3gYPQEQ4oybw0s6d36h4LwhAvuM6bQ&_nc_ht=scontent.fmex11-1.fna&oh=41572fc4738852a252ec3ee198d89821&oe=5DE46ED0"></a>
-                <a href="https://instagram.com/edvilme.jpg"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/73/20/b4/7320b4b4-d80f-b095-55f5-8e2585ad5061/Prod-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/246x0w.jpg"></a>
-                <a href="https://iamedvilme.wordpress.com"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/fe/74/f7/fe74f7f1-15d6-5c73-26d0-19d6e9898b1b/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/246x0w.jpg"></a>
-                <a href="https://edvilme.tumblr.com"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/24/c8/63/24c86398-c778-a4fe-36ce-223b94d275b8/TumblrIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/246x0w.jpg"></a>
-                <a href="mailto:eduardo.villalpando.mello@gmail.com"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/af/4f/a2/af4fa251-760b-5299-58d3-d4c6eb694527/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/246x0w.jpg"></a>
-            </div>
-        </span>
-    </section>
-    <section>
-        <h1>my trayectory.</h1>  
-        <div class="sub-section">
-            <h2>2019</h2>
-            <div>
-                <div class="row">
-                    <strong>Luz Viva</strong> WEB DEVELOPER
-                </div>
-                <div class="row">
-                    <strong>Quazaar</strong> GRAPHIC DESIGNER
-                </div>
-                <div class="row">
-                    <strong>PCA</strong> DEVELOPER
-                </div>
-                <div class="row">
-                    <strong>SAO Sistemas</strong> INTERN DEVELOPER
-                </div>
-                <div class="row">
-                    <strong>Stanford Almond Assistant</strong> CONTRIBUTOR
-                </div>
-                <div class="row">
-                    <strong>HackMx 2</strong> ATTENDEE
-                </div>
-                <div class="row">
-                    <strong>International Baccalaureate</strong> GRADUATE
-                </div>
-                
-            </div>
-        </div>
-        <div class="sub-section">
-            <h2>2018</h2>
-            <div>
-                <div class="row">
-                    <strong>Ctrl Alt Tec</strong> CO-FOUNDER AND PRESIDENT
-                </div>
-                <div class="row">
-                    <strong>Team Apple News</strong> WEB DEVELOPER
-                </div>
-                <div class="row">
-                    <strong>PHAAE</strong> WEB DEVELOPER AND GRAPHIC DESIGNER
-                </div>
-                <div class="row">
-                    <strong>HackMx</strong> ATTENDEE
-                </div>
-                <div class="row">
-                    <strong>#100DaysOfCode</strong> 
-                </div>
-            </div>
-        </div>
-        <div class="sub-section">
-            <h2>2017</h2>
-            <div>
-                <div class="row">
-                    <strong>Monzalvo Abogados, S.C.</strong> INTERN AND WEB DEVELOPER
-                </div>
-                <div class="row">
-                    <strong>Asociación por una Niñez Venturosa, A.C.</strong> GRAPHIC DESIGNER
-                </div>
-                <div class="row">
-                    <strong>Bright</strong> AMBASSADOR
-                </div>
-                <div class="row">
-                    <strong>incMTY + Prepa Tec Apps</strong> PARTICIPANT
-                </div>
-            </div>
-        </div>
-        <div class="sub-section">
-            <h2>...</h2>
-        </div>
-        <div class="sub-section">
-            <h2>2013</h2>
-            <div>
-                <div class="row">
-                    Joined StackOverflow and Github
-                </div>
-            </div>
-        </div>
-        <div class="sub-section">
-            <h2>2011</h2>
-            <div>
-                <div class="row">
-                    <strong>Asociación Nacional de Productos para la Salud</strong> WEB DESIGNER
-                </div>
-                <div class="row">
-                    Began coding :)
-                </div>
-            </div>
-        </div>
-    </section>      
-    <section>
-        <h1>my skills.</h1>  
-        <div class="card-emphasis">javascript</div>
-        <div class="card-emphasis">node.js</div>
-        <div class="card-emphasis">react.js</div>
-        <div class="card-emphasis">express.js</div>
-        <div class="card-emphasis">react native</div>
-        <div class="card-emphasis">python</div>
-        <div class="card-emphasis">java</div>
-        <div class="card-emphasis">php</div>
-        <div class="card-emphasis">unix</div>
-        <div class="card-emphasis">mysql</div>
-        <div class="card-emphasis">jquery</div>
-        <div class="card-emphasis">apache</div>
-        <div class="card-emphasis">css</div>
-        <div class="card-emphasis">html 5</div>
-        <div class="card-emphasis">c#</div>
-        <div class="card-emphasis">xamarin</div>
-        <div class="card-emphasis">firebase</div>
-        <div class="card-emphasis">wordpress</div>
-        <br>
-        <br>
-        <div class="card-emphasis">logo design</div>
-        <div class="card-emphasis">motion graphics</div>
-        <div class="card-emphasis">brand identity</div>
-        <div class="card-emphasis">photography</div>
-        <div class="card-emphasis">UI design</div>
-        <div class="card-emphasis">digital illustration</div>
-        <div class="card-emphasis">photoshop</div>
-    </section>    
-    <section>
-        <h1>some projects.</h1>
-        <div class="icon-grid"> 
-            <a href="https://github.com/edvilme/FISH-WEB-OS"><img src="https://edvilme.github.io/FISH-WEB-OS/favicon.png"></a>
-            <a href="https://ctrl-alt-tec.hackclub.com"><img src="https://ctrl-alt-tec.hackclub.com/img/logo-block.png"></a>
-            <a href="https://ctrl-alt-tec.hackclub.com/bank"><img src="https://ctrl-alt-tec.github.io/Bank/logo.png"></a>
-            <a href="https://ctrl-alt-tec.hackclub.com/lists"><img src="https://ctrl-alt-tec.github.io/Lists/logo.png"></a>
-            <a href="https://ctrl-alt-tec.hackclub.com/puzzle"><img src="https://ctrl-alt-tec.github.io/Puzzle/logo.png"></a>
-            <a href="https://mango-app.github.io/web"><img src="https://mango-app.github.io/web/icon-app.png"></a>
-            <a href="https://ctrl-alt-tec.hackclub.com/kiwi"><img src="https://ctrl-alt-tec.github.io/Kiwi/logo.png"></a>
-            <a href="https://ctrl-alt-tec.hackclub.com/watermelon"><img src="https://ctrl-alt-tec.hackclub.com/watermelon/logo.png"></a>
-            <a href=""><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/b2/8a/cc/b28acc3b-62e2-1dc0-276f-dd81ff58af84/AppIcon-1x_U007emarketing-85-220-0-6.png/246x0w.jpg"></a>
-            <a href=""><img src="https://avatars2.githubusercontent.com/u/42452233?s=200&v=4"></a>
-           
+
+    <section id="about">
+        <h1>edvilme.<span style="color:#2979FF">aboutMe</span>()</h1>
+        <p name="about_summary">About me...</p>
+        <h2>FOLLOW ME ON</h2>
+        <div name="about_profiles">
         </div>
     </section>
+
+    
+
+    <section id="work">
+        <h1>edvilme.<span style="color:#2979FF">work</span>()</h1>
+    </section>
+
+    <section id="education">
+        <h1>edvilme.<span style="color:#2979FF">education</span>()</h1>
+        <div name="education_studies"></div>
+    </section>
+
+    <section id="competitions">
+        <h1>
+            <span style="color:#e06c75">return</span> [
+            <br> 
+            ...edvilme<span style="color:#2979FF">.hackathons</span>(), 
+            <br>
+            ...edvilme<span style="color:#2979FF">.competitions</span>() 
+            <br>
+            ]
+        </h1>
+        <ul name="competitions_competitions">
+        </ul>
+    </section>
+
+
+    <section id="skills">
+        <h1>edvilme.<span style="color:#2979FF">evaluate</span>(<span style="color: #FFA000">"skills"</span>)</h1>
+
+    </section>
+
+    <section>
+        <footer style="text-align: right; display: none;">
+            <hr>
+            <span style="font-size: 14pt;"> This document is available for download at http://edvilme.tk </span>
+            <img src="qr.svg" alt="" srcset="" height="80pt" style="vertical-align: middle;">
+        </footer>
+    </section>
+
+
     <script>
-        window.addEventListener("scroll", function(){
-            if(document.querySelector("body").scrollTop < 50){
-                document.querySelector(".hero").style.background = "black";
-                document.querySelector(".header").classList.add("header_black");
-            }else{
-                //document.querySelector(".hero").style.background = "white";
-                document.querySelector(".header").classList.remove("header_black");
-            }
-        })
+        async function getData(){
+            let req = await fetch('resume.json');
+            let data = await req.json();
+
+            document.querySelector("#about>[name='about_summary']").innerHTML = data.basics.summary
+            data.basics.profiles.forEach(profile=>{
+                let a = document.createElement('a');
+                a.href = profile.url;
+                let img = document.createElement('img');
+                img.src = 'img/' + profile.network + '.png';
+                a.append(img, "@"+profile.username);
+                document.querySelector("#about>[name='about_profiles']").append(a)
+            })
+
+            data.work.reverse().forEach(job=>{
+                let cont = document.createElement('div');
+                cont.className = 'job'
+                let dates = document.createElement('div');
+                dates.className = 'dates'
+                dates.innerHTML = `${job.startDate}<br>TO ${job.endDate}`;
+                let details = document.createElement('div');
+                details.className = 'job_details';
+                let company = document.createElement('h3');
+                company.innerText = job.company;
+                let position = document.createElement('h4');
+                position.innerHTML = job.position;
+                let description = document.createElement('div');
+                description.className = 'caption';
+                description.innerHTML = job.summary;
+                let highights = document.createElement('ul');
+                highights.className = 'job_highlights';
+                job.highlights.forEach(l=>{
+                    highights.innerHTML+=`<li>${l}</li>`
+                })
+                details.append(company, position, description)
+                cont.append(dates, details)
+                document.querySelector("#work").append(cont)
+            })
+
+
+            data.education.forEach(study=>{
+                let cont = document.createElement('div');
+                cont.className = 'study';
+
+                let dates = document.createElement('span');
+                dates.classList = 'dates';
+                dates.innerText = `${study.startDate} - ${study.endDate}`;
+
+                let area = document.createElement('h3');
+                area.innerText = study.area;
+
+                let description = document.createElement('h4');
+                description.innerText = study.studyType;
+
+                let place = document.createElement('span');
+                place.className = 'caption';
+                place.innerText = study.institution;
+
+                cont.append(dates, area, description, place);
+                document.querySelector("#education>[name='education_studies']").append(cont)
+            })
+
+            data.competitions.forEach(competition=>{
+                let cont = document.createElement('li');
+
+                let dates = document.createElement('span');
+                dates.className = 'dates';
+                dates.innerText = competition.startDate;
+
+                let title = document.createElement('h3');
+                title.innerText = competition.title;
+
+                let award = document.createElement('h4');
+                award.innerText = competition.award;
+
+                let description = document.createElement('span');
+                description.className = 'caption';
+                description.style.flex = '1';
+                description.innerText = competition.description;
+
+                let br = document.createElement('hr');
+
+                let project = document.createElement('a');
+                project.className = 'caption';
+                project.innerText = 'Project';
+                project.href = competition.link;
+
+                let event = document.createElement('a');
+                event.className = 'caption';
+                event.innerText = 'Event Website';
+                event.href = competition.website;
+
+                cont.append(dates, title, award, description, br, project, event);
+
+                document.querySelector("#competitions>[name='competitions_competitions']").append(cont)
+
+            })
+            
+            data.skills.forEach(skill=>{
+                let cont = document.createElement('div');
+                cont.className = 'skill'
+
+                let name = document.createElement('h3');
+                name.innerText = skill.name;
+
+                let tools = document.createElement('div');
+                tools.className = "tools"
+                tools.append(...skill?.keywords.map(l=>{
+                    let s = document.createElement('span')
+                    let i = document.createElement('i');
+                    i.className = l.icon;
+                    s.append(i, l.name)
+                    return s
+                }))
+
+                cont.append(name, tools)
+                document.querySelector("#skills").append(cont);
+            })
+        }
+        getData()
     </script>
+</body>
 </html>
