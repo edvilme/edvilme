@@ -141,6 +141,17 @@
                 "Wrote articles", 
                 "Developed online version of the newspaper"
             ]
+        },
+        {
+            "company": "MexiCovid19.app", 
+            "website": "https://mexicovid19.app", 
+            "position": "Junior programmer", 
+            "startDate": "May 2020", 
+            "endDate": "Present",
+            "summary": "Project led by Instituto Tecnológico y de Estudios Superiores de Monterrey. Data visualization tool that displays covid-19 cases by state, municipality and zip code, as well as further socioeconomic analysis and predictions regarding the pandemic and its effect on society.",
+            "highlights": [
+                ""
+            ]
         }
     ],
     "volunteer": [
