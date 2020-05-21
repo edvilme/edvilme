@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <title>Para Ana</title>
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        section{
+            width: 100%;
+            height: 200vh;
+            box-sizing: border-box;
+            position: relative;
+        }
+        section>div{
+            position: fixed;
+            height: 100vh;
+            width: inherit;
+            box-sizing: border-box;
+            padding: 24px;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        section>div.scrolledBottom{
+            position: absolute;
+            bottom: 0;
+        }
+        section>div.scrolledTop{
+            position: absolute;
+            top: 0;
+        }
+
+        section .info{
+            position: fixed;
+        }
+        #section0{
+            background: black;
+        }
+        #section0 h1{
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 16em;
+            text-align: center;
+            background: linear-gradient(to right, #b92b27, #1565c0);
+            fill-color: transparent;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            margin: 0;
+        }
+
+        #section1{
+            background: linear-gradient(180deg, black, #303030, #303030);
+        }
+
+        #section1 #page{
+            width: 80vmin;
+            height: calc(80vmin*1.2941);
+            background: white;
+            box-sizing: border-box;
+            padding: 8vmin;
+            font-size: 8vmin;
+        }
+
+        #section1 #plane{
+            height: 20vmin;
+            width: 20vmin;
+            background: url("./plane.png");
+            position: absolute;
+            transform: translate(-100vw, 0px);
+            left: 0;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #section1 .scrolledBottom #page{
+            position: fixed;
+            top: 0;
+        }
+
+        #section2{
+            background: linear-gradient(180deg, #303030, #3030309e, #3030309e, transparent ), url("write.gif");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-blend-mode: darken;
+        }
+
+        #section2 #envelope{
+            width: 80vmin;
+            border: 1px solid;
+            height: calc(80vmin*0.8);
+            box-sizing: border-box;
+            background: white;
+            border: 1px solid whitesmoke;
+            border-top-width: calc(80vmin*0.4);
+            border-bottom-width: calc(80vmin*0.5);
+            border-left-width: 40vmin;
+            border-right-width: 40vmin;
+            border-top-color: transparent;
+            border-right-color: #e8e8e8;
+            border-bottom-color: #e8e8e8;
+        }
+        #section2 .scrolledTop #envelope{
+            background-color: transparent;
+        }
+
+        #section3 #clock{
+            height: 120vmin;
+            width: 120vmin;
+            position: absolute;
+            left: -50vmin;
+            border-radius: 60vmin;
+            background: white;
+            border: 8vmin solid;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            float: left;
+            transition: background 2s;
+        }
+        #section3 #clock .hand{
+            width: 100%;
+            height: 4vmin;
+            padding: 0vmin 8vmin;
+            transition:cubic-bezier(0.645, 0.045, 0.355, 1) 5ms;
+            position: absolute;
+            box-sizing: border-box;
+        }
+        #section3 #clock .hand div{
+            background-color: #303030;
+            width: 50%;
+            height: 100%;
+            margin-left: auto;
+        }
+        #section3 h1{
+            position: absolute;
+            right: 0;
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 3em;
+            margin: 24px;
+            text-align: right;
+            top: 0;
+        }
+        #section3 mark{
+            position: absolute;
+            bottom: 16px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 2em;
+            font-weight: 600;
+            font-style: italic;
+            text-align: center;
+            margin: 16px auto; 
+            right: 16px
+        }
+
+        #section3 .scrolledBottom #clock{
+            position: fixed;
+            top: 0;
+            background: black;
+        }
+        #section4 h1{
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        #section4 .circle{
+            height: 20px;
+            width: 20px;
+            border-radius: 10px;
+            background: black;
+            position: absolute;
+        }
+        #section4 .emphasis{
+            font-family: 'Poppins';
+            font-size: 4em;
+            position: relative;
+            z-index: 3;
+            color: #1565c0;
+            text-align: center;
+        }
+        #section5{
+            background: black;
+        }
+        #section5 #medal{
+            width: 100%;
+            position: absolute;
+            left: 0; right: 0;
+        }
+        #section5 mark{
+            position: absolute;
+            right: 0;
+            font-family: 'Poppins';
+            font-size: 3em;
+            width: 50%;
+            background: #bc8525;
+            color: #0d114d;
+        }
+
+        section.music_section .content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        section.music_section img{
+            width: 80vmin;
+            height: 80vmin;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+
+        section.music_section h1{
+            font-size: 2em;
+            color: rgb(100,100,102);
+        }
+        section.music_section h2{
+            font-size: 2em;
+            color: rgb(100,100,102);
+            margin: 0;
+            font-weight: 400;
+        }
+        footer{
+            font-family:'Homemade Apple', cursive;
+            font-size: 3em;
+            color: darkblue;
+            padding: 8px;
+        }
+        footer span{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30pt;
+            background-color: black;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+    <section id="section0">
+        <div class="content">
+            <h1>Hola Ana</h1>
+        </div>
+    </section>
+    <section id="section1">
+        <div class="content">
+            <span class="info"></span>
+            <div id="page">
+                Como no te puedo ver, te mando esta carta...
+                <hr>
+                <span id="pd">
+                    Quiero decirte que
+                </span>
+            </div>
+            <div id="plane"></div>
+        </div>
+    </section>
+    <section id="section2">
+        <div class="content">
+            <div id="envelope"></div>
+        </div>
+    </section>
+    <section id="section3">
+        <div class="content">
+            <h1>Hace mucho no te veo</h1>
+            <div id="clock">
+                <div class="hand"><div></div></div>
+                <div class="hand"><div></div></div>
+            </div>
+            <mark>
+                Y te extraño mucho...
+            </mark>
+        </div>
+    </section>
+    <section id="section4">
+        <div class="content">
+            <h1>Incluso cuando tengo mil cosas que hacer</h1>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <span class="emphasis">ERES LO MÁS IMPORTANTE EN MI MENTE</span>
+        </div>
+    </section>
+    <section id="section5">
+        <div class="content">
+            <img src="medal.png" id="medal">
+            <mark>Y eres la persona más increíble del mundo.</mark>
+        </div>
+    </section>
+    <section id="section6">
+        <div class="content">
+            <h1></h1>
+        </div>
+    </section>
+
+    <section id="section7" class="music_section">
+        <div class="content">
+            <img class="album" src="./this_girl.jpg">
+            <h1>This Girl</h1>
+            <h2>Hunter Hayes</h2>
+            <audio src="./this_girl.mp4"></audio>
+        </div>
+    </section>
+    <section id="section8" class="music_section">
+        <div class="content">
+            <img class="album" src="./nobody_compares_to_you.jpg">
+            <h1>Nobody COmpares To You</h1>
+            <h2>Gryffin</h2>
+            <audio src="./nobody_compares_to_you.mp4"></audio>
+        </div>
+    </section>
+    <section id="section9" class="music_section">
+        <div class="content">
+            <img class="album" src="./all_those_prety_lights.jpg">
+            <h1>All Those Prety Lights</h1>
+            <h2>Andrew Bell</h2>
+            <audio src="./all_those_prety_lights.mp4"></audio>
+        </div>
+    </section>
+    <footer>
+        <h1>
+            En fín, quería decirte que te quiero un buen :)
+        </h1>
+        <span>Lalo.</span>
+    </footer>
+    <script>
+        let np = {}
+        Math.newRandom = (min, max) => (
+            Math.floor(Math.random()*(max-min+1)+min)
+        )
+
+
+        np.linspace = (initial, final, step) => {
+            let length = final-initial;
+            let delta = length/step;
+            let arr = [...new Array(step)].map((l,i)=>initial + delta*(i+1))
+            return arr;
+        }
+
+        np.type = (word, length=word.length)=>{
+            let accumulated = "";
+            let arr = [];
+            let density = Math.round(length/word.length);
+
+            [...word].forEach(l=>{
+                accumulated+=l;
+                for (let i = 0; i < density; i++) {
+                    arr.push(accumulated)   
+                }
+            });
+            return arr;
+        }
+
+        function animateSection0(){
+            let element = document.querySelectorAll('section')[0];
+            let scroll = 2*(window.scrollY - element.offsetTop);
+            let deltaScale = np.linspace(0, 0.5, element.offsetHeight+1);
+            element.querySelector('h1').style.transform = `scale(${1-deltaScale[scroll]}, ${1-deltaScale[scroll]})`
+            if(scroll>element.offsetHeight){
+                element.querySelector('div.content').classList.add('scrolledBottom')
+            } else {
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+            }
+        }
+        function animateSection1(){
+            let element = document.querySelectorAll('section')[1];
+            let scroll = 2*(window.scrollY - element.offsetTop);
+            let deltaScale = np.linspace(0,1,element.offsetHeight+1).map(x=>1-0.4*x**2);
+            let deltaRotate = np.linspace(0,10,element.offsetHeight+1);
+            let deltaX = np.linspace(0, Math.PI, element.offsetHeight+1).map(x=>Math.cos(x))
+            let deltaY = np.linspace(0, Math.PI, element.offsetHeight+1).map(x=>Math.cos(x))
+            let deltaOpacity = np.linspace(0, 2, element.offsetHeight+1).map(x=> Math.exp(x*0.6)-2 < 1 ? (Math.exp(x*0.6)-2 > 0 ? Math.exp(x*0.6)-2 : 0) : 1)
+
+            let planeX = np.linspace(0, 2*Math.PI, element.offsetHeight+1).map(t=>(Math.cos(t)+t**2-4)*(element.offsetWidth/36.5));
+            let planeY = np.linspace(0, 2*Math.PI, element.offsetHeight+1).map(t=>100*Math.sin(t));
+            let planeRot = np.linspace(0, 2*Math.PI, element.offsetHeight+1).map(t=>30*Math.tan(Math.cos(t)));
+
+            element.querySelector('.info').innerHTML = scroll
+            element.querySelector('#page').style.transform = `scale(${deltaScale[scroll]}, ${deltaScale[scroll]}) rotate(${deltaRotate[scroll]}deg) `
+            element.querySelector('#page>#pd').style.opacity = deltaOpacity[scroll] 
+            element.querySelector("#plane").style.transform = `translate(${planeX[scroll]}px, ${planeY[scroll]}px) rotate(${planeRot[scroll]}deg)`
+
+
+            if(scroll>element.offsetHeight){
+                element.querySelector('div.content').classList.add('scrolledBottom')
+                element.querySelector('div.content').classList.remove('scrolledTop')
+            } else if(scroll<0){
+                element.querySelector('div.content').classList.add('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+            } else {
+                element.querySelector('div.content').classList.remove('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+
+            }
+            element.style.zIndex = 1*2;
+        }
+
+        function animateSection2(){
+            let element = document.querySelectorAll('section')[2];
+            let scroll = 2*(window.scrollY - element.offsetTop);
+
+            let envelopeRotate = np.linspace(0, 180, element.offsetHeight+1);
+            let envelopeScale = np.linspace(1, 0.5, element.offsetHeight+1);
+            let envelopeTransform = np.linspace(0, element.offsetHeight/8, element.offsetHeight+1)
+            let envelopeRotateZ = np.linspace(0, 20, element.offsetHeight+1);
+            document.querySelector('#envelope').style.transform = `rotateY(${envelopeRotate[scroll]}deg) scale(${envelopeScale[scroll]}) translateY(-${envelopeTransform[scroll]}px) rotateZ(${envelopeRotateZ[scroll]}deg)`;
+
+            if(scroll>element.offsetHeight){
+                element.querySelector('div.content').classList.add('scrolledBottom')
+                element.querySelector('div.content').classList.remove('scrolledTop')
+            } else if(scroll<0){
+                element.querySelector('div.content').classList.add('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+                element.previousElementSibling.querySelector("#page").style.display = 'initial'
+            } else {
+                element.querySelector('div.content').classList.remove('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+                element.previousElementSibling.querySelector("#page").style.display = 'none'
+
+
+            }
+            element.querySelector('div.content').style.zIndex = 2*2;
+        }
+
+
+        function animateSection3(){
+            let element = document.querySelectorAll('section')[3];
+            let scroll = 2*(window.scrollY - element.offsetTop);
+
+            let rotateHour1 = np.linspace(-90, 360, element.offsetHeight+1);
+            let rotateHour2 = np.linspace(-90, 2*360+10, element.offsetHeight+1);
+            let markOpacity = np.linspace(0, 1, element.offsetHeight+1);
+
+            element.querySelectorAll(".hand")[0].style.transform = `rotateZ(${rotateHour1[scroll]}deg)`;
+            element.querySelectorAll(".hand")[1].style.transform = `rotateZ(${rotateHour2[scroll]}deg)`;
+            element.querySelector("mark").style.opacity = markOpacity[scroll];
+
+            if(scroll>element.offsetHeight){
+                element.querySelector('div.content').classList.add('scrolledBottom')
+                element.querySelector('div.content').classList.remove('scrolledTop')
+            } else if(scroll<0){
+                element.querySelector('div.content').classList.add('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+            } else {
+                element.querySelector('div.content').classList.remove('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+            }
+            element.querySelector('div.content').style.zIndex = 2*2;
+        }
+
+        function animateSection4(){
+            let element = document.querySelectorAll('section')[4];
+            let scroll = 2*(window.scrollY - element.offsetTop);
+
+            let clockTranslate = np.linspace(window.innerHeight > window.innerWidth ? -0.5*window.innerWidth : -0.5*window.innerHeight, 0, element.offsetHeight+1);
+            let clockScale = np.linspace(1, 0.02, element.offsetHeight+1);
+            let circlesScales = [...[...new Array(100)].map(()=>0),...np.linspace(1, 80, element.offsetHeight+1-100)]
+            
+            let textScale = [...[...new Array( Math.round(element.offsetHeight*0.6) )].map(()=>0),...np.linspace(0, 1, element.offsetHeight+1-Math.round(element.offsetHeight*0.6))]
+            element.previousElementSibling.querySelector('#clock').style.left = clockTranslate[scroll]+"px"
+            element.previousElementSibling.querySelector('#clock').style.transform = `scale(${clockScale[scroll]})`; 
+            element.previousElementSibling.querySelectorAll('#clock>*').forEach(l=>{
+                l.style.display = scroll<element.offsetHeight/2 ? 'flex':'none';
+            }) 
+            element.querySelectorAll('.circle').forEach(l=>{
+                l.style.transform = `translate(${l.getAttribute('randomX')}px,${l.getAttribute('randomY')}px) scale(${circlesScales[scroll]})`
+            })
+            element.querySelector('.emphasis').style.transform = `scale(${textScale[scroll]})`
+            if(scroll>element.offsetHeight){
+                element.querySelector('div.content').classList.add('scrolledBottom')
+                element.querySelector('div.content').classList.remove('scrolledTop')
+                element.previousElementSibling.querySelector('#clock').style.display='none';
+            } else if(scroll<0){
+                element.querySelector('div.content').classList.add('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom');
+                element.previousElementSibling.querySelector('#clock').style.display='flex';
+            } else {
+                element.querySelector('div.content').classList.remove('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom');
+                element.previousElementSibling.querySelector('#clock').style.display='flex';
+            }
+            element.querySelector('div.content').style.zIndex = 2*2;
+        }
+
+        function animateSection5(){
+            let element = document.querySelectorAll('section')[5];
+            let scroll = 2*(window.scrollY - element.offsetTop);
+
+            if(scroll>element.offsetHeight){
+                confetti.stop();
+                element.querySelector('div.content').classList.add('scrolledBottom')
+                element.querySelector('div.content').classList.remove('scrolledTop')
+            } else if(scroll<0){
+                confetti.stop();
+                element.querySelector('div.content').classList.add('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+            } else {
+                confetti.start();
+                // console.log("conf")
+                element.querySelector('div.content').classList.remove('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+            }
+            element.querySelector('div.content').style.zIndex = 2*2;
+        }
+        function animateSection6(){
+            let element = document.querySelectorAll('section')[6];
+            let scroll = 2*(window.scrollY - element.offsetTop);
+            let title = np.type("Aquí hay unas canciones que me recordaron a tí\n (Dale click al álbum)", element.offsetHeight+1);
+
+            element.querySelector("h1").innerHTML = title[scroll] || "";
+            if(scroll>title.length){ element.querySelector("h1").innerHTML="Aquí hay unas canciones que me recordaron a tí" }
+
+            if(scroll>element.offsetHeight){
+                element.querySelector('div.content').classList.add('scrolledBottom')
+                element.querySelector('div.content').classList.remove('scrolledTop')
+            } else if(scroll<0){
+                element.querySelector('div.content').classList.add('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+            } else {
+                element.querySelector('div.content').classList.remove('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+            }
+            element.querySelector('div.content').style.zIndex = 2*2;
+        }
+
+        function animateSection7n8n9(){
+            for(let i=7; i<10; i++){
+                let element = document.querySelectorAll('section')[i];
+                let scroll = 2*(window.scrollY - element.offsetTop);
+                let scaleAlbum = [...np.linspace(2, 1, Math.round(element.offsetHeight/3)), ...[...new Array(Math.round(element.offsetHeight/3))].map(l=>1)];
+
+                element.querySelector(".album").style.transform = `scale(${scaleAlbum[scroll]})`;
+
+                element.querySelector(".album").addEventListener('click', ()=>{
+                    element.querySelector('audio').play()
+                })
+
+                if(scroll>element.offsetHeight){
+                    element.querySelector('audio').pause()
+                    element.querySelector('div.content').classList.add('scrolledBottom')
+                    element.querySelector('div.content').classList.remove('scrolledTop')
+                } else if(scroll<0){
+                    element.querySelector('audio').pause()
+                    element.querySelector('div.content').classList.add('scrolledTop')
+                    element.querySelector('div.content').classList.remove('scrolledBottom')
+                } else {
+                    element.querySelector('audio').play()
+                    element.querySelector('div.content').classList.remove('scrolledTop')
+                    element.querySelector('div.content').classList.remove('scrolledBottom')
+                }
+            }
+        }
+
+
+        window.addEventListener('scroll', ()=>{
+            window.requestAnimationFrame(animateSection0);
+            window.requestAnimationFrame(animateSection1);
+            window.requestAnimationFrame(animateSection2);
+            window.requestAnimationFrame(animateSection3);
+            window.requestAnimationFrame(animateSection4);
+            window.requestAnimationFrame(animateSection5);
+            window.requestAnimationFrame(animateSection6);
+            window.requestAnimationFrame(animateSection7n8n9);
+        })
+        document.querySelectorAll(".circle").forEach(l=>{
+            let maxHeight = window.innerHeight/2;
+            let maxWidth = window.innerWidth/2;
+            let randomSign = Math.random()<0.5 ? -1 : 1;
+            let randomY = randomSign*Math.newRandom(0, maxHeight)
+            let randomX = randomSign*Math.newRandom(0, maxWidth);
+            l.setAttribute('randomX', randomX);
+            l.setAttribute('randomY', randomY);
+            l.style.transform = `translate(${randomX}px,${randomY}px)`;
+        })
+        window.scrollTo(0,0)
+    </script>
+</body>
+</html>
