@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800;900&display=swap" rel="stylesheet">
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 
     <title>Mi historia este semestre</title>
     <style>
@@ -19,6 +20,15 @@
             font-family: 'Poppins', sans-serif;
             font-size: 4rem;
             font-weight: 800;
+            margin: 4px 0px;
+        }
+        h3{
+            max-width: 800px;
+            width: 100%;
+            font-size: 3rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1;
         }
         p{
             max-width: 800px;
@@ -59,6 +69,34 @@
             font-size: 8rem;
             text-align: center;
         }
+        section:nth-of-type(2){
+            background: black;
+            color: white;
+        }
+        section:nth-of-type(2) .carrousel{
+            height: 80vh;
+            width: 100%;
+            background: url('./img/footsteps.png') rgba(0,0,0,0.5);
+            background-size: auto 100%;
+            display: flex;
+            overflow-x: hidden;
+            background-blend-mode: soft-light;
+        }
+        section:nth-of-type(2) .carrousel>div{
+            flex-shrink: 0;
+            height: 50vh;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        section:nth-of-type(2) .carrousel div img{
+            height: 30vh;
+            /* width: 30vh; */
+        }
+
         section:nth-of-type(2) h2{
             transform: translateX(-50vw);
         }
@@ -78,6 +116,84 @@
             color: white;
             max-width: 600px;
         }
+
+        section:nth-of-type(3){
+            background-color: black;
+            color: white;
+        }
+        section:nth-of-type(3) h2{
+            transform-origin: bottom left;
+        }
+        section:nth-of-type(3) .to-do{
+            width: 40vmax;
+            height: 40vmax;
+            border-radius: 1vmax;
+            background: #303030;
+            transform: rotate(-10deg);
+            list-style: none;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+        section:nth-of-type(3) .to-do>li{
+            display: inline-flex;
+            align-items: baseline;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2rem;
+        }
+        section:nth-of-type(3) .to-do>li::before{
+            height: 20px;
+            width: 20px;
+            border-radius: 8px;
+            margin: 8px !important;
+            padding: 8px;
+            background: #4A4A4A;
+            content: "✓";
+            text-align: center;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+        section:nth-of-type(3) .to-do>.note{
+            background: white;
+            padding: 16px;
+            transform: rotate(10deg);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        section:nth-of-type(4) .chat:before, section:nth-of-type(4) .chat:after {
+            content:"";
+            position:absolute;
+            bottom:-2px;
+            height:20px;
+        }
+
+        section:nth-of-type(4) .chat {
+            color:white; 
+            background:#0B93F6;
+            align-self: flex-end;
+            border-radius:25px;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+
+        section:nth-of-type(4) .chat:before {
+                right:-7px;
+                border-right:20px solid #0B93F6;
+                border-bottom-left-radius: 16px 14px;
+                -webkit-transform:translate(-3px, -20px);
+                        transform:translate(-3px, -20px);
+            }
+
+        section:nth-of-type(4) .chat:after {
+                right:-56px;
+                width:26px;
+                background:white;
+                border-bottom-left-radius: 10px;
+                -webkit-transform:translate(-32px, -20px);
+                        transform:translate(-32px, -20px);
+            }
     </style>
 </head>
 <body>
@@ -90,22 +206,60 @@
     <section>
         <div class="content">
             <h2>El comienzo</h2>
-            <p>
-                Este semestre comenzó como cualquier otro
-            </p>
-            <p>
-                A decir verdad, estaba bastante emocionado porque muchas clases las iba a compartir con mis <strong>amigos</strong>, 
-                tanto aquellos de prepa como los que hice el semestre anterior
-            </p>
-            <p>
-                Me propuse diversos proyectos muy interesantes, entre ellos un <span class="code">Hackathon</span> para <a href="https://ctrl-alt-tec.hackclub.com">Ctrl Alt Tec</a>
-            </p>
-            <p>
-                <span class="confort">Salí de mi zona de confort</span> al inscribirme a clases de actuación en LiFE
-            </p>
-            <div class="highlight">
-                Pensé que todo sería normal y no existiría mayor problema. Estaba equivocado.
+
+            <div class="carrousel">
+                <div>
+                    <h3>Este semestre comenzó como cualquier otro.</h3>
+                </div>
+                <div>
+                    <img src="https://twemoji.maxcdn.com/v/latest/svg/1f57a.svg" alt="" srcset="">
+                    <h3>Iba a tener muchas clases con mis amigos.</h3>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://ctrl-alt-tec.hackclub.com/img/logo-block.png" alt="" srcset="">
+                        <img src="https://elrayo.tk/logo.png" alt="" srcset="">
+                    </div>
+                    <h3>Lleno de proyectos interesantes</h3>
+                    <p>COMO UN HACKATHON</p>
+                </div>
+                <div>
+                    <h3>Decidí <span class="confort-salir">salir</span> de mi <span style="color: rgb(255,149,0);">zona de confort</span></h3>
+                    <p>CON CLASES DE ACTUACIÓN EN LiFE, ESCRIBIR EN EL PERIÓDICO, ETC</p>
+
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="content">
+            <h2>El llamado a la aventura</h2>
+            <ul class="to-do">
+                <li>El primer bloque transcurrió con relativa normalidad.</li>
+                <li>Disfruté la mayoría de las clases y profesores que tuve.</li>
+                <li>A unos cuantos días de
+                    comenzar la primer semana Tec, el Tec
+                    anunció que dada la entonces nueva
+                    situación de contagios de coronavirus, se
+                    suspenderían las clases presenciales hasta
+                    nuevo aviso</li>
+
+                <div class="note">
+                    <h3 style="color: black">
+                        Fui una última vez sin saber que no volvería en mucho tiempo.
+                    </h3>
+                </div>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div class="content">
+            <h2>Batallas libradas</h2>
+            <div style="position: relative;">
+                <p class="chat"></p>
+            </div>
+            
         </div>
     </section>
 
@@ -134,6 +288,11 @@
             let delta = length/step;
             let arr = [...new Array(step)].map((l, i)=>initial+delta*(i+1));
             return arr;
+        }
+        np.linspaceScroll = (initial, final, step, index, map=l=>l)=>{
+            if(index>step) return map(final)
+            if(index<0) return map(initial)
+            return np.linspace(initial, final, step).map(map)[index]
         }
 
         function handleScrollTrnasition(scroll, element){
@@ -166,45 +325,50 @@
         function animateSection1(){
             let element = document.querySelectorAll('section')[1];
             let scroll = 2*(window.scrollY-element.offsetTop);
-            let subtitleMoveIn = np.linspace(-50, 0, element.offsetHeight+1)[scroll] ;
-            let kerning = np.linspace(20, 0, element.offsetHeight+1)[scroll]
+            let subtitleMoveIn = np.linspaceScroll(50, 0, element.offsetHeight+1, scroll) ;
+            let kerning = np.linspaceScroll(20, 0, element.offsetHeight+1, scroll)
             element.querySelector('h2').style.transform = `translateX(${subtitleMoveIn}vw)`
             element.querySelector('h2').style.letterSpacing = kerning+'px';
-
-            element.querySelectorAll('p').forEach((p,i)=>{
-                let scale = np.linspace(2,1, element.offsetHeight+1)[scroll-5*i];
-                let opacity = np.linspace(0, 1, element.offsetHeight+1)[scroll-5*i];
-                p.style.transform = `scale(${scale})`;
-                p.style.opacity = opacity
-            })
-
-            let typeHackathon = np.type('Hackathon', element.offsetHeight+1)[scroll] || 'Hackathon';
-            element.querySelector('p .code').innerText = typeHackathon;
-
-            let confortTilt = np.linspace(0, 10, element.offsetHeight+1)[scroll] || 0;
-            let confortKerning = np.linspace(0, 20, element.offsetHeight+1)[scroll] || 0;
-            let alpha = np.linspace(0, 1, element.offsetHeight+1)[scroll] || 0;
-            element.querySelector('p .confort').style.display = 'inline-block';
-            element.querySelector('p .confort').style.color = 'white';
-            element.querySelector('p .confort').style.transform = `rotate(${confortTilt}deg)`;
-            element.querySelector('p .confort').style.letterSpacing = confortKerning;
-            element.querySelector('p .confort').style.background = `rgba(0,0,0,${alpha})`;
-
-            let highlightScale = np.linspace(0,1,element.offsetHeight+1).map(x=>(1/(Math.E-1))*(Math.exp(x)-1) )[scroll-20] || 0;
-
-            let highligtRotate = np.linspace(0, 20, element.offsetHeight+1).map(x=>(10/x)*Math.sin(Math.PI*x))[scroll]
-
-            element.querySelector('.highlight').style.transform = `scale(${highlightScale}) rotate(${highligtRotate}deg)`
-            // console.log(subtitleMoveIn);
+            let carrouselPosition = np.linspaceScroll(0, 100, element.offsetHeight+1, scroll);
+            element.querySelector('.carrousel').style.backgroundPositionX = carrouselPosition+"%";
+            let carrouselScrollPosition = np.linspaceScroll(0, element.querySelector('.carrousel').scrollWidth, element.offsetHeight+1, scroll)
+            element.querySelector('.carrousel').scrollTo(carrouselScrollPosition, 0);
             
+            let salirScale = np.linspaceScroll(0,1, element.offsetHeight+1, scroll, l=>2*Math.exp(l))
+            element.querySelector('.carrousel .confort-salir').style.fontSize = salirScale+'em';
             handleScrollTrnasition(scroll, element)
         }
 
         function animateSection2(){
             let element = document.querySelectorAll('section')[2];
             let scroll = 2*(window.scrollY-element.offsetTop);
+            let titleEntrance = np.linspaceScroll(0.3,1,element.offsetHeight+1,scroll)
+            let titleRotate = np.linspaceScroll(0, 10, element.offsetHeight+1, scroll, x=>2*Math.sin(x*Math.PI/0.5))
+            element.querySelector('h2').style.transform = ` scale(${titleEntrance}) rotate(${titleRotate}deg)`
+            let todoOpacity = np.linspaceScroll(0,1,element.offsetHeight+1,scroll);
+            element.querySelector('.to-do').style.opacity = todoOpacity;
+
+            element.querySelectorAll('.to-do li').forEach((li,i)=>{
+                let itemScale = np.linspaceScroll(2+0.1*i,1,element.offsetHeight+1,scroll);
+                li.style.transform = `scale(${itemScale})`
+            })
+            let noteScale = np.linspaceScroll(2, 1, element.offsetHeight+1, scroll);
+            let noteRotate = np.linspaceScroll(0, 10, element.offsetHeight+1, scroll);
+            element.querySelector('.to-do .note').style.transform = `scale(${noteScale}) rotate(${noteRotate}deg)`
             handleScrollTrnasition(scroll, element)
 
+        }
+        function animateSection3(){
+            let element = document.querySelectorAll('section')[3];
+            let scroll = 2*(window.scrollY-element.offsetTop);
+            let messageText = np.type('Unas cuantas semanas, como en el 2009 y ya.', element.offsetHeight/2)[scroll] || 'Unas cuantas semanas, como en el 2009 y ya.'
+            element.querySelector('.chat').innerText = messageText
+            handleScrollTrnasition(scroll, element)
+        }
+        function animateSection4(){
+            let element = document.querySelectorAll('section')[4];
+            let scroll = 2*(window.scrollY-element.offsetTop);
+            handleScrollTrnasition(scroll, element)
         }
 
 
@@ -212,7 +376,10 @@
             window.requestAnimationFrame(animateSection0);
             window.requestAnimationFrame(animateSection1);
             window.requestAnimationFrame(animateSection2);
+            window.requestAnimationFrame(animateSection3);
+            window.requestAnimationFrame(animateSection4);
         })
+
     </script>
 </body>
 </html>
