@@ -67,6 +67,17 @@
             font-family: 'Courier New', Courier, monospace;
             font-weight: 600;
         }
+
+        section:nth-of-type(2) .highlight{
+            margin: 4px;
+            padding: 8px;
+            background-color: rgb(0, 122, 254);
+            border-radius: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5rem;
+            color: white;
+            max-width: 600px;
+        }
     </style>
 </head>
 <body>
@@ -92,6 +103,15 @@
             <p>
                 <span class="confort">Salí de mi zona de confort</span> al inscribirme a clases de actuación en LiFE
             </p>
+            <div class="highlight">
+                Pensé que todo sería normal y no existiría mayor problema. Estaba equivocado.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="content">
+            <iframe src="caminoheroe.pdf" frameborder="0" style="width: 100%; height: 100%"></iframe>
         </div>
     </section>
 
@@ -169,14 +189,29 @@
             element.querySelector('p .confort').style.transform = `rotate(${confortTilt}deg)`;
             element.querySelector('p .confort').style.letterSpacing = confortKerning;
             element.querySelector('p .confort').style.background = `rgba(0,0,0,${alpha})`;
+
+            let highlightScale = np.linspace(0,1,element.offsetHeight+1).map(x=>(1/(Math.E-1))*(Math.exp(x)-1) )[scroll-20] || 0;
+
+            let highligtRotate = np.linspace(0, 20, element.offsetHeight+1).map(x=>(10/x)*Math.sin(Math.PI*x))[scroll]
+
+            element.querySelector('.highlight').style.transform = `scale(${highlightScale}) rotate(${highligtRotate}deg)`
             // console.log(subtitleMoveIn);
             
             handleScrollTrnasition(scroll, element)
         }
 
+        function animateSection2(){
+            let element = document.querySelectorAll('section')[2];
+            let scroll = 2*(window.scrollY-element.offsetTop);
+            handleScrollTrnasition(scroll, element)
+
+        }
+
+
         window.addEventListener('scroll', ()=>{
             window.requestAnimationFrame(animateSection0);
             window.requestAnimationFrame(animateSection1);
+            window.requestAnimationFrame(animateSection2);
         })
     </script>
 </body>
