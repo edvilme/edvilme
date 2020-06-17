@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800;900&display=swap" rel="stylesheet">
+
+    <title>Mi historia este semestre</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden
+        }
+        h2{
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+        }
+        p{
+            max-width: 800px;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5rem;
+        }
+        section {
+            width: 100%;
+            height: 200vh;
+            box-sizing: border-box;
+            position: relative;
+        }
+        section>div{
+            position: fixed; 
+            height: 100vh;
+            width: inherit;
+            box-sizing: border-box;
+            padding: 24px;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        section>div.scrolledBottom{
+            position: absolute;
+            bottom: 0
+        }
+        section>div.scrolledTop{
+            position: absolute;
+            top: 0;
+        }
+
+        section:nth-of-type(1) h1{
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 8rem;
+            text-align: center;
+        }
+        section:nth-of-type(2) h2{
+            transform: translateX(-50vw);
+        }
+
+        section:nth-of-type(2) .code {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="content">
+            <h1></h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="content">
+            <h2>El comienzo</h2>
+            <p>
+                Este semestre comenzó como cualquier otro
+            </p>
+            <p>
+                A decir verdad, estaba bastante emocionado porque muchas clases las iba a compartir con mis <strong>amigos</strong>, 
+                tanto aquellos de prepa como los que hice el semestre anterior
+            </p>
+            <p>
+                Me propuse diversos proyectos muy interesantes, entre ellos un <span class="code">Hackathon</span> para <a href="https://ctrl-alt-tec.hackclub.com">Ctrl Alt Tec</a>
+            </p>
+            <p>
+                <span class="confort">Salí de mi zona de confort</span> al inscribirme a clases de actuación en LiFE
+            </p>
+        </div>
+    </section>
+
+    <script>
+        let np = {};
+        np.type = (word, length=word.length)=>{
+            let accumulated = "";
+            let arr = [];
+            let density = Math.round(length/word.length);
+            [...word].forEach(l=>{
+                accumulated+=l;
+                for(let i=0; i<density; i++){
+                    arr.push(accumulated)
+                }
+            });
+            return arr;
+        }
+        np.linspace = (initial, final, step)=>{
+            let length = Math.round(final-initial);
+            let delta = length/step;
+            let arr = [...new Array(step)].map((l, i)=>initial+delta*(i+1));
+            return arr;
+        }
+
+        function handleScrollTrnasition(scroll, element){
+            if(scroll>element.offsetHeight){
+                element.querySelector('div.content').classList.add('scrolledBottom')
+                element.querySelector('div.content').classList.remove('scrolledTop')
+            } else if(scroll<0){
+                element.querySelector('div.content').classList.add('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+            } else {
+                element.querySelector('div.content').classList.remove('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+
+            }
+        }
+
+
+        function animateSection0(){
+            let element = document.querySelectorAll('section')[0];
+            let scroll = 2*(window.scrollY-element.offsetTop);
+            let scale = np.linspace(0,10, element.offsetHeight+1).map(l=> (1/2.4)*Math.log(-l+15) )[scroll];
+
+            let title = np.type("Mi historia este semestre", element.offsetHeight+1)[scroll] || "Mi historia este semestre";
+            element.querySelector('h1').innerText = title;
+            element.querySelector('h1').style.transform = `scale(${scale}, ${scale})`
+
+            handleScrollTrnasition(scroll, element)
+        }
+
+        function animateSection1(){
+            let element = document.querySelectorAll('section')[1];
+            let scroll = 2*(window.scrollY-element.offsetTop);
+            let subtitleMoveIn = np.linspace(-50, 0, element.offsetHeight+1)[scroll] ;
+            let kerning = np.linspace(20, 0, element.offsetHeight+1)[scroll]
+            element.querySelector('h2').style.transform = `translateX(${subtitleMoveIn}vw)`
+            element.querySelector('h2').style.letterSpacing = kerning+'px';
+
+            element.querySelectorAll('p').forEach((p,i)=>{
+                let scale = np.linspace(2,1, element.offsetHeight+1)[scroll-5*i];
+                let opacity = np.linspace(0, 1, element.offsetHeight+1)[scroll-5*i];
+                p.style.transform = `scale(${scale})`;
+                p.style.opacity = opacity
+            })
+
+            let typeHackathon = np.type('Hackathon', element.offsetHeight+1)[scroll] || 'Hackathon';
+            element.querySelector('p .code').innerText = typeHackathon;
+
+            // let confortTilt = 
+            // console.log(subtitleMoveIn);
+            
+            handleScrollTrnasition(scroll, element)
+        }
+
+        window.addEventListener('scroll', ()=>{
+            window.requestAnimationFrame(animateSection0);
+            window.requestAnimationFrame(animateSection1);
+        })
+    </script>
+</body>
+</html>
