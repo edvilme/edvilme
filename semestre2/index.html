@@ -198,6 +198,28 @@
                 -webkit-transform:translate(-32px, -20px);
                         transform:translate(-32px, -20px);
             }
+        section:nth-of-type(4) .bubble_cont{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+        section:nth-of-type(4) .bubble{
+            font-family: Arial, Helvetica, sans-serif;
+            width: 180px;
+            height: 180px;
+            background: black;
+            color: white;
+            border-radius: 50%;
+            padding: 16px;
+            box-sizing: border-box;
+            margin: 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -263,7 +285,26 @@
             <div style="position: relative;">
                 <p class="chat"></p>
             </div>
-            
+            <div class="bubble_cont">
+                <div class="bubble">
+                    Aunque generalmente no salgo mucho, el mero hecho de no poder salir me generaba <span>incomodidad.</span>
+                </div>
+                <div class="bubble">
+                    Las clases que antes disfrutaba, ahora eran aburridas, cansadas y me costaba concentrarme.
+                </div>
+                <div class="bubble">
+                    A los amigos
+                    que antes veía diario y saludaba por los
+                    pasillos con conversaciones más cortas que
+                    un minuto, los empecé a valorar.
+                </div>
+                <div class="bubble">
+                    Muchos planes tuvieron que adaptarse, o ser completamente cancelados.
+                </div>
+                <div class="bubble">
+                    En fín, todo era diferente, incómodo, extraño
+                </div>
+            </div>
         </div>
     </section>
 
@@ -367,6 +408,14 @@
             let scroll = 2*(window.scrollY-element.offsetTop);
             let messageText = np.type('Unas cuantas semanas, como en el 2009 y ya.', element.offsetHeight/2)[scroll] || 'Unas cuantas semanas, como en el 2009 y ya.'
             element.querySelector('.chat').innerText = messageText
+
+            element.querySelectorAll('.bubble').forEach((bubble,i)=>{
+                let bubbleScale = np.linspaceScroll(2.1, 1, element.offsetHeight+1, scroll-120*i);
+                let bubbleOpacity = np.linspaceScroll(0,1,element.offsetHeight+1,scroll-120*i);
+                bubble.style.transform = `scale(${bubbleScale})`;
+                bubble.style.opacity = bubbleOpacity;
+            })
+
             handleScrollTrnasition(scroll, element)
         }
         function animateSection4(){
@@ -383,7 +432,10 @@
             window.requestAnimationFrame(animateSection3);
             window.requestAnimationFrame(animateSection4);
         })
-
+        document.querySelectorAll('.bubble').forEach(bubble=>{
+            bubble.style.width = 2*Math.sqrt(bubble.innerText.length/Math.PI)*1.5+'rem'
+            bubble.style.height = 2*Math.sqrt(bubble.innerText.length/Math.PI)*1.5+'rem'
+        })
     </script>
 </body>
 </html>
