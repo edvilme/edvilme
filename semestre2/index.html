@@ -161,7 +161,14 @@
             let typeHackathon = np.type('Hackathon', element.offsetHeight+1)[scroll] || 'Hackathon';
             element.querySelector('p .code').innerText = typeHackathon;
 
-            // let confortTilt = 
+            let confortTilt = np.linspace(0, 10, element.offsetHeight+1)[scroll] || 0;
+            let confortKerning = np.linspace(0, 20, element.offsetHeight+1)[scroll] || 0;
+            let alpha = np.linspace(0, 1, element.offsetHeight+1)[scroll] || 0;
+            element.querySelector('p .confort').style.display = 'inline-block';
+            element.querySelector('p .confort').style.color = 'white';
+            element.querySelector('p .confort').style.transform = `rotate(${confortTilt}deg)`;
+            element.querySelector('p .confort').style.letterSpacing = confortKerning;
+            element.querySelector('p .confort').style.background = `rgba(0,0,0,${alpha})`;
             // console.log(subtitleMoveIn);
             
             handleScrollTrnasition(scroll, element)
