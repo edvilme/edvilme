@@ -85,6 +85,7 @@
             overflow-x: hidden;
             background-blend-mode: soft-light;
             flex: 1;
+            scroll-snap-type: x;
         }
         section:nth-of-type(2) .carrousel>div{
             flex-shrink: 0;
@@ -95,6 +96,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            scroll-snap-align: start;
         }
         section:nth-of-type(2) .carrousel div img{
             height: 30vmin;
@@ -276,12 +278,15 @@
             width: 100%;
             max-width: 800px;
             flex: 1;
+            scroll-snap-type: x;
         }
         section:nth-of-type(6) .goals>div{
             max-width: 800px;
             width: 100%;
             z-index: 2;
             flex-shrink: 0;
+            scroll-snap-align: start;
+
         }
         section:nth-of-type(6) .goals h3{
             color: green;
