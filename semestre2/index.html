@@ -240,6 +240,10 @@
             color: white;
             display: flex;
             flex-wrap: wrap;
+            z-index: 2;
+        }
+        section:nth-of-type(5) .appear-cont>div>*{
+            margin: 4px 0px;
         }
         section:nth-of-type(5) .notalone{
             transform-origin: left center;
@@ -381,14 +385,11 @@
                <div>
                    <h3>Mi familia</h3>
                    <p>
-                    Antes, todos los días me iba temprano por la mañana al Tec (<small>cuando todos aún estaban dormidos</small>),
-                    y regresaba a casa en la tarde (<small>ya que todos habían comido</small>),
-                    a hacer tarea y prepararme para el día siguiente. Siempre con prisas, tenía
-                    poco tiempo para mi y poco tiempo para mi
-                    familia.
+                    Antes, todos los días, siempre con prisas, tenía
+                    poco tiempo para mi y poco tiempo para mi familia.
                    </p>
                    <p>
-                       En todo momento, mi familia siempre ha estado ahí para mí, y en esta situación tuve oportunidad de convivir más con
+                       En todo momento, han estado ahí para mí, y en esta situación tuve oportunidad de convivir más con
                        mis papás, mi hermana y también mis mascotas.
                    </p>
                 </div>
@@ -403,14 +404,15 @@
                    <h3>Mucha gente más</h3>
                    <p>
                        Igualmente, muchos profesores aprovecharon las herramientas tecnológicas para hacer sus clases más dinámicas.
-                       Otros eran simplemente inspiradores y motivaban a seguir aprendiendo. 
-                   </p>
-                   <p>
-                       Ariel y muchos otros más también me apoyaron de diversas formas a darme cuenta que no estaba solo y juntos podíamos lograr lo que fuera. 
+                       Otros eran simplemente inspiradores y motivaban a seguir aprendiendo. Ariel y muchos otros me ayudaron a darme cuenta que
+
                    </p>
                 </div>
+                <div>
+                    <h3 class="notalone">No estás sol@</h3>
+                </div>
            </div>
-           <h3 class="notalone">No estás sol@</h3>
+           
         </div>
     </section>
 
@@ -561,6 +563,8 @@
             let element = [...document.querySelectorAll('section')][4];
             let scroll = 2*(window.scrollY-element.offsetTop);
             let elementColor = np.linspaceScroll(255, 0, element.offsetHeight+1, scroll);
+            let titleScale = np.linspaceScroll(3,0, element.offsetHeight+1, scroll);
+            element.querySelector('h2').style.fontSize = titleScale+'rem';
             element.style.background = `rgb(${elementColor}, ${elementColor}, ${elementColor})`;
             element.style.color = `rgb(${255-elementColor}, ${255-elementColor}, ${255-elementColor})`;
             [...element.querySelector('.appear-cont').children].forEach(l=>{
@@ -583,6 +587,15 @@
             element.querySelector('.arrow').style.transform = `translate(${arrowPositionX}vw, ${arrowPositionY}vw) rotate(${arrowRot}rad)`
             let goalsScrollPosition = np.linspaceScroll(0, element.querySelector('.goals').scrollWidth, element.offsetHeight+1, scroll)
             element.querySelector('.goals').scrollTo(element.querySelector('.goals').scrollWidth-goalsScrollPosition, 0)
+            if(window.innerWidth<600){
+                let titleScale = np.linspaceScroll(3,0.4, element.offsetHeight+1, scroll+element.offsetHeight/2);
+                element.querySelector('h2').style.fontSize = titleScale+'rem';
+                element.querySelectorAll('h3').forEach(l=>{
+                    let subtitleScale = np.linspaceScroll(3,1, element.offsetHeight+1, scroll+element.offsetHeight/2);
+                    l.style.fontSize = subtitleScale+'rem';
+                    })
+            }
+            
             handleScrollTrnasition(scroll, element)
         }
         function animateSection6(){
