@@ -38,7 +38,7 @@
         }
         section {
             width: 100%;
-            height: 200vh;
+            min-height: 200vh;
             box-sizing: border-box;
             position: relative;
         }
@@ -63,7 +63,7 @@
             top: 0;
         }
 
-        section:nth-of-type(1) h1{
+        h1{
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
             font-size: 8rem;
@@ -156,13 +156,16 @@
             display: inline-block;
             flex-shrink: 0;
         }
+        section:nth-of-type(3)>div{
+            height: auto;
+        }
         section:nth-of-type(3) .to-do>.note{
             background: white;
             padding: 16px;
             transform: rotate(10deg);
             position: relative;
-            bottom: -80px;
-            left: -80px;
+            bottom: -5vmin;
+            left: -5vmin;
             width: 100%;
         }
 
@@ -203,6 +206,7 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-around;
+            overflow: hidden;
         }
         section:nth-of-type(4) .bubble{
             font-family: Arial, Helvetica, sans-serif;
@@ -219,6 +223,68 @@
             flex-direction: column;
             justify-content: center;
             font-size: 1.5rem;
+        }
+        section:nth-of-type(5) .appear-cont{
+            flex: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        section:nth-of-type(5) .appear-cont>div{
+            max-width: 800px;
+            width: 100%;
+            background: black;
+            padding: 16px;
+            margin: 8px;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        section:nth-of-type(5) .notalone{
+            transform-origin: left center;
+            color: #0B93F6;
+            font-size: 6rem;
+            margin: 0;
+        }
+        section:nth-of-type(6){
+            background: black;
+            color: white;
+        }
+        section:nth-of-type(6) img.arrow{
+            width: 50vmin;
+            position: absolute;
+            margin-bottom: auto; margin-top: auto;
+            bottom: 0; top: 0;
+            transform-origin: right center;
+            z-index: 2;
+        }
+        section:nth-of-type(6) img.target{
+            width: 60vmin;
+            position: absolute;
+            margin-bottom: auto; margin-top: auto;
+            bottom: 0; top: 0;
+            transform-origin: right center; right: -30vmin;
+        }
+        section:nth-of-type(6) .goals{
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            flex: 1;
+        }
+        section:nth-of-type(6) .goals>div{
+            max-width: 800px;
+            width: 100%;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+        section:nth-of-type(6) .goals h3{
+            color: green;
+        }
+        section:nth-of-type(7) {
+            background: black;
+            color: white;
         }
     </style>
 </head>
@@ -308,6 +374,74 @@
         </div>
     </section>
 
+    <section>
+        <div class="content">
+           <h2>Aliados y ayuda</h2>
+           <div class="appear-cont">
+               <div>
+                   <h3>Mi familia</h3>
+                   <p>
+                    Antes, todos los días me iba temprano por la mañana al Tec (<small>cuando todos aún estaban dormidos</small>),
+                    y regresaba a casa en la tarde (<small>ya que todos habían comido</small>),
+                    a hacer tarea y prepararme para el día siguiente. Siempre con prisas, tenía
+                    poco tiempo para mi y poco tiempo para mi
+                    familia.
+                   </p>
+                   <p>
+                       En todo momento, mi familia siempre ha estado ahí para mí, y en esta situación tuve oportunidad de convivir más con
+                       mis papás, mi hermana y también mis mascotas.
+                   </p>
+                </div>
+               <div>
+                   <h3>Mis amigos</h3>
+                   <p>
+                       Aunque no de manera presencial, mis amigos ahí estuvieron para mi. Haciendo menos pesado este cambio, distrayéndome, haciéndome
+                       reír, etc.
+                   </p>
+                </div>
+               <div>
+                   <h3>Mucha gente más</h3>
+                   <p>
+                       Igualmente, muchos profesores aprovecharon las herramientas tecnológicas para hacer sus clases más dinámicas.
+                       Otros eran simplemente inspiradores y motivaban a seguir aprendiendo. 
+                   </p>
+                   <p>
+                       Ariel y muchos otros más también me apoyaron de diversas formas a darme cuenta que no estaba solo y juntos podíamos lograr lo que fuera. 
+                   </p>
+                </div>
+           </div>
+           <h3 class="notalone">No estás sol@</h3>
+        </div>
+    </section>
+
+    <section>
+        <div class="content">
+            <h2>Metas y objetivos para el siguiente semestre</h2>
+            <img src="./img/arrow.png" alt="arrow" class="arrow">
+            <img src="./img/target.png" alt="target" srcset="" class="target">
+            <p>Aprendí mucho este semestre. Por eso, el próximo me propongo a:</p>
+            <div class="goals">
+                <div>
+                    <h3>Enfocarme en mi crecimiento personal</h3>
+                    <p>Invertir tiempo y energía en cosas que me hagan crecer como persona en todos los niveles posibles (espiritural, personal, emocional, académico, etc).</p>
+                </div>
+                <div>
+                    <h3>Salir de mi zona de confort</h3>
+                    <p>Retarme para poder realizar cosas que no necesariamente haría, para poder ampliar mis experiencias y descubrir nuevas pasiones. </p>
+                </div>
+                <div>
+                    <h3>Organizar mejor mi tiempo</h3>
+                    <p>Para poder dedicar más tiempo para mi famila, amigos, y para mí.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="content">
+            <h2></h2>
+            <p>Walt Disney</p>
+        </div>
+    </section>
     <section>
         <div class="content">
             <iframe src="caminoheroe.pdf" frameborder="0" style="width: 100%; height: 100%"></iframe>
@@ -409,9 +543,14 @@
             let messageText = np.type('Unas cuantas semanas, como en el 2009 y ya.', element.offsetHeight/2)[scroll] || 'Unas cuantas semanas, como en el 2009 y ya.'
             element.querySelector('.chat').innerText = messageText
 
+            let bubbleScrollPosition = np.linspaceScroll(0, 1, element.offsetHeight+1, scroll, x=>
+            element.querySelector('.bubble_cont').scrollHeight*Math.pow(100, (x-1))
+            )
+            element.querySelector('.bubble_cont').scrollTo(0, bubbleScrollPosition)
+
             element.querySelectorAll('.bubble').forEach((bubble,i)=>{
-                let bubbleScale = np.linspaceScroll(2.1, 1, element.offsetHeight+1, scroll-120*i);
-                let bubbleOpacity = np.linspaceScroll(0,1,element.offsetHeight+1,scroll-120*i);
+                let bubbleScale = np.linspaceScroll(2.1, 1, element.offsetHeight+1, scroll*5);
+                let bubbleOpacity = np.linspaceScroll(0,1,element.offsetHeight+1,scroll*5);
                 bubble.style.transform = `scale(${bubbleScale})`;
                 bubble.style.opacity = bubbleOpacity;
             })
@@ -419,7 +558,41 @@
             handleScrollTrnasition(scroll, element)
         }
         function animateSection4(){
-            let element = document.querySelectorAll('section')[4];
+            let element = [...document.querySelectorAll('section')][4];
+            let scroll = 2*(window.scrollY-element.offsetTop);
+            let elementColor = np.linspaceScroll(255, 0, element.offsetHeight+1, scroll);
+            element.style.background = `rgb(${elementColor}, ${elementColor}, ${elementColor})`;
+            element.style.color = `rgb(${255-elementColor}, ${255-elementColor}, ${255-elementColor})`;
+            [...element.querySelector('.appear-cont').children].forEach(l=>{
+                l.style.display='none'
+                l.style.background = `rgb(${355-elementColor}, ${355-elementColor}, ${355-elementColor})`
+                l.style.color = `rgb(${elementColor}, ${elementColor}, ${elementColor})`
+            })
+            let displayDinamycSelect = np.linspaceScroll(0, element.querySelector('.appear-cont').childElementCount-1, element.offsetHeight+1, scroll, x=>Math.round(x))
+            element.querySelector('.appear-cont').children[displayDinamycSelect].style.display = 'flex'
+            let notAloneScale = np.linspaceScroll(3, 1, element.offsetHeight+1, scroll);
+            element.querySelector('.notalone').style.transform = `scale(${notAloneScale})`
+            handleScrollTrnasition(scroll, element)
+        }
+        function animateSection5(){
+            let element = document.querySelectorAll('section')[5];
+            let scroll = 2*(window.scrollY-element.offsetTop);
+            let arrowPositionY = np.linspaceScroll(-50, 50-20, element.offsetHeight+1, scroll, x=>(x+50)*(x-50)/(50*50));
+            let arrowPositionX = np.linspaceScroll(-50, 50-20, element.offsetHeight+1, scroll);
+            let arrowRot = np.linspaceScroll(-50, 50-20, element.offsetHeight+1, scroll, x=>Math.atan(2*x/(50*50)))
+            element.querySelector('.arrow').style.transform = `translate(${arrowPositionX}vw, ${arrowPositionY}vw) rotate(${arrowRot}rad)`
+            let goalsScrollPosition = np.linspaceScroll(0, element.querySelector('.goals').scrollWidth, element.offsetHeight+1, scroll)
+            element.querySelector('.goals').scrollTo(element.querySelector('.goals').scrollWidth-goalsScrollPosition, 0)
+            handleScrollTrnasition(scroll, element)
+        }
+        function animateSection6(){
+            let element = document.querySelectorAll('section')[6];
+            let scroll = 2*(window.scrollY-element.offsetTop);
+            element.querySelector('h2').innerText = np.type('Si puedes soñarlo, puedes lograrlo', element.offsetHeight+1)[scroll*2] || "Si puedes soñarlo, puedes lograrlo"
+            handleScrollTrnasition(scroll, element)
+        }
+        function animateSection7(){
+            let element = document.querySelectorAll('section')[7];
             let scroll = 2*(window.scrollY-element.offsetTop);
             handleScrollTrnasition(scroll, element)
         }
@@ -431,6 +604,9 @@
             window.requestAnimationFrame(animateSection2);
             window.requestAnimationFrame(animateSection3);
             window.requestAnimationFrame(animateSection4);
+            window.requestAnimationFrame(animateSection5);
+            window.requestAnimationFrame(animateSection6);
+            window.requestAnimationFrame(animateSection7);
         })
         document.querySelectorAll('.bubble').forEach(bubble=>{
             bubble.style.width = 2*Math.sqrt(bubble.innerText.length/Math.PI)*1.5+'rem'
