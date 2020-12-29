@@ -628,7 +628,7 @@
             let title = document.createElement('h2');
                 title.innerHTML = l[0]
             let subtitle = document.createElement('p');
-                subtitle.innerHTML = l[1];
+                subtitle.innerHTML = l[1] || "";
             container.append(title, subtitle);
             return container
         })
