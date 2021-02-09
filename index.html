@@ -2,197 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo VIllalpando Mello</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="devicon.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Hello! Eduardo Villalpando Mello</title>
+    <style>
+        body{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            padding: 16px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            position: fixed;
+        }
+    </style>
 </head>
 <body>
-    
-    <div id="hero">
-        <h1>
-            <span style="color:#2979FF">let</span> edvilme = <span id="name">"Eduardo Villalpando Mello"</span>
-        </h1>
-        <a href="mailto:eduardo.villalpando.mello@gmail.com" class="button">Contact me</a>
+    <button>Click me!</button>
+    <h1>Hello!</h1>
+    <div id="info">
+        This page is under construction, but you can check out these links, or click anywhere for <i>procrastination</i>
+        <ul> <a href="index_old.html">Old Website</a> </ul>
+        <ul> <a href="https://www.periodicoelrayo.com/secciones/ciencia-y-tecnolog%C3%ADa/que-esperar-del-2021">My latest article</a> </ul>
+        <ul> <a href="https://www.youtube.com/channel/UC1E4zbr2sby4sLIYqI9IwQQ">YouTube Channel</a> </ul>
+        <ul> <a href="https://www.twitter.com/edvilme">Twitter</a> </ul>
+        <ul> <a href="https://github.com/edvilme">GitHub</a> </ul>
+        <hr>
+        <ul> <a href="https://ctrl-alt-tec.hackclub.com">Ctrl Alt Tec</a> </ul>
+        <ul> <a href="https://periodicoelrayo.com">El Rayo</a> </ul>
+        <ul> <a href="https://feteccsf.com/quanta">Quanta</a> </ul>
+        <ul> <a href="https://mexicovid19.app">Mexicovid19</a> </ul>
+        <hr>
+        <ul> <a href="CV.pdf">Curriculum Vitae</a> </ul>
+        <ul> <a href="mailto:eduardo.villalpando.mello@gmail.com?subject=Hi&I saw your website and would like to get in touch with you because">Contact me</a> </ul>
     </div>
-    <nav>
-        <ul>
-            <li class="active">Home</li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="">Portfolio</a></li>
-            <li><a href="">Content</a></li>
-        </ul>
-    </nav>
-    <section id="about">
-        <h1>edvilme.<span style="color:#2979FF">aboutMe</span>()</h1>
-        <p name="about_summary">About me...</p>
-        <h2>FOLLOW ME ON</h2>
-        <div name="about_profiles">
-        </div>
-    </section>
-
-    
-
-    <section id="work">
-        <h1>edvilme.<span style="color:#2979FF">work</span>()</h1>
-    </section>
-
-    <section id="education">
-        <h1>edvilme.<span style="color:#2979FF">education</span>()</h1>
-        <div name="education_studies"></div>
-    </section>
-
-    <section id="competitions">
-        <h1>
-            <span style="color:#e06c75">return</span> [
-            <br> 
-            ...edvilme<span style="color:#2979FF">.hackathons</span>(), 
-            <br>
-            ...edvilme<span style="color:#2979FF">.competitions</span>() 
-            <br>
-            ]
-        </h1>
-        <ul name="competitions_competitions">
-        </ul>
-    </section>
-
-
-    <section id="skills">
-        <h1>edvilme.<span style="color:#2979FF">evaluate</span>(<span style="color: #FFA000">"skills"</span>)</h1>
-
-    </section>
-
-    <section>
-        <footer style="text-align: right; display: none;">
-            <hr>
-            <span style="font-size: 14pt;"> This document is available for download at http://edvilme.tk </span>
-            <img src="qr.svg" alt="" srcset="" height="80pt" style="vertical-align: middle;">
-        </footer>
-    </section>
-
-
     <script>
-        async function getData(){
-            let req = await fetch('resume.json');
-            let data = await req.json();
+        Math.randomRange = (min, max) => Math.floor(Math.random() * (max-min+1)+min);
+        let lastX, lastY;
+        let points = 0;
 
-            document.querySelector("#about>[name='about_summary']").innerHTML = data.basics.summary
-            data.basics.profiles.forEach(profile=>{
-                let a = document.createElement('a');
-                a.href = profile.url;
-                let img = document.createElement('img');
-                img.src = 'img/' + profile.network + '.png';
-                a.append(img, "@"+profile.username);
-                document.querySelector("#about>[name='about_profiles']").append(a)
-            })
-
-            data.work.reverse().forEach(job=>{
-                let cont = document.createElement('div');
-                cont.className = 'job'
-                let dates = document.createElement('div');
-                dates.className = 'dates'
-                dates.innerHTML = `${job.startDate}<br>TO ${job.endDate}`;
-                let details = document.createElement('div');
-                details.className = 'job_details';
-                let company = document.createElement('h3');
-                company.innerText = job.company;
-                let position = document.createElement('h4');
-                position.innerHTML = job.position;
-                let description = document.createElement('div');
-                description.className = 'caption';
-                description.innerHTML = job.summary;
-                let highights = document.createElement('ul');
-                highights.className = 'job_highlights';
-                job.highlights.forEach(l=>{
-                    highights.innerHTML+=`<li>${l}</li>`
-                })
-                details.append(company, position, description)
-                cont.append(dates, details)
-                document.querySelector("#work").append(cont)
-            })
-
-
-            data.education.forEach(study=>{
-                let cont = document.createElement('div');
-                cont.className = 'study';
-
-                let dates = document.createElement('span');
-                dates.classList = 'dates';
-                dates.innerText = `${study.startDate} - ${study.endDate}`;
-
-                let area = document.createElement('h3');
-                area.innerText = study.area;
-
-                let description = document.createElement('h4');
-                description.innerText = study.studyType;
-
-                let place = document.createElement('span');
-                place.className = 'caption';
-                place.innerText = study.institution;
-
-                cont.append(dates, area, description, place);
-                document.querySelector("#education>[name='education_studies']").append(cont)
-            })
-
-            data.competitions.forEach(competition=>{
-                let cont = document.createElement('li');
-
-                let dates = document.createElement('span');
-                dates.className = 'dates';
-                dates.innerText = competition.startDate;
-
-                let title = document.createElement('h3');
-                title.innerText = competition.title;
-
-                let award = document.createElement('h4');
-                award.innerText = competition.award;
-
-                let description = document.createElement('span');
-                description.className = 'caption';
-                description.style.flex = '1';
-                description.innerText = competition.description;
-
-                let br = document.createElement('hr');
-
-                let project = document.createElement('a');
-                project.className = 'caption';
-                project.innerText = 'Project';
-                project.href = competition.link;
-
-                let event = document.createElement('a');
-                event.className = 'caption';
-                event.innerText = 'Event Website';
-                event.href = competition.website;
-
-                cont.append(dates, title, award, description, br, project, event);
-
-                document.querySelector("#competitions>[name='competitions_competitions']").append(cont)
-
-            })
-            
-            data.skills.forEach(skill=>{
-                let cont = document.createElement('div');
-                cont.className = 'skill'
-
-                let name = document.createElement('h3');
-                name.innerText = skill.name;
-
-                let tools = document.createElement('div');
-                tools.className = "tools"
-                tools.append(...skill?.keywords.map(l=>{
-                    let s = document.createElement('span')
-                    let i = document.createElement('i');
-                    i.className = l.icon;
-                    s.append(i, l.name)
-                    return s
-                }))
-
-                cont.append(name, tools)
-                document.querySelector("#skills").append(cont);
-            })
+        let params = (new URL(document.location)).searchParams;
+        if(params.get('game')=='true'){
+            document.querySelector('#info').innerHTML = "";
         }
-        getData()
+
+        document.body.addEventListener('click', (e)=>{
+            document.querySelector('#info').innerHTML = "";
+        })
+
+        document.body.addEventListener('mousemove', (e)=>{
+            window.requestAnimationFrame(()=>{
+                let {clientX, clientY} = e;
+                if( Math.sqrt( (clientX-lastX)**2 + (clientY-lastY)**2 ) < 15 ) return;
+                lastX = clientX;
+                lastY = clientY;
+
+                let angle = Math.randomRange(0, 2*Math.PI);
+
+                let distance = Math.randomRange(0, 200)
+
+                let x = clientX + distance*Math.sin(angle);
+                let y = clientY + distance*Math.cos(angle)
+
+                // document.querySelector('p').innerHTML = clientX + ',' + clientY;
+                document.querySelector('button').style.left = x+'px';
+                document.querySelector('button').style.top = y+'px';
+            })
+        });
+
+        document.querySelector('button').addEventListener('click', ()=>{
+            points++;
+            document.querySelector('h1').innerHTML = 'High score '+points;
+            document.querySelector('button').style.left = Math.randomRange(0, window.innerWidth)+'px';
+            document.querySelector('button').style.top = Math.randomRange(0, window.innerHeight)+'px';
+        })
     </script>
 </body>
 </html>
