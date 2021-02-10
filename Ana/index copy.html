@@ -265,6 +265,9 @@
             <h1>Hola Ana</h1>
         </div>
     </section>
+
+
+
     <section id="section1">
         <div class="content">
             <span class="info"></span>
@@ -314,13 +317,13 @@
             <mark>Y eres la persona más increíble del mundo.</mark>
         </div>
     </section>
-    <section id="section6">
+<!--     <section id="section6">
         <div class="content">
             <h1></h1>
         </div>
-    </section>
+    </section> -->
 
-    <section id="section7" class="music_section">
+    <!-- <section id="section7" class="music_section">
         <div class="content">
             <img class="album" src="./this_girl.jpg">
             <h1>This Girl</h1>
@@ -342,6 +345,12 @@
             <h1>All Those Prety Lights</h1>
             <h2>Andrew Bell</h2>
             <audio src="./all_those_prety_lights.mp4"></audio>
+        </div>
+    </section> -->
+    <section id="section10" class="month">
+        <div class="content">
+            <h1>Estos 31 días me he dado cuenta que amo:</h1>
+            <ol></ol>
         </div>
     </section>
     <footer>
@@ -550,34 +559,26 @@
             element.querySelector('div.content').style.zIndex = 2*2;
         }
 
-        function animateSection7n8n9(){
-            for(let i=7; i<10; i++){
-                let element = document.querySelectorAll('section')[i];
-                let scroll = 2*(window.scrollY - element.offsetTop);
-                let scaleAlbum = [...np.linspace(2, 1, Math.round(element.offsetHeight/3)), ...[...new Array(Math.round(element.offsetHeight/3))].map(l=>1)];
-
-                element.querySelector(".album").style.transform = `scale(${scaleAlbum[scroll]})`;
-
-                element.querySelector(".album").addEventListener('click', ()=>{
-                    element.querySelector('audio').play()
-                })
-
-                if(scroll>element.offsetHeight){
-                    element.querySelector('audio').pause()
-                    element.querySelector('div.content').classList.add('scrolledBottom')
-                    element.querySelector('div.content').classList.remove('scrolledTop')
-                } else if(scroll<0){
-                    element.querySelector('audio').pause()
-                    element.querySelector('div.content').classList.add('scrolledTop')
-                    element.querySelector('div.content').classList.remove('scrolledBottom')
-                } else {
-                    element.querySelector('audio').play()
-                    element.querySelector('div.content').classList.remove('scrolledTop')
-                    element.querySelector('div.content').classList.remove('scrolledBottom')
-                }
+        function animateSection7(){
+            let element = document.querySelectorAll('section')[6];
+            let scroll = 2*(window.scrollY - element.offsetTop);
+           
+            
+            if(scroll>element.offsetHeight){
+                element.querySelector('div.content').classList.add('scrolledBottom')
+                element.querySelector('div.content').classList.remove('scrolledTop')
+            } else if(scroll<0){
+                element.querySelector('div.content').classList.add('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
+            } else {
+                element.querySelector('div.content').classList.remove('scrolledTop')
+                element.querySelector('div.content').classList.remove('scrolledBottom')
             }
+            element.querySelector('div.content').style.zIndex = 2*2;
         }
 
+        
+        
 
         window.addEventListener('scroll', ()=>{
             window.requestAnimationFrame(animateSection0);
@@ -586,9 +587,54 @@
             window.requestAnimationFrame(animateSection3);
             window.requestAnimationFrame(animateSection4);
             window.requestAnimationFrame(animateSection5);
-            window.requestAnimationFrame(animateSection6);
-            window.requestAnimationFrame(animateSection7n8n9);
+            // window.requestAnimationFrame(animateSection6);
+            window.requestAnimationFrame(animateSection7);
         })
+
+        let cosasQueMeGustan = [
+            ['El color de tu cabello', 'Es el más bonito que he visto'],
+            ['La suavidad de tu cabello', 'Hace que quiera sentirlo'],
+            ['Tu sonrisa', 'Es lo más hermoso del mundo y haré lo que sea por verla'],
+            ['Tu belleza', 'En general eres hermosa y muy guapa'],
+            ['Tus selfies', 'Aún cuando son chistosas porque puedo verte como eres (hermosa)'],
+            ['Tu voz', 'Puedo escucharla por horas y horas'],
+            ['Tus voicenotes', 'Amo cuando te emocionas y me cuentas cosas por voicenotes'],
+            ['Tus stories en instagram', 'Aunque amo que me lo cuentes a mi, amo ver tus stories y tu cara de emoción con lo que sea que nos platiques'],
+            ['Tus sonidos cuando hablas', 'Haces muchas expresiones y se me hace de lo más bonito y tierno'],
+            ['Tu risa', 'Neta me mata, y amo cuando soy yo el que la causo'],
+            ['Tu humor', 'Y como siempre logras reirte de todo (incluso de mis babosadas)'],
+            ['Tu forma de hablar'],
+            ['El sonido de tus besos', 'Se me hace muy bonito y tierno. Aunque no haya tenido oportunidad de robarte uno y me arrepienta de eso todos los días'],
+            ['Tus abrazos', 'Hay cosas que simplemente se sienten destinadas a ser. Tus abrazos de mil horas son un ejemplo'],
+            ['Nuestras pláticas eternas', 'Aunque ambos hagamos cosas, podemos platicar todo el día diario sin hartarnos y aún tener de qué hablar. No tengo idea cómo pasa eso'],
+            ['Que siempre tengas algo de qué hablar', 'Te hace la persona más interesante que conozco'],
+            ['Que me cuentes de tu día', 'Siento que comparto un pedacito contigo'],
+            ['Que escuches de mi día', 'Y que además me digas que se te hace interesante. Realmente me ayuda a seguir adelante cuando es difícil'],
+            ['Que no te da miedo decir lo que sientes', 'Sea bueno o malo. A veces yo si, pero me has enseñado a cambiarlo'],
+            ['Que me cuentes cosas que a nadie más le has contado', 'Aprecio muchísimo la confianza, y creo que a nadie le tengo la misma confianza que te tengo a tí. Se que cualquier problema o colapso te puedo contar'],
+            ['Que nada parece importar cuando estoy contigo', 'En esos abrazos de horas, o esas desveladas, todas mis preocupaciones se desaparecen sabiendo que estoy contigo'],
+            ['Que te emociones por las cosas más pequeñas', 'Amo cuando te emocionas porque ves un bebé o un Husky, o por pensar en pasar tiempo con tu familia en Monterrey. Nunca dejes de ser así'],
+            ['El sonido que haces cuando te emocionas', 'Se me hace de lo más bonito y tierno y quiero oírlo siempre (Me gustan los sonidos, aunque suene raro jaja)'],
+            ['Que eres muy divertida', 'Me la paso riéndome contigo y jamás me he aburrido'],
+            ['Que eres cheesy', 'Eso lo descubrí después jiji. Pero lo amo'],
+            ['Que me digas guapo, Lolo o Lolito', 'Se me hace muy bonito y me siento especial. Puntos extra si me dices que soy tuyo 😍'],
+            ['Que me digas que me quieres o me extrañas', 'Lit me puedes hacer el día o sacar de un momento sad solo con decirme eso'],
+            ['Que estés en mi vida'],
+            ['Que me hagas feliz'],
+            ['Que seas mi novia']
+        ]
+        let cosasQueMeGustan_elem = cosasQueMeGustan.map(l=>{
+            let container = document.createElement('li');
+            let title = document.createElement('h2');
+                title.innerHTML = l[0]
+            let subtitle = document.createElement('p');
+                subtitle.innerHTML = l[1] || "";
+            container.append(title, subtitle);
+            return container
+        })
+
+        document.querySelector('.month ol').append(...cosasQueMeGustan_elem)
+
         document.querySelectorAll(".circle").forEach(l=>{
             let maxHeight = window.innerHeight/2;
             let maxWidth = window.innerWidth/2;
