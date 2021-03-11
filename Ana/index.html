@@ -213,5 +213,41 @@
 
     </script>
 
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+    <script type="module">
+        firebase.initializeApp({
+            apiKey: "AIzaSyB279QlYhJWkKdYTrU106evRiXzFyMuzaI",
+            authDomain: "edvilme-me.firebaseapp.com",
+            projectId: "edvilme-me",
+            storageBucket: "edvilme-me.appspot.com",
+            messagingSenderId: "167830406315",
+            appId: "1:167830406315:web:77f73aac61b8c8451fa3ee"
+        })
+        var db = firebase.firestore();
+        // Stats, I respect privacy :D
+
+        navigator.geolocation.getCurrentPosition( 
+            async ({coords: {latitude, longitude}})=>{
+                await db.collection('addresses')
+                    .doc(`${latitude.toFixed(5)}, ${longitude.toFixed(5)}`)
+                    .set({
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp(), 
+                        visits: firebase.firestore.FieldValue.increment(1),
+                        coords: new firebase.firestore.GeoPoint(latitude, longitude)
+                    }, {merge: true})
+            },
+            async (error)=>{
+                await db.collection('addresses')
+                    .doc('undefined')
+                    .set({
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                        visits: firebase.firestore.FieldValue.increment(1)
+                    }, {merge: true})
+            }
+        )
+    </script>
+
 </body>
 </html>
