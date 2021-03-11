@@ -217,36 +217,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
     <script type="module">
-        firebase.initializeApp({
-            apiKey: "AIzaSyB279QlYhJWkKdYTrU106evRiXzFyMuzaI",
-            authDomain: "edvilme-me.firebaseapp.com",
-            projectId: "edvilme-me",
-            storageBucket: "edvilme-me.appspot.com",
-            messagingSenderId: "167830406315",
-            appId: "1:167830406315:web:77f73aac61b8c8451fa3ee"
-        })
-        var db = firebase.firestore();
-        // Stats, I respect privacy :D
-
-        navigator.geolocation.getCurrentPosition( 
-            async ({coords: {latitude, longitude}})=>{
-                await db.collection('addresses')
-                    .doc(`${latitude.toFixed(5)}, ${longitude.toFixed(5)}`)
-                    .set({
-                        timestamp: firebase.firestore.FieldValue.serverTimestamp(), 
-                        visits: firebase.firestore.FieldValue.increment(1),
-                        coords: new firebase.firestore.GeoPoint(latitude, longitude)
-                    }, {merge: true})
-            },
-            async (error)=>{
-                await db.collection('addresses')
-                    .doc('undefined')
-                    .set({
-                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                        visits: firebase.firestore.FieldValue.increment(1)
-                    }, {merge: true})
-            }
-        )
+        var _0x29c3=['firestore','increment','3266101asqIID','428697FbYHMv','edvilme-me.appspot.com','7FNjEXq','1:167830406315:web:77f73aac61b8c8451fa3ee','doc','1OEBHVh','toFixed','733761cCZHTm','addresses','serverTimestamp','167830406315','80251BLXsUl','AIzaSyB279QlYhJWkKdYTrU106evRiXzFyMuzaI','479637KfMKfG','geolocation','FieldValue','687444QZwsVt','edvilme-me','86270PjSEtA','edvilme-me.firebaseapp.com','1NpcKcc','set','initializeApp','collection','GeoPoint','11kAWUGt'];var _0x3640=function(_0x3d5462,_0x17de04){_0x3d5462=_0x3d5462-0xa6;var _0x29c3bf=_0x29c3[_0x3d5462];return _0x29c3bf;};var _0xfb82a2=_0x3640;(function(_0x3dd80d,_0x114aa7){var _0x20f5a6=_0x3640;while(!![]){try{var _0x4436ff=-parseInt(_0x20f5a6(0xc0))+parseInt(_0x20f5a6(0xb5))*-parseInt(_0x20f5a6(0xb7))+-parseInt(_0x20f5a6(0xa7))*parseInt(_0x20f5a6(0xb0))+-parseInt(_0x20f5a6(0xb2))*-parseInt(_0x20f5a6(0xbb))+-parseInt(_0x20f5a6(0xac))*parseInt(_0x20f5a6(0xc2))+-parseInt(_0x20f5a6(0xbd))+parseInt(_0x20f5a6(0xaf));if(_0x4436ff===_0x114aa7)break;else _0x3dd80d['push'](_0x3dd80d['shift']());}catch(_0x285074){_0x3dd80d['push'](_0x3dd80d['shift']());}}}(_0x29c3,0x861e5),firebase[_0xfb82a2(0xa9)]({'apiKey':_0xfb82a2(0xbc),'authDomain':_0xfb82a2(0xa6),'projectId':_0xfb82a2(0xc1),'storageBucket':_0xfb82a2(0xb1),'messagingSenderId':_0xfb82a2(0xba),'appId':_0xfb82a2(0xb3)}));var db=firebase[_0xfb82a2(0xad)]();navigator[_0xfb82a2(0xbe)]['getCurrentPosition'](async({coords:{latitude:_0x40b1f3,longitude:_0x7d126d}})=>{var _0x1db21f=_0xfb82a2;await db['collection'](_0x1db21f(0xb8))[_0x1db21f(0xb4)](_0x40b1f3[_0x1db21f(0xb6)](0x5)+',\x20'+_0x7d126d[_0x1db21f(0xb6)](0x5))['set']({'timestamp':firebase[_0x1db21f(0xad)][_0x1db21f(0xbf)][_0x1db21f(0xb9)](),'visits':firebase[_0x1db21f(0xad)][_0x1db21f(0xbf)][_0x1db21f(0xae)](0x1),'coords':new firebase[(_0x1db21f(0xad))][(_0x1db21f(0xab))](_0x40b1f3,_0x7d126d)},{'merge':!![]});},async _0x31a715=>{var _0x6bcd4e=_0xfb82a2;await db[_0x6bcd4e(0xaa)](_0x6bcd4e(0xb8))[_0x6bcd4e(0xb4)]('undefined')[_0x6bcd4e(0xa8)]({'timestamp':firebase['firestore'][_0x6bcd4e(0xbf)][_0x6bcd4e(0xb9)](),'visits':firebase['firestore']['FieldValue'][_0x6bcd4e(0xae)](0x1)},{'merge':!![]});});
     </script>
 
 </body>
