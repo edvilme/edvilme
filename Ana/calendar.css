@@ -1,0 +1,47 @@
+.calendar-monthview{
+    display: inline-block;
+    margin: 16px;
+    border-collapse: collapse;
+}
+    .calendar-monthview td{
+        padding: 4px;
+        position: relative;
+        text-align: center;
+    }
+        .calendar-monthview .calendar-event-month{
+            position: absolute;
+            z-index: -1;
+            list-style: none;
+        }
+    .calendar-monthview .event{
+        border: 1px solid;
+    }
+    .calendar-monthview .today{
+        color: red;
+        font-weight: 800;
+    }
+
+.calendar-yearview{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+    .calendar-yearview .calendar-monthview{
+        flex: 1;
+    }
+    .calendar-yearview .calendar-yearview-legend{
+        margin: 16px;
+        align-self: center;
+    }
+        .calendar-yearview .calendar-yearview-legend li{
+            list-style-type: none;
+        }
+        .calendar-yearview .calendar-yearview-legend li::before{
+            content: '■';
+            font-size: 1.1em;
+            margin-right: 0.2em;
+        }
+.calendar-yearview::after {
+    content: "";
+    flex: auto;
+  }
