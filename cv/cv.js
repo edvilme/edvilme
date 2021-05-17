@@ -1,5 +1,5 @@
 async function renderCV(){
-    const cv = await (await fetch('/cv.json')).json();
+    const cv = await (await fetch('cv.json')).json();
     const {basics, languages, education, work, volunteer, awards} = cv;
     {
         // Basics
