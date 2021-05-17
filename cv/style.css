@@ -1,0 +1,176 @@
+:root{
+    --sidebar-width: 1.8in;
+    --page-margin-sides: 0.3in;
+}
+
+html, body{
+    font-family: 'Source Sans Pro';
+    /* background: whitesmoke; */
+    font-size: 10pt;
+    margin: 0
+}
+
+header, article{
+    width: 100%;
+    max-width: 10in;
+    background: white;
+    padding: 0.25in var(--page-margin-sides);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+@media print{
+    header, article{
+        max-width: 100%;
+        font-size: 10pt;
+    }
+}
+
+header{
+    border-bottom: 0.5px solid rgb(160, 160, 160);
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.1in;
+}
+header h1, header h2 {
+    margin: 0;
+}
+header #about {
+    flex: 1;
+    margin-bottom: 0.2in;
+}
+header #profiles{
+    flex-basis: var(--sidebar-width);
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+}
+    #profiles .social-profile-link{
+        text-decoration: none;
+    }
+    #profiles .social-profile-icon{
+        height: 1em;
+        margin-right: 0.25em;
+    }
+
+article{
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    column-gap: var(--page-margin-sides);
+}
+
+section h1{
+    font-size: 1.5rem;
+    overflow: hidden;
+    margin: 0 0 0.25em 0;
+    font-family: 'Source Code Pro';
+    font-weight: 400;
+}
+    section h1::after{
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        margin-right: -100%;
+        border-bottom: 0.5px solid;
+        margin-bottom: 0.25em;
+    }
+
+#name{
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+#work{
+    display: inline-block;
+}
+    .work{
+        /* margin-bottom: 0.1in; */
+        display: inline-block;
+    }
+    .work>*:empty{
+        display: none;
+    }
+    .work h2, .work h3{
+        margin: 0;
+    }
+    .work h2{
+        /* font-size: 1.2rem; */
+        font-weight: 400;
+    }
+    .work .work-description{
+        font-style: italic;
+        color: gray;
+    }
+
+    .work-role{
+        display: grid;
+        grid-template-columns: 1in 1fr;
+        margin-top: 0.1in;
+        margin-bottom: 0.1in;
+    }
+        .work-duration{
+            color: gray;
+            font-weight: 600;
+        }
+        .work-summary{
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .work-highlights{
+            margin: 0;
+            padding: 0;
+            font-size: 0.8rem;
+        }
+
+
+#education{
+    display: inline-block;
+}
+.education {
+    margin-bottom: 0.2in;
+}
+.education h2, .education h3, .education p{
+    margin: 0;
+}
+.education .education-duration{
+    font-weight: 600;
+}
+.education .education-area{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.education .education-institution{
+    font-size: 1rem;
+    color: gray;
+    font-weight: 400;
+}
+
+#awards{
+    display: inline-block;
+}
+.award{
+    margin-bottom: 0.2in;
+}
+.award h2, .award h3, .award p{
+    margin: 0;
+}
+.award .award-date{
+    font-weight: 600;
+    margin: 0;
+}
+.award .award-issuer{
+    font-size: 1rem;
+    color: gray;
+    font-weight: 400;
+}
+.award .award-name{
+    font-size: 1.2rem;
+}
+.award .award-description{
+    margin-top: 0.5em;
+    font-size: 0.9rem;
+    color: gray;
+}

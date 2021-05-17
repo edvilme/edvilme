@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+blockquote{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-style: italic;
+    margin: 1em 0;
+}
+
+header h1, header h2{
+    margin: 0.25em 0;
+}
+header #basics-name {
+    font-size: 2rem;
+}
+
+header, 
+section{
+    max-width: 8.5in;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.1in;
+}
+section {
+    display: grid;
+    grid-template-columns: 1.5in 1fr;
+}
+
+header #basics-profiles {
+    display: flex;   
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0.1rem 0;
+    margin: 0.1rem 0;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+}
+    #basics-profiles li {
+        flex: 1;
+    }
+    #basics-profiles a{
+        text-decoration: none;
+        display: flex;
+    }
+    #basics-profiles li img {
+        height: 1rem;
+        margin-right: 0.5rem;
+        display: inline-block;
+    }
+
+#work{
+    display: flex;
+    flex-direction: column;
+}
+    .work {
+        margin-bottom: 0.05in;
+    }
+        .work>*:empty{
+            display: none;
+        }
+        .work .work-name{
+            font-weight: 900;
+            margin-bottom: 0;
+        }
+        .work .work-dates {
+            color: darkslategray;
+        }
+        .work .work-position{
+            display: inline;
+            margin: 0;
+            margin-left: 0.5em;
+            color: rgb(80,80,80);
+        }
+
+        .work .work-summary, 
+        .work .work-description{
+            margin: 0.5em 0;
+            color: gray;
+        }
