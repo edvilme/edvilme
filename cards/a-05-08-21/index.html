@@ -52,6 +52,9 @@
                 document.querySelector('#section-1 floating-random-element').addClonableEventListener('clone', e=>{
                     if(count > 20){
                         alert('muchoss xd')
+                        while(document.querySelectorAll('#section-1 floating-random-element').length > 1 ){
+                            document.querySelector('#section-1 floating-random-element').reomve();
+                        }
                     }
                     const {node, content} = e.detail;
                     content.querySelector('object').addEventListener('load', ()=>{
