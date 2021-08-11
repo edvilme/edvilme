@@ -5,66 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body{
-            margin: 0
-        }
-        section{
-            position: relative;
-            height: 100vmin;
-            width: 100vmin;
-            padding: 24px;
-            box-sizing: border-box;
-            margin: auto
-        }
-        .heart{
-            height: 100px;
-            width: 100px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="section-0">
-        <typing-element animation-speed="0.5" animation-enabled="true">
-            <div>
-                <h1>Hola mundo!</h1>
-            </div>
-        </typing-element>
-    </section>
-    <section id="section-1">
-        <p style="text-align: right;">6 de agosto del 2021</p>
-        <h1>Dale click a los corazones</h1>
-        <floating-random-element animation-speed="0.5" animation-enabled="true" travel-radius="100">
+    <div id="heart-background">
+        <div class="title">
+            <typing-element animation-speed="0.25" animation-enabled="true">
+                <div>
+                    <h1 style="font-size: 10rem; line-height: 7rem;">Ana, te amo. </h1>
+                </div>
+            </typing-element>
+        </div>
+        <floating-random-element animation-speed="1.5" animation-enabled="true" travel-radius="50">
             <div style="position: relative;">
-                <div style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></div>
+                <div style="position: absolute; height: 100%; width: 100%"></div>
                 <object data="heart.svg" type="image/svg+xml" class="heart"></object>
             </div>
         </floating-random-element>
-    </section>
-
-    <script src="https://unpkg.com/randomcolor"></script>
+    </div>
     <script src="https://unpkg.com/animated-web-components/index.js" type="module"></script>
+    <script src="https://unpkg.com/randomcolor"></script>
     <script>
-        window.addEventListener('load', ()=>{
-
-            {
-                let count = 0;
-                document.querySelector('#section-1 floating-random-element').addClonableEventListener('clone', e=>{
-                    if(count > 20){
-                        alert('muchoss xd')
-                        while(document.querySelectorAll('#section-1 floating-random-element').length > 1 ){
-                            document.querySelector('#section-1 floating-random-element').reomve();
-                        }
-                    }
-                    const {node, content} = e.detail;
-                    content.querySelector('object').addEventListener('load', ()=>{
-                        const svg = content.querySelector('object').contentDocument;
-                        svg.querySelector('path').style.fill = randomColor({hue: 'red'})
-                    })
-                    count++;
+        function createHeartsBackground(){
+            document.querySelector('#heart-background floating-random-element').addClonableEventListener('clone', e=>{
+                const {node, content} = e.detail;
+                content.querySelector('object').addEventListener('load', ()=>{
+                    content.querySelector('object').contentDocument.querySelector('path').style.fill = randomColor({hue: 'red'})
                 })
-            }
-        })
+            })
+        }
+        window.addEventListener('load', createHeartsBackground)
     </script>
 </body>
 </html>
