@@ -27,11 +27,17 @@
     <script src="https://unpkg.com/randomcolor"></script>
     <script>
         function createHeartsBackground(){
+            let count = 0;
             document.querySelector('#heart-background floating-random-element').addClonableEventListener('clone', e=>{
+                if(count>20){
+                    alert("Te amo Ana. Me encanta tu sonrisa y que seas mía -Lolo");
+                    return;
+                }
                 const {node, content} = e.detail;
                 content.querySelector('object').addEventListener('load', ()=>{
                     content.querySelector('object').contentDocument.querySelector('path').style.fill = randomColor({hue: 'red'})
                 })
+                count++;
             })
         }
         window.addEventListener('load', createHeartsBackground)
