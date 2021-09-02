@@ -1,159 +1,207 @@
 {
     "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
     "basics": {
+        "name": "Eduardo Villalpando Mello", 
         "email": "eduardo.villalpando.mello@gmail.com", 
-        "location": {
-            "countryCode": "MX",
-            "city": "Mexico City"
-        },
-        "label": "Developer", 
-        "name": "Eduardo Villalpando Mello",
-        "url": "https://edvilme.me", 
-        "summary": "I am passionate about creating stuff that will possitively impact other people, through technology, design and emotion.", 
+        "summary": "I want to pursue my passions to learn more, challenge myself and possitively impact the lives of many through design, technology and creativity",
+        "url": "https://edvilme.me/", 
         "profiles": [
             {
-                "network": "Twitter", 
-                "url": "https://twitter.com/edvilme", 
-                "username": "edvilme"
+                "network": "linkedin", 
+                "url": "https://linkedin.com/in/edvilme",
+                "username": "Eduardo Villalpando Mello"
             }, 
             {
-                "network": "Github", 
+                "network": "github", 
                 "url": "https://github.com/edvilme", 
                 "username": "edvilme"
-            }, 
+            },
             {
-                "network": "LinkedIn", 
-                "url": "https://www.linkedin.com/in/edvilme/",
-                "username": "Eduardo Villalpando Mello"
+                "network": "stackoverflow",
+                "url": "https://stackoverflow.com/users/2276332/edvilme",
+                "username": "edvilme"
+            },
+            {
+                "network": "gmail", 
+                "url": "mailto:eduardo.villalpando.mello@gmail.com?subject=I saw your CV",
+                "username": "eduardo.villalpando.mello@gmail.com"
+            },
+            {
+                "network": "whatsapp",
+                "url": "https://api.whatsapp.com/send?phone=525551053108&text=%C2%A1Hola!%20Vi%20tu%20CV%20%F0%9F%91%80%F0%9F%93%83", 
+                "username": "+52 (55) 5105 3108"
             }
-        ]
+        ], 
+        "label": "Computer Science Student", 
+        "location": {
+            "city": "Mexico City"
+        }, 
+        "phone": "+52 (55) 5105 3018"
     }, 
-    "languages": [
-        {"language": "Spanish", "fluency": "Native speaker"},
-        {"language": "English", "fluency": "Fluent"}
-    ], 
-    "education": [
+    "awards": [
         {
-            "area": "International Baccalaureate Diploma Programme", 
-            "institution": "Instituto Tecnológico y de Estudios Superiores de Monterrey", 
-            "startDate": "2016-08", 
-            "endDate": "2019-05", 
-            "studyType": "High School", 
-            "courses": [
-                "Mathematics SL", "Physics SL", "Computer Science HL", "Business Management HL", "English A Language & Literature HL", "Spanish Literature HL"
-            ]
+            "awarder": "FETEC",
+            "date": "2021-01", 
+            "title": "Nominee to best vicepresidency of student clubs", 
+            "summary": "Nominated for project innovation and team leadership at Ctrl Alt Tec"
         }, 
         {
+            "awarder": "JDA (now BlueYonder)", 
+            "date": "2019-08", 
+            "title": "HackMty 2019 First place winner",
+            "summary": "My team won first place in the JDA challenge during HackMty 2019"
+        },
+        {
+            "awarder": "PrepaTec and incMty", 
+            "date": "2017-11", 
+            "title": "PrepaTec Apps and incMty participants",
+            "summary": "Pitched app idea at one of the biggest entepeneurship events in Latin America"
+        }
+    ],
+    "education": [
+        {
+            "institution": "Instituto Tecnológico y de Estudios Superiores de Monterrey", 
             "area": "B.S. Computer Science and Technologies", 
-            "studyType": "Bachelor", 
-            "institution": "Instituto Tecnológico y de Estudios Superiores de Monterrey",
-            "startDate": "2019-08"
+            "startDate": "2019-08",
+            "endDate": "2023-06"
+        },
+        {
+            "institution": "Instituto Tecnológico y de Estudios Superiores de Monterrey", 
+            "area": "International Baccalaureate Diploma Programme", 
+            "startDate": "2016-08", 
+            "endDate": "2019-05"
         }
     ],
     "work": [
         {
-            "name": "Monzalvo Abogados, S.C.", 
-            "description": "Law firm in Mexico City specialized in corporate litigation and family affairs.", 
-            "startDate": "2017-05", 
-            "endDate": "2017-07", 
-            "position": "Law Intern and Web Developer", 
-            "summary": "Drafting of lawsuits, business plans and corporate strategy. Maintainance and development of webpage.", 
-            "url": "http://monzalvoabogados.com/" 
-        }, 
-        {
-            "name": "SAO Software & IT Solutions", 
-            "description": "Software based in Mexico City specialized in the financial, insurance and automotive sectors.",
-            "startDate": "2019-05", 
-            "endDate": "2019-07", 
-            "position": "Intern Software Engineer", 
-            "summary": "Designed and co-developed mobile app for insurance brokers using Xamarin and C#", 
-            "url": "https://www.saoinsurtech.com/"
+            "name": "ITESM Government and Public Transformation School", 
+            "description": "Interdisciplinary research on the impact and propagation of fake news in Twitter", 
+            "startDate": "2020-08-01", 
+            "position": "Software Engineer Intern and Research Assistant", 
+            "highlights": [
+                "Implemented relational database in <b>MySQL</b>",
+                "Developed layered <b>Node.js</b> app that communicates with Twitter API to fetch 100 tweets per second",
+                "Built algorithm that reduces query execution time in half using tree data structures"
+            ]
         },
         {
-            "name": "Instituto Tecnológico y de Estudios Superiores de Monterrey", 
-            "startDate": "2020-05", 
-            "endDate": "2020-06", 
-            "position": "Intern Software Engineer", 
-            "summary": "Mexicovid19 is a project that shows information on the COVID-19 impact, from daily cases per municipality to economic analysis and predictions. Helped build the site using React.js, and implemented MongoDB database.", 
-            "url": "https://mexicovid19.app" 
-        }, 
+            "name": "ITESM Government and Public Transformation School", 
+            "description": "Expansión Urbana de Monterrey showcases the urban growth of Monterrey",
+            "startDate": "2020-05-01", 
+            "endDate": "2020-08-01", 
+            "position": "Software Engineer Intern", 
+            "highlights": [
+                "Created meaningful <b>data visualizations</b> using <b>d3.js</b> and <b>Plotly.py</b>"
+            ],
+            "url": "https://expansionurbanamty.mx/"
+        },
         {
-            "name": "Instituto Tecnológico y de Estudios Superiores de Monterrey", 
-            "startDate": "2020-06", 
-            "endDate": "2020-09", 
-            "position": "Intern Software Engineer and Research Assistant", 
-            "summary": "Expansión Urbana Monterrey showcases the urban growth of Monterrey. Construction and development of the site, and data visualization using d3.js, chart.js and leaflet.js", 
-            "url": "https://expansionurbanamty.mx"
-        }, 
+            "name": "ITESM Government and Public Transformation School", 
+            "description": "mexicovid19.app shows relevant information on the COVID-19 impact in Mexico", 
+            "startDate": "2020-04-01", 
+            "endDate": "2020-05-01", 
+            "position": "Software Engineer Intern", 
+            "highlights": [
+                "Built sections of the site with <b>React.js</b>", 
+                "Implemented <b>MongoDB</b> database to store daily COVID-19 statistics in more than a thousand municipalities", 
+                "Optimized <b>REST API</b> in <b>Node.js</b> for efficient database communication and traffic handling"
+            ],
+            "url": "https://www.mexicovid19.app/"
+        },
         {
-            "name": "Instituto Tecnológico y de Estudios Superiores de Monterrey", 
-            "startDate": "2020-09", 
-            "position": "Intern Software Engineer and Research Assistant", 
-            "summary": "Twitter Fake News is a research project on the impact and propagation of fake news. Constructed database with autofilling methods using SQL, Node.js and Twitter API"
+            "name": "SAO Software & IT Solutions", 
+            "description": "Firm in Mexico City that develops software primarily to the financial and insurance sectors", 
+            "startDate": "2019-04-01", 
+            "endDate": "2019-06-01", 
+            "position": "Software Engineer Intern", 
+            "highlights": [
+                "Designed and co-developed mobile app for insurance brokers using <b>Figma</b>, <b>Xamarin</b> and <b>C#</b>"
+            ]
+        },
+        {
+            "name": "Freelance Developer", 
+            "description": "Developed a platform for survey creation in political campaigns", 
+            "startDate": "2019-04-01", 
+            "endDate": "2019-06-01",
+            "position": "Freelance Full Stack Developer", 
+            "highlights": [
+                "Build relational database using <b>MySQL</b>",
+                "Developed backend with <b>Node.js</b>", 
+                "Developed reusable UI components with <b>Javascript</b>"
+            ]
         }
     ],
     "volunteer": [
         {
-            "organization": "Public Health Aid Awareness and Education Organization", 
-            "summary": "PHAAE is a non profit organization in Negeria focused on issues regarding water, sanitation and hygiene.",
-            "position": "Web developer", 
-            "startDate": "2017-12", 
-            "endDate": "2018-02",
-            "url": "https://www.phaae.org/"
-        }, 
-        {
             "organization": "Ctrl Alt Tec HackClub", 
-            "summary": "With some friends, I co-founded a computer science club in Tec de Monterrey Campus Santa Fe and one of the first HackClub chapters in Mexico. We make technology and coding accesible and fun to everyone through projects, activities, resources and events.",
-            "startDate": "2018-03",
-            "position": "Co-Founder and member of the board", 
+            "summary": "Computer Science Club in ITESM CSF, and one of the first HackClub chapters in Latin America",
+            "startDate": "2018-02-01", 
+            "position": "Co-Founder, Vice President and Member of the Board", 
             "highlights": [
-                "Nominated for best vicepresidency of student clubs",
-                "Collaboration on software development projects with other organizations", 
-                "Community of over 90 members"
+                "Achieved international recognition by the HackClub community",
+                "Developed 10+ projects in collaboration with other organizations", 
+                "Nominated for best vicepresidency", 
+                "Co-built and co-led a community of over 90 members"
             ],
-            "url": "https://ctrl-alt-tec.hackclub.com"
-        }, 
-        {
-            "organization": "Periódico El Rayo", 
-            "summary": "Student led newspaper created to give the community a voice. Passionate about technology I joined from the beginning as editorial subdirector of Science and Technology.",
-            "startDate": "2019-11", 
-            "position": "Editorial Subdirector of Science and Technology, Web Developer, Writer", 
-            "highlights": [
-                "In charge of helping coordinate the team, review articles and maintain the webpage."
-            ], 
-            "url": "https://periodicoelrayo.com"
+            "url": "https://ctrl-alt-tec.hackclub.com/"
         },
         {
-            "organization": "HackMx", 
-            "summary": "Hackathon led by the Regional Engineering Faculty of Tec de Monterrey in Mexico City",
-            "startDate": "2021-04-01", 
-            "position": "Staff", 
+            "organization": "Periódico El Rayo  ", 
+            "summary": "Student led newspaper created to give the community a voice", 
+            "startDate": "2019-10-01", 
+            "position": "Subdirector of Science and Technology, Web Developer", 
             "highlights": [
-                "Helped corrdinate event logistics", 
-                "Succesfully signed sponsorships"
-            ], 
-            "endDate": "2021-05-05", 
-            "url": "https://hackmx.mx"
+                "Led and coordinated team to meet deadlines, reviewed articles and maintained the website"
+            ],
+            "url": "https://www.periodicoelrayo.com/"
+        }, 
+        {
+            "organization": "HackMx 2021", 
+            "summary": "One of the biggest Hackathons in Mexico City, organized in collaboration with ITESM", 
+            "startDate": "2021-03-01", 
+            "endDate": "2021-05-01", 
+            "position": "Organization Staff", 
+            "highlights": [
+                "Helped coordinate event logistics", 
+                "Contacted and signed sponsorships with IBM and Wolfram"
+            ],
+            "url": "https://www.linkedin.com/company/hackmx/about/"
         }
     ],
-    "awards": [
+    "languages": [
         {
-            "awarder": "FETEC", 
-            "date": "2021-01", 
-            "title": "Nominee to best vicepresidency of student clubs", 
-            "summary": "Nominated for my work at Ctrl Alt Tec"
+            "language": "Spanish", 
+            "fluency": "Native"
         }, 
         {
-            "awarder": "HackMty 2019", 
-            "date": "2019-08",
-            "title": "First place winner in JDA Challenge", 
-            "summary": "My team won first place. We got a chance to showcase our solutions to executives and meet their offices."
+            "language": "English",
+            "fluency": "Profficient"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Programming", 
+            "keywords": [
+                "JavaScript", "Python", "SQL", "C++", "Java", "C#"
+            ]
         },
         {
-            "awarder": "PrepaTec", 
-            "date": "2017-11", 
-            "title": "Participation in PrepaTec Apps", 
-            "summary": "Represented our campus in national competition for technological solutions. Pitched idea at incMty."
+            "name": "Web Development",
+            "keywords": [
+                "React", "Node.js", "Express.js", "Rest APIs", "WebAssembly", "Web Components"
+            ]
+        }, 
+        {
+            "name": "Database Management", 
+            "keywords": [
+                "MariaDB", "MySQL", "PostgreSQL", "MongoDB", "Firebase"
+            ]
+        },
+        {
+            "name": "Data visualization",
+            "keywords": [
+                "Tableau", "d3.js", "Plotly"
+            ]
         }
     ]
 }

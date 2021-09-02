@@ -1,0 +1,21 @@
+@import url(components.css);
+:host{
+    margin: 3mm 0mm;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    column-gap: 2mm;
+}
+:host .institution {
+    flex-basis: 100%;
+    padding-bottom: 1px;
+    border-bottom: var(--border-bottom);
+    margin-bottom: 1px;
+    color: gray;
+    font-weight: bold;
+}
+
+:host .area{
+    flex: 1;
+    font-weight: bold;
+}

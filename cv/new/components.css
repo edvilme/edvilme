@@ -1,0 +1,9 @@
+:host{
+    --border-bottom: 0.5px solid rgb(220,220,220)
+}
+
+:host .duration,
+:host .date{
+    color: gray;
+    flex-basis: 1.8cm;
+}

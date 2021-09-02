@@ -1,0 +1,12 @@
+@import url(components.css);
+
+:host{
+    display: flex;
+    margin: 2mm 0;
+    flex-wrap: wrap;
+    column-gap: 2mm;
+}
+    :host .name{
+        font-weight: bold;
+        flex-basis: 100%;
+    }

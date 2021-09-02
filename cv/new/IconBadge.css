@@ -1,0 +1,11 @@
+@import url(components.css);
+:host{
+    display: flex;
+    align-items: center;
+}
+
+:host .icon{
+    height: 0.9em;
+    width: 0.9em;
+    margin-right: 0.5mm;
+}

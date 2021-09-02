@@ -1,0 +1,24 @@
+@import url(components.css);
+
+:host{
+    margin: 2mm 0;
+    display: block;
+}
+
+:host .header{
+    display: flex;
+    gap: 2mm;
+    border-bottom: var(--border-bottom);
+}
+    :host .header .awarder{
+        /* font-weight: bold; */
+    }
+
+
+:host .title{
+    display: inline-block;
+    margin-top: 2mm;
+    font-size: 1.1em;
+    font-weight: bolder;
+    /* text-align: center; */
+}

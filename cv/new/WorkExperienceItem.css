@@ -1,0 +1,48 @@
+@import url(components.css);
+:host{
+    margin-bottom: 5mm;
+    display: flex;
+    align-items: flex-end;
+    /* column-gap: 4mm; */
+    flex-wrap: wrap;
+    font-size: inherit;
+}
+        :host .duration {
+            flex-basis: 1.8cm;
+            flex-shrink: 0;
+            text-align: right;
+            padding-right: 4mm;
+        }
+        :host .info{
+            flex: 1;
+        }
+            :host .info-position{
+                font-weight: bold;
+                margin-right: 2mm;
+                font-size: 1em;
+            }
+    
+            :host .info-description{
+                margin-top: 0;
+                margin-bottom: 0;
+                font-style: italic;
+                color: gray;
+                text-decoration: none;
+                display: block;
+            }
+        :host .duration, 
+        :host .info{
+            padding-bottom: 1px;
+            border-bottom: var(--border-bottom);
+        }
+        :host .highlights{
+            flex-basis: 100%;
+            margin-top: 1mm;
+            /* padding-left: 9mm; */
+        }
+            :host .highlights>span::before{
+                content: ' • ';
+            }
+            :host .highlights>span:first-child::before{
+                content: '';
+            }
