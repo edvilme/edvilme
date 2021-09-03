@@ -25,7 +25,11 @@
     </div>
 
     <div id="words-background">
-        AA
+        <floating-random-element animation-speed="1.5" animation-enabled="true" travel-radius="50">
+            <div style="position: relative;">
+                <p style="font-size: 2em; font-weight: 600;">Ana</p>
+            </div>
+        </floating-random-element>
     </div>
 
     <script src="https://unpkg.com/animated-web-components/index.js" type="module"></script>
@@ -46,6 +50,41 @@
             }
         }
         window.addEventListener('load', createHeartsBackground)
+
+        function createWordsBackground(){
+            let things = [
+                'Ana',
+                'Amo tu sonrisa', 
+                'Amo tu risa', 
+                'Amo tu cabello', 
+                'Amo tus ojos', 
+                'Amo platicar contigo', 
+                'Amo que me cuentes cosas',
+                'Te emocionas bonito',
+                'Abrazas increíble', 
+                'Quiero ver tu cara toda mi vida',
+                'Eres lo más bonito de mi vida',
+                'Gracias por ser mi ratón', 
+                'Quiero crecer junto a ti', 
+                'Me enamoras',
+                'Me gustas', 
+                'Te amo',
+                'Me dejas sin palabras', 
+                'Eres única'
+            ];
+            let count = 0;
+            document.querySelector('#words-background floating-random-element').addClonableEventListener('clone', e=>{
+                // alert('A')
+                count++;
+                const {node, content} = e.detail;
+                console.log(content)
+                content.querySelector('p').innerHTML = things[count%things.length];
+                content.querySelector('p').style.color = randomColor();
+            })
+        }
+        window.addEventListener('load', createWordsBackground.bind(this))
+
+
     </script>
 </body>
 </html>
