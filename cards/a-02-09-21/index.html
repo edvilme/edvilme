@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te amo Ana.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="heart-background">
+        <div class="title">
+            <typing-element animation-speed="0.25" animation-enabled="true">
+                <div>
+                    <h1 style="font-size: 10rem; line-height: 7rem;">Ana, te amo. </h1>
+                </div>
+            </typing-element>
+        </div>
+        <floating-random-element animation-speed="1.5" animation-enabled="true" travel-radius="50">
+            <div style="position: relative;">
+                <div style="position: absolute; height: 100%; width: 100%"></div>
+                <object data="heart.svg" type="image/svg+xml" class="heart"></object>
+            </div>
+        </floating-random-element>
+    </div>
+
+    <div id="words-background">
+        AA
+    </div>
+
+    <script src="https://unpkg.com/animated-web-components/index.js" type="module"></script>
+    <script src="https://unpkg.com/randomcolor"></script>
+    <script>
+        async function createHeartsBackground(){
+            document.querySelector('#heart-background floating-random-element').addClonableEventListener('clone', e=>{
+                const {node, content} = e.detail;
+                content.querySelector('object').addEventListener('load', ()=>{
+                    content.querySelector('object').contentDocument.querySelector('path').style.fill = randomColor({hue: 'red'})
+                })
+                count++;
+            })
+            for(let i=0; i<28; i++){ 
+                await( new Promise((resolve, reject) => { setTimeout(resolve, 400) }) )
+                document.querySelector('#heart-background floating-random-element').click() 
+
+            }
+        }
+        window.addEventListener('load', createHeartsBackground)
+    </script>
+</body>
+</html>
