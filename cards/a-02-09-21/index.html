@@ -16,7 +16,7 @@
                 </div>
             </typing-element>
         </div>
-        <floating-random-element animation-speed="1.5" animation-enabled="true" travel-radius="50">
+        <floating-random-element animation-speed="1.5" animation-enabled="true" travel-radius="50" class="heart">
             <div style="position: relative;">
                 <div style="position: absolute; height: 100%; width: 100%"></div>
                 <object data="heart.svg" type="image/svg+xml" class="heart"></object>
@@ -25,9 +25,9 @@
     </div>
 
     <div id="words-background">
-        <floating-random-element animation-speed="1.5" animation-enabled="true" travel-radius="50">
+        <floating-random-element animation-speed="1.5" animation-enabled="true" travel-radius="50" class="word">
             <div style="position: relative;">
-                <p style="font-size: 2em; font-weight: 600;">Ana</p>
+                <p style="font-size: 2.5em; font-weight: 800; text-shadow: 1px 1px 8px rgba(0,0,0,0.8);">Ana</p>
             </div>
         </floating-random-element>
     </div>
@@ -36,7 +36,7 @@
     <script src="https://unpkg.com/randomcolor"></script>
     <script>
         async function createHeartsBackground(){
-            document.querySelector('#heart-background floating-random-element').addClonableEventListener('clone', e=>{
+            document.querySelector('#heart-background floating-random-element.heart').addClonableEventListener('clone', e=>{
                 const {node, content} = e.detail;
                 content.querySelector('object').addEventListener('load', ()=>{
                     content.querySelector('object').contentDocument.querySelector('path').style.fill = randomColor({hue: 'red'})
@@ -73,13 +73,13 @@
                 'Eres única'
             ];
             let count = 0;
-            document.querySelector('#words-background floating-random-element').addClonableEventListener('clone', e=>{
+            document.querySelector('#words-background floating-random-element.word').addClonableEventListener('clone', e=>{
                 // alert('A')
                 count++;
                 const {node, content} = e.detail;
                 console.log(content)
                 content.querySelector('p').innerHTML = things[count%things.length];
-                content.querySelector('p').style.color = randomColor();
+                content.querySelector('p').style.color = randomColor({hue: 'red'});
             })
         }
         window.addEventListener('load', createWordsBackground.bind(this))
