@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdón por ser cabezón, Ana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="hero">
+        <h1>Para un ratón.</h1>
+        <div id="hero-background">
+            <floating-random-element animation-speed="1.5" animation-enabled="true" travel-radius="60">
+                <img src="happy.jpg" alt="" srcset="" class="mouse-memoji">
+            </floating-random-element>
+        </div>
+    </section>
+    <section id="letter">
+        <p>
+            Estar junto a tí es lo más increíble de este mundo, y siempre quiero un ratito más porque cada segundo a tu lado es súper especial para mí. Eres lo más bonito que tengo.
+        </p>
+        <p>
+            Ya pasaron algunos días y todavía puedo sentir tus abrazos, besos y cariño del otro día. Igual que siempre, fue algo completamente mágico. No por nada eres una estrella fugaz.
+        </p>
+        <hr>
+        <p>
+            Sé que ayer íbamos a ver una peli juntos, y que por muchos contratiempos te quedé mal. La verdad estaba súper emocionado por eso. Entiendo si estás molesta o decepcionada y escribo esto para decirte que lo siento.
+        </p>
+        <p>
+            Te amo mucho, siempre (y extraño darte muchos besos en la nariz jiji), 
+            -- Lolo
+        </p>
+    </section>
+
+    <section id="prompt">
+        <div id="alert">
+            <p>¿Me perdonas?</p>
+            <div>
+                <button id="button-no">No.</button>
+                <button id="button-yes">Si.</button>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="https://unpkg.com/animated-web-components/index.js" type="module"></script>
+    <script>
+        {
+            let mice = [
+                'happy.jpg',
+                'kiss.jpg',
+                'love.jpg',
+                'star.jpg',
+            ]
+            let i = 0;
+            window.addEventListener('load', ()=>{
+                document.querySelector('floating-random-element').addClonableEventListener('clone', e => {
+                    // console.log(e.detail);
+                    e.detail.content.setAttribute('src', mice[ i%mice.length ]);
+                    i++;
+                })
+            })
+
+        }    
+
+        {
+            let i = 0;
+            let messages = [
+                'Opción inválida. Intenta nuevamente más tarde o prueba con otra opción', 
+                '😙😙😙😙😙😙 ¿me perdonas?', 
+                'Si me perdonas te dejo pegarme con el bat (no el de metal)', 
+                'Yo opino que deberías perdonarlo, se esforzó mucho haciendo esto -- tu celular/computadora', 
+                'Lo dice tu celular/computadora, no lo digo yo 😁', 
+                'Creo que accidentalmente pulsaste el botón incorrecto 😬',
+                'Perdooon princesa', 
+                '¿Ayuda si te digo que te amo mucho?',
+                'Sé que soy un cabezón'
+            ]
+            document.querySelector('#button-no').addEventListener('click', (e) => {
+                alert(messages[i%messages.length]);
+                i++;
+            })
+        }
+
+        {
+            document.querySelector('#button-yes').addEventListener('click', (e) => {
+                if( confirm("¿En serioo? 😁😁") ){
+                    window.location.href = 'https://wa.me/+525551053108?text=Si%20te%20perdono%20Lolo.%20Pero%20ya%20no%20seas%20cabez%C3%B3n'
+                } else {
+                    alert('😔')
+                }
+            })
+        }
+
+    </script>
+
+</body>
+</html>
