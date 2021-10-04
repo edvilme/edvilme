@@ -12,7 +12,9 @@ body{
     justify-content: center;
     position: relative;
 }
-
+    #hero h1{
+        color: rgb(214, 145, 157);
+    }
     #hero-background{
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
