@@ -13,9 +13,7 @@ document.body.addEventListener('click', e=>{
         origin: {x: e.x/window.innerWidth, y: e.screenY/window.innerHeight}
     });
     e.target.style.transform = 'scale(0)'
-    sleep(1000).then(()=>{
-        e.target.remove()  
-    })
+    e.target.remove()
 
     count++;
     if(count > Number.parseInt(localStorage.getItem('high-score') || 0)){
