@@ -1,7 +1,32 @@
+/**
+ * Para Ana:
+ * De todas las personas creo que 
+ * tú eres quien mejor me conoce,
+ * y quien mejor sabe lo mucho que
+ * me apasiona hacer estas cosas.
+ * 
+ * Sin embargo, mi pasión más grande
+ * en todo el mundo, eres tú.
+ * Constantemente y en todo lo que hago,
+ * pienso siempre en tí.
+ * 
+ * Por eso para tu cumpleaños quise 
+ * hacerte esta carta, como forma de
+ * decirte que quiero robarme tu 
+ * corazón y que usaré todas las armas
+ * que tenga disponible para hacerlo.
+ * 
+ * Te quiero muchísimo y espero que
+ * hayas tenido un muy feliz cumpleaños.
+ * Aún te debo un abrazo, un beso y una cita.
+ * 
+ * Te extraño y te amo,
+ * Lalo. 
+ */
+
 import 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js';
 
 const sleep = t => new Promise(s => setTimeout(s, t));
-
 
 let count = 0;
 
