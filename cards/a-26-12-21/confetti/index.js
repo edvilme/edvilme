@@ -35,11 +35,12 @@ document.body.addEventListener('click', e=>{
     confetti({
         particleCount: 100,
         spread: 70,
-        origin: {x: e.x/window.innerWidth, y: e.screenY/window.innerHeight}
+        origin: {x: e.x/Math.min(window.screen.width, window.innerWidth), y: e.y/Math.min(window.screen.height, window.innerHeight)},
+        useWorker: true,
+        disableForReducedMotion: false
     });
     e.target.style.transform = 'scale(0)'
     e.target.remove()
-
     count++;
     if(count > Number.parseInt(localStorage.getItem('high-score') || 0)){
         localStorage.setItem('high-score', count.toString());
