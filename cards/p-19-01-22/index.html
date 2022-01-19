@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Montserrat:wght@900&family=Zeyada&display=swap" rel="stylesheet">    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            /* overflow: hidden; */
+        }
+        header{
+            height: 100vmin;
+            font-family: monospace;
+            white-space: pre;
+            background-color: black;
+            color: yellow;
+            padding: 24px;
+            font-size: 0.8rem;
+        }
+
+        section#message{
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            --page-height: 400px;
+        }
+            section#message > #message-page{
+                width: var(--page-height);
+                height: calc(var(--page-height)/1.2941);
+                background-color: white;
+                padding: 16px;
+                transform: rotate(-5deg);
+                font-size: 1.4rem;
+                /* font-family: 'Dawning of a New Day', cursive; */
+                font-family: 'Zeyada', cursive;
+                white-space: pre-line;
+            }
+
+            section#message > #message-emphasis{
+                width: calc(var(--page-height)*1.5);
+                max-width: 90vw;
+                color: white;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 900;
+                font-size: 2rem;
+                text-align: center;
+                background: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        
+            section#candles{
+                height: 100vh;
+                background: linear-gradient(black, whitesmoke);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+                section#candles img{
+                    filter: brightness(80%) contrast(120%);
+                }
+                section#candles>#fireworks{
+                    width: 90vw;
+                    background: url(./img/fireworks.gif);
+                    background-size: cover;
+                    background-position: center;
+                    -webkit-background-clip: text;
+                    text-transform: uppercase;
+                    -webkit-text-fill-color: transparent;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 900;
+                    font-size: 4rem;
+                    line-height: 3rem;
+                    letter-spacing: -1.5px;
+                }
+                section#candles>#pill{
+                    margin-top: 2rem;
+                    background-color: black;
+                    color: white;
+                    font-family: Arial, Helvetica, sans-serif;
+                    padding: 8px 16px;
+                    border-radius: 100px;
+                }
+
+            section#collage{
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                user-select: none;
+                background-color: whitesmoke;
+
+                font-family: 'Montserrat', sans-serif;
+                font-size: 4rem;
+                color: #404040;
+            }
+                section#collage>img{
+                    user-select: none;
+                    width: 100px;
+                    border: 8px solid white;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+                    position: absolute;
+                    transform-origin: center;
+                    transition: 0.5s ease-in-out;
+                    opacity: 0.9;
+                    backdrop-filter: blur(8px);
+                }
+                section#collage>img:active, 
+                section#collage>img:hover{
+                    left: initial !important;
+                    top: initial !important;
+                    height: 100%;
+                    width: auto;
+                    transform: rotate(0rad) !important;
+                    z-index: 1000;
+                    opacity: 1;
+                }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <section id="message">
+        <div id="message-page"><!-- 
+                Ayuda me tienen atrapado haciendo esta página. Jajaja es broma. Pablo si lees esto quiero que ya ganaste, que Aída
+                te quiere muchísimo y quiso tenerte este bonito detalle. Espero que la pases súper padre, que festejes mucho y que
+                comas mucho pastel. Te debo el abrazo. ¡Feliz cumpleaños bro! -- Lalo.
+        --> Yo sé que este no es de tus días favoritos y que anteriormente ha sido un día que te causó dolor o malos recuerdos.
+            Quiero que todo el regalo que te tengo preparado (incluyendo esta página que Lalito con mucho cariño me ayudó a hacer <!-- 
+                xd te juro que así me dijo Aída que pusiera, no es self promotion jaja 
+            -->) te dé un día tan bonito y especial como siempre has merecido. 
+            ------------------------------------------
+        </div>
+        <div id="message-emphasis">
+            Es el primer año que puedo pasar contigo algo así de importante y estoy muy feliz de poder ser parte de festejar tu vida. </h1>
+        </div>
+    </section>
+    <section id="candles">
+        <div id="fireworks">
+            Cuando soples tus velitas hoy quiero que sea el momento más especial para tí, pidas deseos y que se cumplan.
+        </div>
+        <div id="pill">
+            (dado a que cumples 23, tienes el privilegio de pedir 23 deseos)
+        </div>
+    </section>
+    <section id="collage">
+        Quiero tener el privilegio de acompañarte en muchos más cumpleaños. Siempre te deseo lo mejor de lo mejor, que tu vida sea llena de muchas bendiciones y que tengas muchas risas y aventuras por delante.
+    </section>
+    <script src="./index.js"></script>
+</body>
+</html>
