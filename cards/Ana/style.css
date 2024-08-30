@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+}
+
+h1{
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+h1.emph{
+    font-size: 6.5rem;
+}
+p{
+    font-size: 1.5rem;
+}
+
+.huge{
+    font-size: 9rem;
+    text-align: center;
+}
+
+header h1{
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    font-size: 12rem;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+header,
+section{
+    min-height: 100vh;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+    header>*,
+    section>*{
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+header{
+    background-color: pink;
+}
+
+#teamo{
+    transition: transform 1s ease-in-out
+}
+#reason{
+    transition: transform 1s ease-in-out;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.calendar-monthview{
+    /* background: white; */
+    transition: transform 0.5s ease-out;
+
+}
+
+.calendar-monthview:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 2px 2px 0px #0000001a;
+}
+
+.calendar-monthview td{
+    transition: transform 0.5s ease-out;
+
+}
+.calendar-monthview td:hover{
+    transform: scale(1.5);
+    box-shadow: 1px 2px 2px 0px #0000008A;
+}

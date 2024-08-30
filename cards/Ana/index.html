@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calendar.css">
+    <link rel="stylesheet" href="whatsapp.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Hola hermosa</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Architects+Daughter&family=Bungee+Shade&family=Codystar&family=Fascinate&family=Fredericka+the+Great&family=Mali:wght@700&family=Monoton&family=Poiret+One&family=Ribeye+Marrow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>
+            Hola Ana,
+        </h1>
+    </header>
+
+
+    <section id="calendars">
+        <h1>100 días a tu lado</h1>
+    </section>
+
+    <section id="stats-hours" style="background-color:  #ECE5DD;">
+        <h1>100 días =</h1>
+        <h1 class="emph">2 400 horas</h1>
+        <p>
+            Que pasan como unos minutos cuando estoy hablando contigo
+        </p>
+    </section>
+
+    <section id="kisses">
+        <h1>100 días =</h1>
+        <h1 class="emph">Miles de besos</h1>
+        <p>Los amo, aunque quiero muchos en persona también</p>
+        <p><i>Psst... Dale click al emoji</i></p>
+    </section>
+
+    <section>
+        <h1>100 días =</h1>
+        <h1 class="emph">Más de 100 veces que dijimos</h1>
+        <div class="huge" id="teamo">TE AMO</div>
+    </section>
+
+    <section>
+        <h1>100 días =</h1>
+        <h1 class="emph">100 veces que me enamoré</h1>
+        <p id="reason">Da click aquí varias veces</p>
+    </section>
+
+    <section>
+        <h1>100 días</h1>
+        <h1 class="emph">De ser tu novio</h1>
+        <p>
+            Ana, gracias por 100 días a tu lado. Y gracias por todos los que faltan. En tí encontré el amor.
+        </p>
+        <p>
+            A más de 100 días, aún no puedo creer que la niña guapa de la que me enamoré sea mi novia. Estoy comprometido a quererte mucho y a intentar siempre sacarte esa sonrisa que me trae como tonto.
+        </p>
+        <p>
+            Esto es solo un pequeño detalle. Sé que no es mucho pero me esforcé por que fuera entretenido y diferente. Intentaré siempre demostrarte mi amor y cariño de cuantas maneras sea posible, porque tan solo decir <i>te amo</i> no representa todo lo que siento por tí. 
+        </p>
+        <p>
+            Gracias por este tiempo. Gracias por tu cariño y apoyo. Gracias por ser mi novia.
+        </p>
+        <hr>
+        <p>Te amo.</p>
+        <p style="font-family: 'Shadows Into Light', cursive; font-size: 5rem; text-align: right;">Tu Lolito ❤</p>
+    </section>
+
+    <footer style="display: none;">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://edvilme.me/Ana" alt="stats">
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.6.1/randomColor.min.js" integrity="sha512-vPeZ7JCboHcfpqSx5ZD+/jpEhS4JpXxfz9orSvAPPj0EKUVShU2tgy7XkU+oujBJKnWmu4hU7r9MMQNWPfXsYw==" crossorigin="anonymous"></script>
+    <script src="calendar.js?b"></script>
+    <script>
+        // Get calendar
+        let day0 = new CalendarDay('2020-11-28');
+        let month = day0.getWeek().getMonth();
+        let months = new CalendarYear()
+        while( month.year + month.month/100 <= new CalendarDay().getFullYear() + new CalendarDay().getMonth()/100 ){
+            months.push(month)
+            month = month.getNext()
+        }
+        months.removeDuplicates();
+        // Add events
+        let days = months.findRange('2020-11-28');
+        days.forEach(day=>{
+            day.addEvents(
+                new CalendarEvent('otro día contigo', {type: 'allday', 
+                    tag: new CalendarEventTag('Días contigo')
+                })
+            )
+        })
+        months.findDay('2020-11-28').addEvents(
+            new CalendarEvent('♥', {
+                tag: new CalendarEventTag('Día que me dijiste que sí'),
+            })
+        )
+        months.findDay('2021-02-19').addEvents(
+            new CalendarEvent('💏', {
+                tag: new CalendarEventTag('Día que me enamoraron tus besos')
+            })
+        )
+        months.findDay('2021-01-11').addEvents(
+            new CalendarEvent('"Te amo Lolo"', {
+                tag: new CalendarEventTag('Día que me dijiste que me amas')
+            })
+        )
+        months.findDay('2020-12-18').addEvents(
+            new CalendarEvent('"Te amo Ana"', {
+                tag: new CalendarEventTag('Día que te dije que te amo')
+            })
+        )
+        document.querySelector('#calendars').append( months.renderYearView() )
+        document.querySelector('#calendars h1').innerHTML = `El día de hoy cumplo <br>${days.length-3} días a tu lado`
+    </script>
+    <script src="whatsapp.js"></script>
+    <script>
+        let chat = new WhatsAppChat();
+        document.querySelector("#stats-hours").append( chat.render().dom )
+    </script>
+    <script src="floatingStuff.js"></script>
+    <script>
+        let kisses = document.querySelector("#kisses");
+        let kissEmoji = Object.assign(document.createElement('img'), {
+            src: './img/kiss-emoji.png',
+            onclick: ()=>{kisses.style.backgroundColor = randomColor({luminosity: 'light', hue: 'pink'});}
+        })
+        Object.assign(kissEmoji.style, {
+            height: '60px', 
+            width: '60px',
+        })
+        let emoji = new FloatingDuplicatingStuff(kissEmoji,kisses);
+        emoji.clone()
+    </script>
+
+    <script>
+        let fonts = [
+            'Abril Fatface', 
+            'Architects Daughter', 
+            'Bungee Shade', 
+            'Codystar', 
+            'Fascinate', 
+            'Fredericka the Great', 
+            'Mali', 
+            'Monoton', 
+            'Poiret One', 
+            'Ribeye Marrow'
+        ]
+        let fontCounter = 0;
+        document.querySelector('#teamo').addEventListener('mousemove', (e)=>{
+            let {movementX, movementY} = e;
+            let magnitude = Math.sqrt( Math.pow(movementX, 2) + Math.pow(movementY, 2) );
+            if(magnitude<50) return;
+            let x = 0.5*movementX;
+            let y = 0.5*movementY
+            fontCounter++;
+            if(fontCounter==fonts.length) fontCounter = 0;
+            document.querySelector('#teamo').style.fontFamily = fonts[fontCounter];
+            document.querySelector('#teamo').style.color = randomColor({hue: 'red'})
+            document.querySelector('#teamo').style.transform = `translate(${x}px, ${y}px) scale(${1 + Math.max(x/magnitude, y/magnitude)})`
+        })
+    </script>
+
+    <script>
+        let _100cosas = [
+            'De tu sonrisa',
+            'De tu forma de hablar',
+            'De tu risa', 
+            'De tu belleza',
+            'De lo tierna que eres',
+            'De tu cabello',
+            'De tus besos',
+            'De tus abrazos',
+            'De tus historias',
+            'De cómo gritas de emoción',
+            'De cómo puedo ser yo mismo contigo',
+            'De tu voz',
+            'De que me digas guapo',
+            'De que me digas que amas ser mía',
+            'De que me digas Lolito',
+            'De que me digas que me extrañas',
+            'De que me digas que me quieres',
+            'De que me cuentes todo',
+            'De que me mandes fotos así de la nada',
+            'De que preguntes por mis cosas',
+            'De que me me regales dulces',
+            'De las noches desvelados',
+            'De que seas mía',
+            'De ti.'
+        ]
+        let reasonCounter=0;
+        document.querySelector('#reason').addEventListener('click', ()=>{
+            document.querySelector('#reason').innerHTML = _100cosas[reasonCounter];
+            if(reasonCounter<_100cosas.length-1) reasonCounter++;
+            else reasonCounter=0;
+        })
+        document.querySelector('#reason').addEventListener('mousemove', (e)=>{
+            let {movementX, movementY} = e;
+            let magnitude = Math.sqrt( Math.pow(movementX, 2) + Math.pow(movementY, 2) );
+            if(magnitude<10) return;
+            let x = 10*movementX/magnitude;
+            let y = 10*movementY/magnitude;
+
+            document.querySelector('#reason').style.transform = `translate(${x}px, ${y}px)`
+        })
+
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+    <script type="module">
+        var _0x29c3=['firestore','increment','3266101asqIID','428697FbYHMv','edvilme-me.appspot.com','7FNjEXq','1:167830406315:web:77f73aac61b8c8451fa3ee','doc','1OEBHVh','toFixed','733761cCZHTm','addresses','serverTimestamp','167830406315','80251BLXsUl','AIzaSyB279QlYhJWkKdYTrU106evRiXzFyMuzaI','479637KfMKfG','geolocation','FieldValue','687444QZwsVt','edvilme-me','86270PjSEtA','edvilme-me.firebaseapp.com','1NpcKcc','set','initializeApp','collection','GeoPoint','11kAWUGt'];var _0x3640=function(_0x3d5462,_0x17de04){_0x3d5462=_0x3d5462-0xa6;var _0x29c3bf=_0x29c3[_0x3d5462];return _0x29c3bf;};var _0xfb82a2=_0x3640;(function(_0x3dd80d,_0x114aa7){var _0x20f5a6=_0x3640;while(!![]){try{var _0x4436ff=-parseInt(_0x20f5a6(0xc0))+parseInt(_0x20f5a6(0xb5))*-parseInt(_0x20f5a6(0xb7))+-parseInt(_0x20f5a6(0xa7))*parseInt(_0x20f5a6(0xb0))+-parseInt(_0x20f5a6(0xb2))*-parseInt(_0x20f5a6(0xbb))+-parseInt(_0x20f5a6(0xac))*parseInt(_0x20f5a6(0xc2))+-parseInt(_0x20f5a6(0xbd))+parseInt(_0x20f5a6(0xaf));if(_0x4436ff===_0x114aa7)break;else _0x3dd80d['push'](_0x3dd80d['shift']());}catch(_0x285074){_0x3dd80d['push'](_0x3dd80d['shift']());}}}(_0x29c3,0x861e5),firebase[_0xfb82a2(0xa9)]({'apiKey':_0xfb82a2(0xbc),'authDomain':_0xfb82a2(0xa6),'projectId':_0xfb82a2(0xc1),'storageBucket':_0xfb82a2(0xb1),'messagingSenderId':_0xfb82a2(0xba),'appId':_0xfb82a2(0xb3)}));var db=firebase[_0xfb82a2(0xad)]();navigator[_0xfb82a2(0xbe)]['getCurrentPosition'](async({coords:{latitude:_0x40b1f3,longitude:_0x7d126d}})=>{var _0x1db21f=_0xfb82a2;await db['collection'](_0x1db21f(0xb8))[_0x1db21f(0xb4)](_0x40b1f3[_0x1db21f(0xb6)](0x5)+',\x20'+_0x7d126d[_0x1db21f(0xb6)](0x5))['set']({'timestamp':firebase[_0x1db21f(0xad)][_0x1db21f(0xbf)][_0x1db21f(0xb9)](),'visits':firebase[_0x1db21f(0xad)][_0x1db21f(0xbf)][_0x1db21f(0xae)](0x1),'coords':new firebase[(_0x1db21f(0xad))][(_0x1db21f(0xab))](_0x40b1f3,_0x7d126d)},{'merge':!![]});},async _0x31a715=>{var _0x6bcd4e=_0xfb82a2;await db[_0x6bcd4e(0xaa)](_0x6bcd4e(0xb8))[_0x6bcd4e(0xb4)]('undefined')[_0x6bcd4e(0xa8)]({'timestamp':firebase['firestore'][_0x6bcd4e(0xbf)][_0x6bcd4e(0xb9)](),'visits':firebase['firestore']['FieldValue'][_0x6bcd4e(0xae)](0x1)},{'merge':!![]});});
+    </script>
+
+</body>
+</html>
