@@ -1,5 +1,7 @@
 # 👋 Hi, I'm Eduardo Villalpando Mello
 
+[![](https://learn.microsoft.com/media/learn/certification/badges/github-copilot.svg)](https://learn.microsoft.com/en-us/users/eduardovillalpando-6333/credentials/db8d93d0658526e4)
+
 I’m a software engineer who cares deeply about design, innovation, and the small details that make technology delightful. I’m passionate about building tools and solutions that empower developers—and people—to create meaningful change in the world.
 
 - 💡 I love designing and developing intuitive, robust software, always with an eye for user experience and the details that matter.
